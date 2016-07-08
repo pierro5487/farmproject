@@ -11,6 +11,7 @@ use W\Security\AuthorizationManager;
 class Controller 
 {
 
+	
 	/**
 	 * Génère l'URL correspondant à une route nommée
 	 * @param  string $routeName Le nom de route
