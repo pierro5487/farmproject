@@ -3,7 +3,7 @@
     <head>
         <title>Insertion d'un utilisateur</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/inscription.styles.css">
+        <link rel="stylesheet" href="<?= $this->assetUrl('css/inscription.styles.css')?>">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
     </head>
     <body>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="field">
-                            <input error type="text" name="mail" value="<?php if (isset($mail)) echo $mail ?>" placeholder="E-mail"><br>
+                            <input type="text" name="mail" value="<?php if (isset($mail)) echo $mail ?>" placeholder="E-mail"><br>
                             <?php
                             if (isset($errors['mail'])) :
                                 if (isset($errors['mail']['empty'])) :
