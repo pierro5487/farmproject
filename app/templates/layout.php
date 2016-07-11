@@ -29,11 +29,11 @@
 				<!-- navigation -->
 				<nav>
 					<ul>
-						<li><a href="#">Ma ferme</a></li>
-						<li><a href="#">Mes bâtiments</a></li>
-						<li><a href="#">Mes animaux</a></li>
-						<li><a href="#">Mes cultures</a></li>
-						<li><a href="#">Mes produits</a></li>
+						<li><a href="#">ferme</a></li>
+						<li><a href="#">bâtiments</a></li>
+						<li><a href="#">animaux</a></li>
+						<li><a href="#">cultures</a></li>
+						<li><a href="#">produits</a></li>
 						<div class="clearfix"></div>
 					</ul>
 				</nav>

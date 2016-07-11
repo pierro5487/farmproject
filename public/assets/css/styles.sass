@@ -1,7 +1,7 @@
 /* utilities */
 
 .container
-  width: 1180px
+  width: 980px
   margin: auto
 .clearfix
   clear: both
@@ -11,24 +11,29 @@
 
 /*.......................................HEADER..................................*/
 header
-  background: url("../img/champs.png") no-repeat bottom -250px right
+  background: url("../img/champs.png") no-repeat top -450px right fixed
   background-size: cover
   img
     display: block
     float: left
     margin-top: 20px
+    margin-left: 20px
   #infoUser
-    display: block
     float: right
-    padding: 20px 0 50px 0
+    padding: 10px 0 10px 0
+    color: #fff
+    background: rgba(0, 0, 0, 0.2)
+    border-radius: 5%
+    width: 20%
+    margin-top: 20px
     div
-      float: left
-      margin-right: 20px
+      margin: 0px 20px 0px
+      padding: 5px
       &:first-child::before
         background: url("../img/avatar.png") no-repeat center
         background-size: cover
         content: ""
-        width: 30px
+        width: 25px
         height: 30px
         display: block
         float: left
@@ -37,11 +42,16 @@ header
         background: url("../img/or.png") no-repeat center
         background-size: cover
         content: ""
-        width: 30px
-        height: 30px
+        width: 25px
+        height: 25px
         display: block
         float: left
         margin-right: 15px
+    button
+      margin: auto
+      display: block
+      border-radius: 5px
+      padding: 5px
   nav
     padding-bottom: 100px
     ul
@@ -51,12 +61,18 @@ header
         list-style: none
         background: url("../img/pencarte.gif") no-repeat center
         background-size: contain
-        padding: 42px
-        margin-top: 20px
+        position: relative
+        padding: 60px 10px 60px 10px
+        width: 130px
+        margin-left: 20px
         a
           text-decoration: none
           color: #1a1a1a
           font-weight: bold
+          position: absolute
+          top: 55%
+          left: 28%
+          text-transform: capitalize
 
 
 /*.......................................MAIN....................................*/
@@ -64,28 +80,35 @@ main
   #navLeft
     width: 25%
     margin: 10px 0px
+    margin-left: 20px
+    margin-top: 20px
     article
       background : url("../img/background.jpg") center no-repeat
       background-size: cover
       border-radius: 5px
-      color: #1a1a1a
-      font-weight: bold
-      height: 200px
       margin-bottom: 5px
       h5
+        color: black
         padding: 20px 0 20px 50px
         text-transform: uppercase
+        font-weight: bold
+        font-size: 18px
       a
         display: block
-        padding: 20px
-        margin: 0 0 0px 50px
+        padding: 10px 20px 20px 40px
+        margin-left: 50px
         text-decoration: none
-        color: #f9f2f4
+        color: white
+        font-size: 17px
+        font-weight: bold
+
     #products
+      position: relative
       button
-        float : right
-        padding: 10px 30px
-        border-radius: 10px
+        padding: 4px 4px
+        border-radius: 5px
+        position: absolute
+        left: 60%
   .containe
     width: 75%
     background-color: #7ab5d3
@@ -98,3 +121,84 @@ footer
   p
     padding: 20px 0 20px
     color: lightgrey
+
+/*..................................................................................*/
+/* ..........................RESPONSIVE DESIGN.......................................*/
+
+@media screen and (min-width: 980px) and (max-width: 1200px)
+  .container
+    width: 980px
+
+/*............................................................................................*/
+/* ...................................MOYEN ECRAN.............................................*/
+
+@media screen and (min-width: 768px) and (max-width: 980px)
+  .container
+    width: 768px
+  header
+    #infoUser
+      margin-right: 10px
+    nav 
+      ul
+        li
+          padding: 40px 5px 40px 5px
+          margin-left: 5px
+          margin-top: 30px
+
+  main
+    #navLeft
+      article
+        h5
+          padding: 20px 0 20px 30px
+        a
+          padding: 10px 20px 20px 15px
+
+/*.................................................................................................*/
+/* ...................................PETIT ECRAN..................................................*/
+
+@media screen and (max-width: 768px)
+  .container
+    width: 100%
+  /*.......................HEADER..............................*/
+
+  header
+    #infoUser
+      width: 30%
+      margin-right: 40px
+    button
+      padding: 1px
+    nav
+      padding-bottom: 1px
+      width: 100%
+      ul
+        float: none !important
+        li
+          background-image: none !important
+          width: 70px
+          padding: 20px 3px 25px 3px
+          background-color: white
+          margin-top: 5px
+          a
+            font-size: 12px
+            margin-right: 2px
+
+  /*.....................MAIN..............................*/
+  main
+    #navLeft
+      article
+        width: 100%
+        h5
+          padding: 20px 0 20px 5px
+          font-size: 15px
+          text-align: center
+        a
+          padding: 10px 20px 20px 4px
+          margin-left: 20px
+          color: white
+          font-size: 12px
+      #products
+        button
+          display: block
+          padding: 1px 1px
+          border-radius: 2px
+          margin: auto
