@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Insertion d'un utilisateur</title>
@@ -8,26 +7,19 @@
     </head>
     <body>
         <?php
-        if (isset($formValid)) :
-            if (isset($userAdded)) :
-                ?>
-                L'utilisateur a été ajouté en base de données
-            <?php else : ?>
-                Problème lors de l'ajout en base de données
+        if (!empty($_POST) && empty($errors)) :
+            ?>
+            L'utilisateur a été ajouté en base de données
             <?php
-            endif;
-        else:
-        ?>  
-        <header>
-            
-        </header>
+        else :
+        ?>
         <main>
             <div class="container">
                 <div class="box">
                     <h1>Inscription</h1>
                     <form action="#" method="POST">
                         <div class="field">
-                            <input type="text" name="pseudo" value="<?php if (isset($pseudo)) echo $pseudo ?>" placeholder="Pseudo"><br>
+                            <input type="text" name="pseudo" value="<?php if (isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" placeholder="Pseudo"><br>
                             <?php
                             if (isset($errors['pseudo'])) :
                                 if (isset($errors['pseudo']['empty'])) :
@@ -38,20 +30,20 @@
                         </div>
 
                         <div class="field">
-                            <input type="text" name="mail" value="<?php if (isset($mail)) echo $mail ?>" placeholder="E-mail"><br>
+                            <input type="text" name="email" value="<?php if (isset($_POST['email'])) echo $_POST['email'] ?>" placeholder="E-mail"><br>
                             <?php
-                            if (isset($errors['mail'])) :
-                                if (isset($errors['mail']['empty'])) :
+                            if (isset($errors['email'])) :
+                                if (isset($errors['email']['empty'])) :
                                     ?>
                                     <div class="error">Le mail doit être rempli</div>
                                     <?php
                                 endif;
-                                if (isset($errors['mail']['invalid'])) :
+                                if (isset($errors['email']['invalid'])) :
                                     ?>
-                                    <div class="error">Le mail n'est pas valide</div>
+                                    <div class="error">L'email n'est pas valide</div>
                                     <?php
                                 endif;
-                                if (isset($errors['mail']['exists'])) :
+                                if (isset($errors['email']['exists'])) :
                                     ?>
                                     <div class="error">Un compte est déjà enregistré avec cette adresse</div>
                                 <?php endif; ?>
@@ -91,7 +83,7 @@
                         </div>
 
                         <div class="field">
-                            <input type="text" name="lastname" value="<?php if (isset($lastname)) echo $lastname ?>" placeholder="Nom de famille"><br>
+                            <input type="text" name="lastname" value="<?php if (isset($_POST['lastname'])) echo $_POST['lastname'] ?>" placeholder="Nom de famille"><br>
                             <?php
                             if (isset($errors['lastname'])) :
                                 if (isset($errors['lastname']['empty'])) :
@@ -102,7 +94,7 @@
                         </div>
 
                         <div class="field">
-                            <input type="text" name="firstname" value="<?php if (isset($firstname)) echo $firstname ?>" placeholder="Prénom"><br>
+                            <input type="text" name="firstname" value="<?php if (isset($_POST['firstname'])) echo $_POST['firstname'] ?>" placeholder="Prénom"><br>
                             <?php
                             if (isset($errors['firstname'])) :
                                 if (isset($errors['firstname']['empty'])) :

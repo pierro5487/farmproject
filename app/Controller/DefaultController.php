@@ -12,11 +12,9 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
-		$tryConnection = true;
 		if(isset($_POST['sendConnexion'])){
 			if (empty($_POST['email'])) {
 				$errors['email']['empty'] = true;
-				$tryConnection = false; // On n'essaie pas de se connecter
 			} else {
 				// Nettoyage des caractères spéciaux, avant validation
 				$email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
@@ -25,12 +23,10 @@ class DefaultController extends Controller
 				$isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
 
 				if (!$isEmailValid) {
-					$tryConnection = false;
 					$errors['email']['noValid'] = true;
 				}
 				if (empty($_POST['password'])) {
 					$errors['password']['empty'] = true;
-					$tryConnection = false;
 
 				} else {
 					$password = $_POST['password'];
@@ -45,15 +41,11 @@ class DefaultController extends Controller
 					//Le compte est bloqué en raison d'un trop grand nombre de tentatives
 				}
 			}
-			
-			//$login pour login et $password pour password
-			// $login='user';
-			// $password='webforce3';
 
 			/*---- redirection en fonction des erreurs-----------*/
 			//si j'ai des erreurs dans formulaire je renvoie direct au formulaire avec les erreurs 
-			//sinon je test le login et le mot de pass est bien dans la bdd et correct
-			//si c'est faux je renvoi le formulaire ;si c'est ok je récupères les info user et les passe à la session grace à logUserIn()voir doc
+			//sinon je test le login,le mot de passe est bien dans la bdd et correct
+			//si c'est faux je renvoi le formulaire ;si c'est ok je récupères les infos user et les password à la session grace à logUserIn() voir doc
 			/*------------------------------------------------------*/
 			if(!isset($errors)){
 				$authentificationManager = new \Manager\AuthentificationManager();
@@ -65,7 +57,7 @@ class DefaultController extends Controller
 					//j'inseres les donnees user dans la session 
 					$authentificationManager->logUserIn($user);
 					//on remet les trylogin à zéero
-					$authentificationManager->resetLoginTries($pdo, $eemail);
+					$authentificationManager->resetLoginTries($pdo, $email);
 					//et on redirige
 					$this->redirectToRoute('game_farm');
 				}else{
@@ -102,9 +94,8 @@ class DefaultController extends Controller
 
 				// Avant de valider un champ, on le nettoie
 				$email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
-				// Facultatif
 				// On teste la validité du email
-				$isemailValid = filter_var($email, FILTER_VALIDATE_Eemail);
+				$isemailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
 				if (!$isemailValid) {
 					$errors['email']['invalid'] = true;
 				}
@@ -159,14 +150,18 @@ class DefaultController extends Controller
 
 			// Le formulaire est valide si je n'ai pas enregistré d'erreurs
 			if (count($errors) == 0) {
-				$formValid = true;
 
 				// Hash du mot de passe
 				$passHashed = password_hash($_POST['pass1'], PASSWORD_DEFAULT);
-				$userAdded = insertUser($pdo, $pseudo, $email, $passHashed, $lastname, $firstname);
+				$controller = new \Manager\ConnectManager();
+				$pdo = $controller->connectPdo();
+
+				$authentificationManager = new \Manager\AuthentificationManager();
+				$authentificationManager->insertUser($pdo, $pseudo, $email, $passHashed, $lastname, $firstname);
 			}
-			$this->show('default/subscription');
+			$this->show('default/subscription', ['errors'=>$errors]);
 		}
+		$this->show('default/subscription');
 	}
 
 	/*--------------------------------------------------------------------------*/
