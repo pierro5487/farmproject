@@ -1,0 +1,98 @@
+/* utilities */
+.container {
+  width: 1180px;
+  margin: auto; }
+
+.clearfix {
+  clear: both;
+  display: block; }
+
+/*................................................................................. */
+/*.......................................HEADER.................................. */
+header {
+  background: url("../img/champs.png") no-repeat bottom -250px right;
+  background-size: cover; }
+  header img {
+    display: block;
+    float: left;
+    margin-top: 20px; }
+  header #infoUser {
+    display: block;
+    float: right;
+    padding: 20px 0 50px 0; }
+    header #infoUser div {
+      float: left;
+      margin-right: 20px; }
+      header #infoUser div:first-child::before {
+        background: url("../img/avatar.png") no-repeat center;
+        background-size: cover;
+        content: "";
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+        margin-right: 15px; }
+      header #infoUser div:last-of-type::before {
+        background: url("../img/or.png") no-repeat center;
+        background-size: cover;
+        content: "";
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+        margin-right: 15px; }
+  header nav {
+    padding-bottom: 100px; }
+    header nav ul {
+      float: right; }
+      header nav ul li {
+        float: left;
+        list-style: none;
+        background: url("../img/pencarte.gif") no-repeat center;
+        background-size: contain;
+        padding: 42px;
+        margin-top: 20px; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #1a1a1a;
+          font-weight: bold; }
+
+/*.......................................MAIN.................................... */
+main #navLeft {
+  width: 25%;
+  margin: 10px 0px; }
+  main #navLeft article {
+    background: url("../img/background.jpg") center no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    color: #1a1a1a;
+    font-weight: bold;
+    height: 200px;
+    margin-bottom: 5px; }
+    main #navLeft article h5 {
+      padding: 20px 0 20px 50px;
+      text-transform: uppercase; }
+    main #navLeft article a {
+      display: block;
+      padding: 20px;
+      margin: 0 0 0px 50px;
+      text-decoration: none;
+      color: #f9f2f4; }
+  main #navLeft #products button {
+    float: right;
+    padding: 10px 30px;
+    border-radius: 10px; }
+main .containe {
+  width: 75%;
+  background-color: #7ab5d3; }
+
+/*.......................................FOOTER.................................. */
+footer {
+  background-color: green;
+  text-align: center;
+  text-transform: capitalize; }
+  footer p {
+    padding: 20px 0 20px;
+    color: lightgrey; }
+
+/*# sourceMappingURL=styles.css.map */
