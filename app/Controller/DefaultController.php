@@ -158,6 +158,7 @@ class DefaultController extends Controller
 
 				$authentificationManager = new \Manager\AuthentificationManager();
 				$authentificationManager->insertUser($pdo, $pseudo, $email, $passHashed, $lastname, $firstname);
+				//A remplacer par insert()
 			}
 			$this->show('default/subscription', ['errors'=>$errors]);
 		}

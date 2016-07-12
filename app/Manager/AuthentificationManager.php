@@ -27,7 +27,7 @@ class AuthentificationManager extends AManager
      * Incrémenter le nombre d'essais d'un utilisateur
      *
      * @param PDO $pdo Connexion à la base de données
-     * @param type string $mail E-mail
+     * @param type string $email E-mail
      */
     public function addLoginTry($pdo, $email)
     {
@@ -59,12 +59,12 @@ class AuthentificationManager extends AManager
      * @param   $firstname Prénom
      * @return bool : le succès de l'insertion
      */
-    public function insertUser($pdo, $pseudo, $email, $password, $lastname, $firstname)
+    public function insertUser($pdo, $login, $email, $password, $lastname, $firstname)
     {
-        $sqlInsert = 'INSERT INTO Users (pseudo, email, password, lastname, firstname, role) VALUES ' .
-            '(:pseudo, :email, :pass, :lname, :fname, :role)';
+        $sqlInsert = 'INSERT INTO Users (login, email, password, lastname, firstname, role) VALUES ' .
+            '(:login, :email, :pass, :lname, :fname, :role)';
         $stmt = $pdo->prepare($sqlInsert);
-        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->bindValue(':login', $login);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':pass', $password);
         $stmt->bindValue(':lname', $lastname);
