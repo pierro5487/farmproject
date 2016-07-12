@@ -1,0 +1,100 @@
+body
+  font-family: 'Open sans', sans-serif
+  overflow-x: hidden
+  background: url(../img/backgroundHerbe.png) no-repeat center center fixed
+  background-size: cover
+
+div
+  &.field
+    padding-bottom: 5px
+    input
+      &[type="text"], &[type="password"]
+        width: 80%
+        height: 16px
+  &.error
+    font-style: italic
+    font-size: 80%
+    color: #EA2525
+    margin: -12px 30px 0px // Pour ne pas que les inputs bougent
+
+/* styles utilitaires */
+.container
+  width: 980px
+  margin: 0px auto
+
+.clearfix
+  clear: both
+
+.box
+  position: relative
+  font-family: Helvetica
+  width: 400px
+  color: #fff
+  background: rgba(0, 0, 0, 0.13)
+  border-radius: 30px
+  margin: 100px auto
+  h1
+    text-align: center
+    margin: 30px 0
+    font-size: 30px
+    padding-top: 30px
+  input
+    display: block
+    margin: 0px auto
+    padding: 10px
+    background: rgba(127, 127, 0, 0.12)
+    color: #fff
+    border: 0
+    border-radius: 10px
+    &:focus, &:active
+      outline: none
+      border: 1px solid #828293
+      padding: 9px //Pour ne pas faire bouger les champs
+
+  button
+    background: #2ecc71
+    border: 0
+    color: #fff
+    padding: 10px
+    font-size: 20px
+    width: 230px
+    margin: 20px auto
+    display: block
+    cursor: pointer
+    border-radius: 10px
+    &:hover
+      background-color: #37F39D
+    &:focus
+      outline: none
+    &:active
+      outline: none
+      background: #27ae60
+  p
+    font-size: 14px
+    text-align: center
+    span
+      cursor: pointer
+      color: #666
+      a
+        text-decoration: none
+        color: #05F86C
+        &:hover
+          color: #8F918F
+
+/****************/
+/* Médiaqueries */
+/****************/
+
+@media screen and (max-width: 1024px)
+  .box
+    width: 400px
+  .container
+    width: 60%
+  .bgvid
+    display: none
+@media screen and (max-width: 687px)
+  .box
+    margin: 0
+    width: 100%
+  .container
+    width: 100%
