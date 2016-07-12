@@ -59,12 +59,12 @@ class AuthentificationManager extends AManager
      * @param   $firstname Prénom
      * @return bool : le succès de l'insertion
      */
-    public function insertUser($pdo, $pseudo, $email, $password, $lastname, $firstname)
+    public function insertUser($pdo, $login, $email, $password, $lastname, $firstname)
     {
-        $sqlInsert = 'INSERT INTO Users (pseudo, email, password, lastname, firstname, role) VALUES ' .
-            '(:pseudo, :email, :pass, :lname, :fname, :role)';
+        $sqlInsert = 'INSERT INTO Users (login, email, password, lastname, firstname, role) VALUES ' .
+            '(:login, :email, :pass, :lname, :fname, :role)';
         $stmt = $pdo->prepare($sqlInsert);
-        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->bindValue(':login', $login);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':pass', $password);
         $stmt->bindValue(':lname', $lastname);
@@ -73,4 +73,27 @@ class AuthentificationManager extends AManager
         $stmt->bindValue(':role', $role);
         return $stmt->execute();
     }
+
+    public function postToken($pdo, $id_user, $token)
+    {
+        //et on supprime d'abord un eventuel token déja demandé
+        $bddManager = new \Manager\ConnectManager();
+        $bddManager->setTable('recovery_token');
+        $bddManager->deleteToken($pdo,$id_user);
+        //puis on insere
+        $stmt = $pdo->prepare('INSERT INTO recovery_Token (id_user, token) VALUES(:id_user, :token)');
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->bindParam(':token', $token);
+        $stmt->execute();
+    }
+
+
+
+    public function tokenExist($pdo, $token)
+    {
+        $stmt = $pdo->prepare('SELECT id_user FROM recovery_Token where token=:token');
+        $stmt->bindParam(':token', $token);
+        $stmt->execute();
+		return $stmt->fetchColumn(0);/*il faudrait que je retourne l id du user*/
+	}
 }
