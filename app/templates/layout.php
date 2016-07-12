@@ -5,6 +5,11 @@
 	<title><?= $this->e($title) ?></title>
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
+
+	<!-- LOCAL -->
+	<script src="<?=$this->assetUrl('js/jquery-2.2.3.min.js')?>"></script>
+	<!-- SCRIPT PERSO -->
+	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
 </head>
 <body>
 		<header>
@@ -29,7 +34,7 @@
 				<!-- navigation -->
 				<nav>
 					<ul>
-						<li><a href="#">ferme</a></li>
+						<li><a href="#" id="farm">ferme</a></li>
 						<li><a href="#">bâtiments</a></li>
 						<li><a href="#">animaux</a></li>
 						<li><a href="#">cultures</a></li>
@@ -69,6 +74,8 @@
 						<div></div>
 					</article>
 				</section>
+
+				<a id="buttonNavLeft" href="#"></a>
 
 				<section id="containe">
 					<?= $this->section('main_content') ?>

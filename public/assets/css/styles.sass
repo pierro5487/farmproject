@@ -73,15 +73,17 @@ header
           top: 55%
           left: 28%
           text-transform: capitalize
+        #farm
+          left: 35%
 
 
 /*.......................................MAIN....................................*/
 main
   #navLeft
     width: 25%
-    margin: 10px 0px
     margin-left: 20px
-    margin-top: 20px
+    margin-top: 30px
+    display: block
     article
       background : url("../img/background.jpg") center no-repeat
       background-size: cover
@@ -101,7 +103,6 @@ main
         color: white
         font-size: 17px
         font-weight: bold
-
     #products
       position: relative
       button
@@ -109,6 +110,8 @@ main
         border-radius: 5px
         position: absolute
         left: 60%
+  #buttonNavLeft
+    display: none
   .containe
     width: 75%
     background-color: #7ab5d3
@@ -173,32 +176,46 @@ footer
       ul
         float: none !important
         li
-          background-image: none !important
           width: 70px
-          padding: 20px 3px 25px 3px
+          padding: 5px 5px 30px 3px
           background-color: white
-          margin-top: 5px
+          margin-top: 15px
+          margin-left: 20px
+          background: url("../img/pencarte.gif") no-repeat center
+          border: solid 1px #513201
           a
             font-size: 12px
-            margin-right: 2px
+            top: 40%
+            left: 20%
+          #farm
+            left: 30%
 
   /*.....................MAIN..............................*/
   main
     #navLeft
+      width: 50%
+      display: none
       article
         width: 100%
         h5
           padding: 20px 0 20px 5px
-          font-size: 15px
+          font-size: 90%
           text-align: center
         a
           padding: 10px 20px 20px 4px
-          margin-left: 20px
+          text-align: center
           color: white
-          font-size: 12px
+          font-size: 75%
       #products
         button
           display: block
-          padding: 1px 1px
+          padding: 2px
           border-radius: 2px
           margin: auto
+    #buttonNavLeft
+      display: block
+      background: url("../img/fleche2.jpg") no-repeat center
+      background-size: cover
+      height: 15px
+      width: 15px
+      margin: 5px
