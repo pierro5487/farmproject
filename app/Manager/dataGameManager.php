@@ -103,7 +103,7 @@ class dataGameManager
         $stmt->bindValue(':id', $id);
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll()
     }
 
 /*    /**

@@ -27,7 +27,7 @@
                             for ($i = 0; $i< count($allNbAnimalsInformations); $i++) {
                                 $name = $key[$i]['name'];
                                 if($key[$i] != $name) {
-                                    echo "<li>".$allNbAnimalsInformations[$i]['nb_animals'] . "/" . $allUserFarmInformations['buildings'][$i]['max_quantity'] . " " . mb_strtolower($allNbAnimalsInformations[$i]['name'], 'utf8') . "(s)</li>";
+                                    echo "<li>" . $allNbAnimalsInformations[$i]['nb_animals'] . "/" . $allUserFarmInformations['buildings'][$i]['max_quantity'] . " " . mb_strtolower($allNbAnimalsInformations[$i]['name'], 'utf8') . "(s)</li>";
                                 }
                             }
                         }
