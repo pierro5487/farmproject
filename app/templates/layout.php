@@ -71,13 +71,18 @@
 					<article>
 						<h5>le tchat</h5>
 						<!-- Le tchat -->
-						<div></div>
+						<div id="chat">
+							<form method="post" action="#" id="messageForm">
+								<textarea name="message" id="message" placeholder="Message" cols="20" rows="2"></textarea>
+								<button type="submit">Envoyer</button>
+							</form>
+						</div>
 					</article>
 				</section>
 
 				<a id="buttonNavLeft" href="#"></a>
 
-				<section id="containe">
+				<section id="content">
 					<?= $this->section('main_content') ?>
 				</section>
 			</div>

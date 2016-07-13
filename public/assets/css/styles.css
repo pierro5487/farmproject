@@ -107,9 +107,18 @@ main #navLeft {
       border-radius: 5px;
       position: absolute;
       left: 60%; }
+    main #navLeft #products #chat #messageForm {
+      width: 80%;
+      padding: 0 20px; }
+      main #navLeft #products #chat #messageForm #message {
+        width: 70%; }
+      main #navLeft #products #chat #messageForm button {
+        display: block;
+        padding: 5px;
+        border-radius: 2px; }
 main #buttonNavLeft {
   display: none; }
-main .containe {
+main .content {
   width: 75%;
   background-color: #7ab5d3; }
 
