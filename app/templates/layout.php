@@ -39,7 +39,7 @@
 		<nav>
 			<ul>
 				<li><a href="<?= $this->url('game_farm')?>" id="farm">ferme</a></li>
-				<li><a href="<?= $this->url('game_animals')?>">bâtiments</a></li>
+				<li><a href="<?= $this->url('game_building')?>">bâtiments</a></li>
 				<li><a href="<?= $this->url('game_animals')?>">animaux</a></li>
 				<li><a href="#">cultures</a></li>
 				<li><a href="#">produits</a></li>
