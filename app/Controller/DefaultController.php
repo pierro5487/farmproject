@@ -325,4 +325,11 @@ class DefaultController extends Controller
 			$this->redirectToRoute('recovery-passwords');
         }
     }
+	// fonction creé seulement pour se déconnecter pendant les test avec l url /deconnect
+	public function logOut()
+	{
+		$authentificationManager = new \Manager\AuthentificationManager();
+		$authentificationManager->logUserOut();
+		$this->redirectToRoute('home');
+	}
 }

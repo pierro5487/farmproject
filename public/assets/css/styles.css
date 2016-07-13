@@ -1,0 +1,284 @@
+/*--------pages d'acceuil-------------- */
+html, body {
+  font-family: Consolas, monaco, monospace;
+  color: #62c462; }
+
+.container {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+  /*background: url('../img/backgroundHerbe.png') repeat-x fixed bottom */ }
+  .container::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+a {
+  text-decoration: none;
+  color: #A6E22E; }
+  a:hover {
+    color: #F92672; }
+
+.box {
+  position: relative;
+  width: 100%;
+  font-family: Helvetica;
+  border-radius: 5%;
+  padding: 30px 50px 30px;
+  box-sizing: border-box; }
+  .box ul h2 {
+    color: darkgreen; }
+  .box ul li {
+    font-style: italic; }
+
+.left {
+  width: 50%;
+  margin: 0 auto;
+  float: left; }
+  .left::before {
+    display: block;
+    content: "";
+    clear: both; }
+
+.right {
+  width: 50%;
+  margin: 0 auto; }
+
+/*---------------integration layout--------------------------------------- */
+/*---------------------------------------------------------------------------- */
+/* utilities */
+.clearfix {
+  clear: both;
+  display: block; }
+
+/*................................................................................. */
+/*.......................................HEADER.................................. */
+header {
+  background: url("../img/champs.png") no-repeat top -450px right fixed;
+  background-size: cover; }
+  header img {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px; }
+  header #infoUser {
+    float: right;
+    padding: 10px 0 10px 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    width: 20%;
+    margin-top: 20px; }
+    header #infoUser div {
+      margin: 0px 20px 0px;
+      padding: 5px; }
+      header #infoUser div:first-child::before {
+        background: url("../img/avatar.png") no-repeat center;
+        background-size: cover;
+        content: "";
+        width: 25px;
+        height: 30px;
+        display: block;
+        float: left;
+        margin-right: 15px; }
+      header #infoUser div:last-of-type::before {
+        background: url("../img/or.png") no-repeat center;
+        background-size: cover;
+        content: "";
+        width: 25px;
+        height: 25px;
+        display: block;
+        float: left;
+        margin-right: 15px; }
+    header #infoUser button {
+      margin: auto;
+      display: block;
+      border-radius: 5px;
+      padding: 5px; }
+  header nav {
+    position: relative;
+    top: 45px; }
+    header nav ul {
+      float: right; }
+      header nav ul li {
+        float: left;
+        list-style: none;
+        background: url("../img/pencarte.gif") no-repeat center;
+        background-size: contain;
+        position: relative;
+        padding: 60px 10px 60px 10px;
+        width: 130px;
+        margin-left: 20px; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #1a1a1a;
+          font-weight: bold;
+          position: absolute;
+          top: 55%;
+          left: 28%;
+          text-transform: capitalize; }
+        header nav ul li #farm {
+          left: 35%; }
+
+/*.......................................MAIN.................................... */
+main {
+  padding: 50px 0; }
+  main #navLeft {
+    width: 25%;
+    margin-left: 20px;
+    display: block;
+    float: left;
+    box-sizing: border-box; }
+    main #navLeft article {
+      background: url("../img/background.jpg") center no-repeat;
+      background-size: cover;
+      border-radius: 5px;
+      margin-bottom: 5px; }
+      main #navLeft article h5 {
+        color: black;
+        padding: 20px 0 20px 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px; }
+      main #navLeft article a {
+        display: block;
+        padding: 10px 20px 20px 40px;
+        margin-left: 50px;
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+        font-weight: bold; }
+    main #navLeft #products {
+      position: relative; }
+      main #navLeft #products button {
+        padding: 4px 4px;
+        border-radius: 5px;
+        position: absolute;
+        left: 60%; }
+    main #navLeft #chat #messageForm {
+      width: 90%;
+      padding-left: 10px; }
+      main #navLeft #chat #messageForm #message {
+        width: 85%;
+        margin: auto;
+        display: block; }
+      main #navLeft #chat #messageForm button {
+        display: block;
+        padding: 5px;
+        border-radius: 2px;
+        margin: 5px auto; }
+  main #buttonNavLeft {
+    display: none; }
+  main #content {
+    width: 70%;
+    float: right;
+    box-sizing: border-box;
+    border: 5px double #422811; }
+
+/*.......................................FOOTER.................................. */
+footer {
+  background-color: green;
+  text-align: center;
+  text-transform: capitalize; }
+  footer p {
+    padding: 20px 0 20px;
+    color: lightgrey; }
+
+/*.................................................................................. */
+/* ..........................RESPONSIVE DESIGN....................................... */
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+  .container {
+    width: 980px; } }
+/*............................................................................................ */
+/* ...................................MOYEN ECRAN............................................. */
+@media screen and (min-width: 768px) and (max-width: 980px) {
+  .container {
+    width: 768px; }
+
+  header #infoUser {
+    margin-right: 10px; }
+  header nav ul li {
+    padding: 40px 5px 40px 5px;
+    margin-left: 5px;
+    margin-top: 30px; }
+
+  main #navLeft article h5 {
+    padding: 20px 0 20px 30px; }
+  main #navLeft article a {
+    padding: 10px 20px 20px 15px; } }
+/*................................................................................................. */
+/* ...................................PETIT ECRAN.................................................. */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%; }
+
+  /*.......................HEADER.............................. */
+  header #infoUser {
+    display: none; }
+  header button {
+    padding: 1px; }
+  header nav {
+    padding-bottom: 1px;
+    width: 100%; }
+    header nav ul {
+      float: none !important; }
+      header nav ul li {
+        width: 70px;
+        padding: 5px 5px 30px 3px;
+        background-color: white;
+        margin-top: 15px;
+        margin-left: 20px;
+        background: url("../img/pencarte.gif") no-repeat center;
+        border: solid 1px #513201; }
+        header nav ul li a {
+          font-size: 12px;
+          top: 40%;
+          left: 20%; }
+        header nav ul li #farm {
+          left: 30%; }
+
+  /*.....................MAIN.............................. */
+  main #navLeft {
+    width: 50%;
+    display: none; }
+    main #navLeft.showOnPhone {
+      display: block; }
+    main #navLeft article {
+      width: 100%; }
+      main #navLeft article h5 {
+        padding: 20px 0 20px 5px;
+        font-size: 90%;
+        text-align: center; }
+      main #navLeft article a {
+        padding: 10px 20px 20px 4px;
+        text-align: center;
+        color: white;
+        font-size: 75%; }
+    main #navLeft #products button {
+      display: block;
+      padding: 2px;
+      border-radius: 2px; }
+  main #buttonNavLeft {
+    display: block;
+    background: url("../img/fleche2.jpg") no-repeat center;
+    background-size: cover;
+    height: 15px;
+    width: 15px;
+    margin: 5px; }
+  main #navLeft.showOnPhone + a#buttonNavLeft {
+    background-image: url("../img/fleche1.jpg"); } }
+/*------------------------------------integration des templates------------------------------------------- */
+/*--------page animals listing---------- */
+.avatar, .information {
+  float: left; }
+
+.listing {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px; }
+  .listing::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+/*# sourceMappingURL=styles.css.map */
