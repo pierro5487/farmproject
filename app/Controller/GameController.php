@@ -2,7 +2,6 @@
 
 namespace Controller;
 
-use Manager\AuthentificationManager;
 use \W\Controller\Controller;
 
 class GameController extends Controller
@@ -21,8 +20,14 @@ class GameController extends Controller
 		$pdo = $dbh->connectPdo();
 
 		$getAllUserFarmInformations = new \Manager\dataGameManager();
+		$getNbAnimalsInformations = new \Manager\dataGameManager();
 		$allUserFarmInformations = $getAllUserFarmInformations->getAllUserFarmInformations($pdo, $_SESSION['user']['id']);
-		$this->show('Game/farm',['userInformations' => $userInformations, 'allUserFarmInformations' => $allUserFarmInformations]);
+		$allNbAnimalsInformations = $getNbAnimalsInformations->getNbAnimalsInformations($pdo, $_SESSION['user']['id']);
+		$this->show('Game/farm',[
+			'userInformations' => $userInformations,
+			'allUserFarmInformations' => $allUserFarmInformations,
+			'allNbAnimalsInformations' => $allNbAnimalsInformations,
+		]);
 	}
 
 	// fonction creé seulement pour se déconnecter pendant les test avec l url /deconnect
