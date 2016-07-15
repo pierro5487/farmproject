@@ -19,9 +19,9 @@
 <?php
 foreach ($fields as $field2){
     ?>
-    <article class="listing">
-        <div class="avatar"><img src="<?= $this->assetUrl($field2['image'])?>"/></div>
-        <div class="information">
+    <article class="listingField">
+        <div class="avatarField"><img src="<?= $this->assetUrl($field2['image'])?>"/></div>
+        <div class="informationField">
             <ul>
                 <li>Champ: <?= $field2['id']?></li>
                 <li>Plantation: <?= $field2['nameCereals']?></li>

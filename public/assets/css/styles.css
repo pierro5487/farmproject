@@ -301,4 +301,26 @@ footer {
     display: block;
     clear: both; }
 
+/*--------page fields listing---------- */
+.avatarField {
+  float: left; }
+  .avatarField img {
+    width: 80px;
+    height: 100px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px; }
+
+.listingField {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px; }
+  .listingField .informationField {
+    float: right;
+    padding: 50px 200px 20px 0px; }
+  .listingField::after {
+    content: "";
+    display: block;
+    clear: both; }
+
 /*# sourceMappingURL=styles.css.map */
