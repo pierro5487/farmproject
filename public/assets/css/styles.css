@@ -184,98 +184,26 @@ footer {
     padding: 20px 0 20px;
     color: lightgrey; }
 
-/*.................................................................................. */
-/* ..........................RESPONSIVE DESIGN....................................... */
-@media screen and (min-width: 980px) and (max-width: 1200px) {
-  .container {
-    width: 980px; } }
-/*............................................................................................ */
-/* ...................................MOYEN ECRAN............................................. */
-@media screen and (min-width: 768px) and (max-width: 980px) {
-  .container {
-    width: 768px; }
-
-  header #infoUser {
-    margin-right: 10px; }
-  header nav ul li {
-    padding: 40px 5px 40px 5px;
-    margin-left: 5px;
-    margin-top: 30px; }
-
-  main #navLeft article h5 {
-    padding: 20px 0 20px 30px; }
-  main #navLeft article a {
-    padding: 10px 20px 20px 15px; } }
-/*................................................................................................. */
-/* ...................................PETIT ECRAN.................................................. */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 100%; }
-
-  /*.......................HEADER.............................. */
-  header #infoUser {
-    display: none; }
-  header button {
-    padding: 1px; }
-  header nav {
-    padding-bottom: 1px;
-    width: 100%; }
-    header nav ul {
-      float: none !important; }
-      header nav ul li {
-        width: 70px;
-        padding: 5px 5px 30px 3px;
-        background-color: white;
-        margin-top: 15px;
-        margin-left: 20px;
-        background: url("../img/pencarte.gif") no-repeat center;
-        border: solid 1px #513201; }
-        header nav ul li a {
-          font-size: 12px;
-          top: 40%;
-          left: 20%; }
-        header nav ul li #farm {
-          left: 30%; }
-
-  /*.....................MAIN.............................. */
-  main #navLeft {
-    width: 50%;
-    display: none; }
-    main #navLeft.showOnPhone {
-      display: block; }
-    main #navLeft article {
-      width: 100%; }
-      main #navLeft article h5 {
-        padding: 20px 0 20px 5px;
-        font-size: 90%;
-        text-align: center; }
-      main #navLeft article a {
-        padding: 10px 20px 20px 4px;
-        text-align: center;
-        color: white;
-        font-size: 75%; }
-    main #navLeft #products button {
-      display: block;
-      padding: 2px;
-      border-radius: 2px; }
-  main #buttonNavLeft {
-    display: block;
-    background: url("../img/fleche2.jpg") no-repeat center;
-    background-size: cover;
-    height: 15px;
-    width: 15px;
-    margin: 5px; }
-  main #navLeft.showOnPhone + a#buttonNavLeft {
-    background-image: url("../img/fleche1.jpg"); } }
 /*------------------------------------integration des templates------------------------------------------- */
 /*--------page animals listing---------- */
-.avatar, .information {
-  float: left; }
+.avatar {
+  float: left;
+  width: 30%; }
+  .avatar img {
+    width: 200px;
+    height: 180px;
+    float: left;
+    padding: 5%; }
 
 .listing {
   border: 3px solid black;
   border-radius: 10px;
   margin: 10px; }
+  .listing .information {
+    float: left;
+    width: 70%;
+    padding: 10%;
+    box-sizing: border-box; }
   .listing::after {
     content: "";
     display: block;
@@ -322,5 +250,163 @@ footer {
     content: "";
     display: block;
     clear: both; }
+
+/*.................................................................................. */
+/* ..........................RESPONSIVE DESIGN....................................... */
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+  .container {
+    width: 980px; } }
+/*............................................................................................ */
+/* ...................................MOYEN ECRAN............................................. */
+@media screen and (min-width: 768px) and (max-width: 980px) {
+  .container {
+    width: 768px; }
+
+  header #infoUser {
+    margin-right: 10px; }
+  header nav ul li {
+    padding: 40px 5px 40px 5px;
+    margin-left: 5px;
+    margin-top: 30px; }
+
+  main #navLeft article h5 {
+    padding: 20px 0 20px 30px; }
+  main #navLeft article a {
+    padding: 10px 20px 20px 15px; }
+
+  /*------------------------------------integration des templates------------------------------------------- */
+  /*--------page fields listing---------- */
+  .avatarField img {
+    width: 40%;
+    height: 90px;
+    float: left; }
+
+  .listingField .informationField {
+    float: left;
+    padding: 10%;
+    width: 50%;
+    display: block; }
+
+  /*--------page building listing---------- */
+  .avatarBuilding {
+    float: left;
+    width: 40%; }
+    .avatarBuilding img {
+      width: 80%;
+      height: 80%;
+      float: left;
+      padding-top: 30%;
+      padding-left: 20%; }
+
+  .listingBuilding .informationBuilding {
+    float: left;
+    padding: 10%;
+    width: 60%;
+    box-sizing: border-box; } }
+/*................................................................................................. */
+/* ...................................PETIT ECRAN.................................................. */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%; }
+
+  /*------------------------------------integration layout------------------------------------------- */
+  /*.......................HEADER.............................. */
+  header #infoUser {
+    display: none;
+    height: 30%; }
+  header button {
+    padding: 1px; }
+  header nav {
+    padding-bottom: 1px;
+    width: 100%; }
+    header nav ul {
+      float: none !important; }
+      header nav ul li {
+        width: 70px;
+        padding: 5%;
+        background-color: white;
+        margin-top: 15px;
+        margin-left: 20px;
+        background: url("../img/pencarte.gif") no-repeat center;
+        border: solid 1px #513201; }
+        header nav ul li a {
+          font-size: 12px;
+          top: 40%;
+          left: 20%; }
+        header nav ul li #farm {
+          left: 30%; }
+
+  /*.....................MAIN.............................. */
+  main #navLeft {
+    width: 50%;
+    display: none; }
+    main #navLeft.showOnPhone {
+      display: block; }
+    main #navLeft article {
+      width: 100%; }
+      main #navLeft article h5 {
+        padding: 20px 0 20px 5px;
+        font-size: 90%;
+        text-align: center; }
+      main #navLeft article a {
+        padding: 10px 20px 20px 4px;
+        text-align: center;
+        color: white;
+        font-size: 75%; }
+    main #navLeft #products button {
+      display: block;
+      padding: 2px;
+      border-radius: 2px; }
+  main #buttonNavLeft {
+    display: block;
+    background: url("../img/fleche2.jpg") no-repeat center;
+    background-size: cover;
+    height: 15px;
+    width: 15px;
+    margin: 5px; }
+  main #navLeft.showOnPhone + a#buttonNavLeft {
+    background-image: url("../img/fleche1.jpg"); }
+
+  /*------------------------------------integration des templates------------------------------------------- */
+  /*--------page fields listing---------- */
+  .avatarField img {
+    width: 40%;
+    height: 90px;
+    float: left; }
+
+  .listingField .informationField {
+    float: left;
+    padding: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block; }
+
+  /*--------page building listing---------- */
+  .avatarBuilding {
+    float: left; }
+    .avatarBuilding img {
+      width: 50%;
+      height: 40%;
+      float: left; }
+
+  .listingBuilding .informationBuilding {
+    float: left;
+    padding: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block; }
+
+  /*--------page animals listing---------- */
+  .avatar {
+    width: 70%; }
+    .avatar img {
+      width: 80%;
+      height: 70%; }
+
+  .listing .information {
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+    display: block; } }
 
 /*# sourceMappingURL=styles.css.map */
