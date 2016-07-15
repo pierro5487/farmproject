@@ -8,8 +8,7 @@ body {
 div.field {
   padding-bottom: 5px; }
   div.field input[type="text"], div.field input[type="password"] {
-    width: 80%;
-    height: 16px; }
+    width: 80%; }
 div.error {
   font-style: italic;
   font-size: 80%;
@@ -25,7 +24,6 @@ div.error {
   clear: both; }
 
 .box {
-  position: relative;
   font-family: Helvetica;
   width: 400px;
   color: #fff;
@@ -84,7 +82,7 @@ div.error {
 /*************** */
 @media screen and (max-width: 1024px) {
   .box {
-    width: 400px; }
+    width: 100%; }
 
   .container {
     width: 60%; }

@@ -8,21 +8,21 @@
         <div class="left">Money:</div><div class="right"><?= $userInformations['money']."po" ?></div>
 
         <?php $timeStampCreated = strtotime($userInformations['date_created']) ?>
-        <?= "<br>Votre ferme à ".round(((time()- $timeStampCreated)/60)/60)." heures" ?>
+        <?= "<br>Votre ferme a ".round(((time()- $timeStampCreated)/60)/60)." heures" ?>
         <div class="box">
             <ul>
                 <?php foreach ($allUserFarmInformations as $value => $key) : ?>
                     <?php
-                    if ($value == 'buildings') {
+                    if ($value == 'buildings' && $key != null) {
                         echo "<h2>Vos batiments:</h2>";
                         for ($i = 0; $i< count($key); $i++) {
                             $name = $key[$i]['name'];
                             if($key[$i] != $name) {
-                                echo "<li>".$allUserFarmInformations['buildings'][$i]['nb_building'] . " " . mb_strtolower($allUserFarmInformations['buildings'][$i]['name'], 'utf8') . "(s) (" . $allUserFarmInformations['buildings'][$i]['max_quantity']*$allUserFarmInformations['buildings'][$i]['nb_building']." place(s) max)</li>";
+                                echo "<li>".$allUserFarmInformations['buildings'][$i]['nb_building'] . " " . mb_strtolower($allUserFarmInformations['buildings'][$i]['name'], 'utf8') . "(s) (" . $allUserFarmInformations['buildings'][$i]['max_quantity']." place(s) max)</li>";
                             }
                         }
                     }
-                    else if ($value == 'animals') {
+                    else if ($value == 'animals' && $key != null) {
                         echo "<h2>Vos animaux:</h2>";
                         for ($i = 0; $i< count($allNbAnimalsInformations); $i++) {
                             $name = $key[$i]['name'];
@@ -31,10 +31,9 @@
                             }
                         }
                     }
-                    else if ($value == 'fields') {
+                    else if ($value == 'fields' && $key != null) {
                         echo "<h2>Vos champs:</h2>";
                         for ($i = 0; $i< count($key); $i++) {
-                            /*var_dump($key);*/
                             $name = $key[$i]['name'];
                             if($key[$i] != $name) {
                                 echo "<li>" . $allUserFarmInformations['fields'][$i]['nb_field'] . " champ(s)";
@@ -42,7 +41,8 @@
                             }
                         }
                     }
-                    else if ($value == 'products') {
+
+                    else if ($value == 'products' && $key != null) {
                         echo "<h2>Vos produits:</h2>";
                         for ($i = 0; $i< count($key); $i++) {
                             $name = $key[$i]['name'];

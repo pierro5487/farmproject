@@ -15,8 +15,8 @@
 					<video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
 						<source src="https://d2v9y0dukr6mq2.cloudfront.net/video/preview/okUindP/tractor-cycle-cartoon_hupss54n__PM.mp4?random=1" type="video/webm">
 					</video>
-					<div class="box">
-						<div class="container">
+					<div class="container">
+						<div class="box">
 							<?php if (isset($errors['connexion']['nbTries'])) echo '<div class="error">Le compte est bloqué en raison d\'un trop grand nombre de tentatives</div>'; ?>
 							<?php if (isset($errors['connexion']['fail'])) echo '<div class="error">Le mot de passe ne correspond pas</div>'; ?>
 							<h1>Connexion</h1>
