@@ -23,13 +23,9 @@
         }
         echo '</optgroup>';
         ?>
-<!---->
-<!--    --><?php //foreach($buildings as $building) : ?>
-<!--        <option value="">--><?//= $building['id'] ?><!--</option>-->
-<!--    --><?php //endforeach ?>
     </select>
 
-    <a href="#">Voir le bâtiment</a>
+    <a href="?id=<?php echo $building['id'] ?>">Voir le bâtiment</a>
 
 <?php foreach($buildings as $building) : ?>
     <!-- Lien pour afficher le détail du bâtiment-->

@@ -9,6 +9,6 @@
 		['GET|POST', '/new-password', 'Default#setNewPassword', 'game_new_pass'],
 		['GET', '/animals', 'Animals#displayAnimals', 'game_animals'],
 		['GET', '/ajax/refresh', 'Ajax#animalsRefreshList', 'ajax_refresh_animals'],
-		['GET', '/building', 'Building#displayBuilding', 'game_building'],
+		['GET', '/building/[:id]', 'Building#displayBuilding', 'game_building'],
 		['GET', '/field', 'Field#displayField', 'game_field'],
 	);

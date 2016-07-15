@@ -266,8 +266,7 @@ footer {
     margin-right: 10px; }
   header nav ul li {
     padding: 40px 5px 40px 5px;
-    margin-left: 5px;
-    margin-top: 30px; }
+    margin-left: 5px; }
 
   main #navLeft article h5 {
     padding: 20px 0 20px 30px; }
@@ -318,15 +317,15 @@ footer {
     padding: 1px; }
   header nav {
     padding-bottom: 1px;
-    width: 100%; }
+    width: 100%;
+    top: 10%; }
     header nav ul {
       float: none !important; }
       header nav ul li {
         width: 70px;
         padding: 5%;
-        background-color: white;
-        margin-top: 15px;
-        margin-left: 20px;
+        margin-top: 5px;
+        margin-left: 10px;
         background: url("../img/pencarte.gif") no-repeat center;
         border: solid 1px #513201; }
         header nav ul li a {

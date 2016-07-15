@@ -15,4 +15,5 @@ class BuildingController extends Controller
         $buildings = $dataBuilding->getListBuilding($pdo, $_SESSION['user']['id']);
         $this->show('Game/building', ['buildings'=>$buildings]);
     }
+
 }
