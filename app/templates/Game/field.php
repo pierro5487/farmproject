@@ -2,19 +2,18 @@
 
 <?php $this->start('main_content'); ?>
 
-<fieldset disabled>
     <!-- affichage des champs sous forme de select-->
-    <?php foreach($fields as $field) : ?>
-    Champ:
+    Champs:
     <select name="field" id="field">
-        <option value=""><?= $field['id'] ?></option>
+        <?php $cpt = 1 ?>
+        <?php foreach($fields as $field) : ?>
+        <option value="$field['id']"><?= "n°" . $cpt ?></option>
+            <?php $cpt++ ?>
+        <?php endforeach; ?>
     </select>
 
     <!-- Lien pour afficher le détail du champ-->
     <a href="#">Voir le champ</a>
-    <?php endforeach; ?>
-
-</fieldset>
 
 <!-- Affichage du détail -->
 <?php

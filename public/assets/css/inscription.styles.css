@@ -8,8 +8,7 @@ body {
 div.field {
   padding-bottom: 5px; }
   div.field input[type="text"], div.field input[type="password"] {
-    width: 80%;
-    height: 16px; }
+    width: 80%; }
 div.error {
   font-style: italic;
   font-size: 80%;

@@ -281,4 +281,24 @@ footer {
     display: block;
     clear: both; }
 
+/*--------page building listing---------- */
+.avatarBuilding {
+  float: left; }
+  .avatarBuilding img {
+    width: 250px;
+    height: 200px;
+    float: left; }
+
+.listingBuilding {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px; }
+  .listingBuilding .informationBuilding {
+    float: right;
+    padding: 50px 20px 0px 0px; }
+  .listingBuilding::after {
+    content: "";
+    display: block;
+    clear: both; }
+
 /*# sourceMappingURL=styles.css.map */
