@@ -18,25 +18,119 @@ class AjaxController extends Controller
         //je créé un objet pdo
         $controller = new \Manager\ConnectManager();
         $pdo = $controller->connectPdo();
-        //je vend l'animal selectionner
+        //je recupere l'id de l'animal selectionné
         $idAnimal = $_GET['animal'];
         //je recupere les données de l'animal
         $animalsManager = new\Manager\AnimalsManager();
         $animal = $animalsManager->getAnimal($pdo,$idAnimal);
+        //je récupere les donnees utilisateur
+        $connectBdd = new \Manager\ConnectManager();
+        $connectBdd->setTable('users');
+        $user = $connectBdd->find($_SESSION['user']['id']);
+        //je credit son compte
+        $newMoney=$user['money']+$animal['price_sale'];
+        $_SESSION['user']['money']=$newMoney;
+        //j'insere la nouvelle solde
+        $data =['money'=>$newMoney];
+        $connectBdd->update($data,$_SESSION['user']['id']);
         //je supprime l'animal
-        /*$connectBdd->delete($idAnimal);*/
+        $connectBdd->setTable('animals');
+        $connectBdd->delete($idAnimal);
+        //je récupere la liste des animaux apartenant à mon user
+        $dataAnimals= new\Manager\AnimalsManager();
+        $animals= $dataAnimals->getListAnimals($pdo,$_SESSION['user']['id']);
+        $this->show('ajax/animals_refresh',['animals'=>$animals]);
+    }
+
+
+    public function productsRefreshList()
+    {
+        $this->allowTo('user');
+        //je créé un objet pdo
+        $controller = new \Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        //je recupere l'id de la production selectionné
+        $idProduct = $_GET['product'];
+        //je recupere les données de la production
+        $productsManager = new\Manager\ProductsManager();
+        $product = $productsManager->getProduct($pdo,$idProduct);
         //je récupere les donnees utilisateur
         $connectBdd = new\Manager\ConnectManager();
         $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         //je credit son compte
-        $newMoney=$user['money']+$animal['price_sale'];
+        $newMoney=$user['money']+$product['price_sale']*$product['quantity'];
+        $_SESSION['user']['money']=$newMoney;
         //j'insere la nouvelle solde
         $data =['money'=>$newMoney];
         $connectBdd->update($data,$_SESSION['user']['id']);
-        $dataAnimals= new\Manager\AnimalsManager();
+        //je supprime la production
+        $connectBdd->setTable('stocks');
+        $connectBdd->delete($idProduct);
         //je récupere la liste des animaux apartenant à mon user
-        $animals= $dataAnimals->getListAnimals($pdo,$_SESSION['user']['id']);
-        $this->show('ajax/animals_refresh',['animals'=>$animals]);
+        $dataProducts= new\Manager\ProductsManager();
+        $products= $dataProducts->getUserProductsInformations($pdo,$_SESSION['user']['id']);
+        $this->show('ajax/products_refresh',['products'=>$products]);
     }
+
+    public function userRefresh()
+    {
+        $userManager = new\Manager\ConnectManager();
+        $userManager->setTable('users');
+        $user = $userManager->find($_SESSION['user']['id']);
+        $this->show('ajax/user_info_refresh',['user'=>$user]);
+    }
+
+    private function calculHarvest()
+    {
+        //je créé un objet pdo
+        $controller = new \Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        //récupération du temps
+        $timeManager = new\Manager\OptionsManager();
+        $timeManager->setTable('options');
+        $options = $timeManager->find(1);
+        $time=$options['time'];
+        /*---------récupération produit animaliers------*/
+        //je recupere le nombre d'animaux par espece et la caratéristique temps de production de chaque espece
+        $dataAnimals= new\Manager\AnimalsManager();
+        $animals= $dataAnimals->getAllInfoAnimals($pdo,$_SESSION['user']['id']);
+        //on parcourt un à un chaque animal pour evaluer sa production
+        $productsGroup = [];
+        foreach ($animals as $animal) {
+            //calcul production depuis la derniere récolte
+            $now = time();
+            $lastHarvest = strtotime($animal['last_harvest']);
+            $productTime = $now - $lastHarvest;
+            $timeToProduct = $animal['time_product'] * $time;
+            $nbProduct = floor($productTime / $timeToProduct);
+            //regroupement des produit
+            if (isset($productsGroup[$animal['species']])) {
+                $productsGroup[$animal['species']]['nb'] += $nbProduct;
+            } else {
+                $productsGroup[$animal['species']]['nb'] = $nbProduct;
+                $productsGroup[$animal['species']]['productName']=$animal['productName'];
+                $productsGroup[$animal['species']]['unity']=$animal['unity'];
+                $productsGroup[$animal['species']]['idProduct']=$animal['id_product'];
+            }
+        }
+        return $productsGroup;
+    }
+    public function productsRefresh()
+    {
+        $productsGroup = $this->calculHarvest();
+        $this->show('ajax/article_products_refresh',['products'=> $productsGroup]);
+    }
+    public function harvest(){
+        //on récupère la production
+        $productsGroup = $this->calculHarvest();
+        //on test si les stocks existe déja pour ce produits
+        
+        //on envoi les nouveaux produits dans la bdd
+        //on parcourt un à un chaque animal pour evaluer sa production
+
+        //on recharge la liste de la production
+        $this->productsRefresh();
+    }
+
 }

@@ -124,6 +124,29 @@ header
         #farm
           left: 35%
 
+.viber:hover
+  cursor: pointer
+  animation: vibration 2s cubic-bezier(.2,.52,.71,.56) 0s
+
+@-webkit-keyframes vibration
+  0%
+    opacity: 1
+    -webkit-transform: rotate(-2deg)
+
+  25%
+    -webkit-transform: rotate(-3deg)
+
+  50%
+    -webkit-transform: rotate(3deg)
+
+  75%
+    -webkit-transform: rotate(-2deg)
+
+  100%
+    opacity: 1
+    -webkit-transform: rotate(1deg)
+
+
 /*.......................................MAIN....................................*/
 main
   padding: 50px 0
@@ -154,6 +177,7 @@ main
         font-weight: bold
     #products
       position: relative
+      color: black
       button
         padding: 4px 4px
         border-radius: 5px

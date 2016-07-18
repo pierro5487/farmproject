@@ -12,5 +12,10 @@
 		['GET|POST', '/building', 'Building#displayBuilding', 'game_building'],
 		['GET', '/field', 'Field#displayField', 'game_field'],
 		['GET|POST', '/buildingsUpgrade', 'Building#upgradeBuilding', 'ajax_upgrade_buldings'],
-
+		['GET', '/ajax/Animalsrefresh', 'Ajax#animalsRefreshList', 'ajax_refresh_animals'],
+		['GET', '/products', 'Products#displayProducts', 'game_products'],
+		['GET', '/ajax/productsRefresh', 'Ajax#productsRefreshList', 'ajax_refresh_products'],
+		['GET', '/ajax/userRefresh', 'Ajax#userRefresh', 'ajax_refresh_user_info'],
+        ['GET', '/ajax/articleProductsRefresh', 'Ajax#productsRefresh', 'ajax_refresh_article_products'],
+        ['GET', '/ajax/harvest', 'Ajax#harvest', 'ajax_harvest'],
 	);
