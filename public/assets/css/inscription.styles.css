@@ -24,7 +24,6 @@ div.error {
   clear: both; }
 
 .box {
-  position: relative;
   font-family: Helvetica;
   width: 400px;
   color: #fff;
@@ -83,7 +82,7 @@ div.error {
 /*************** */
 @media screen and (max-width: 1024px) {
   .box {
-    width: 400px; }
+    width: 100%; }
 
   .container {
     width: 60%; }

@@ -24,7 +24,7 @@ class AjaxController extends Controller
         $animalsManager = new\Manager\AnimalsManager();
         $animal = $animalsManager->getAnimal($pdo,$idAnimal);
         //je récupere les donnees utilisateur
-        $connectBdd = new\Manager\ConnectManager();
+        $connectBdd = new \Manager\ConnectManager();
         $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         //je credit son compte
@@ -41,6 +41,7 @@ class AjaxController extends Controller
         $animals= $dataAnimals->getListAnimals($pdo,$_SESSION['user']['id']);
         $this->show('ajax/animals_refresh',['animals'=>$animals]);
     }
+
 
     public function productsRefreshList()
     {
@@ -131,4 +132,5 @@ class AjaxController extends Controller
         //on recharge la liste de la production
         $this->productsRefresh();
     }
+
 }

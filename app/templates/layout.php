@@ -42,11 +42,11 @@
 		<!-- navigation -->
 		<nav>
 			<ul>
-				<li><a href="<?= $this->url('game_farm')?>" id="farm">ferme</a></li>
-				<li><a href="#">bâtiments</a></li>
-				<li><a href="<?= $this->url('game_animals')?>">animaux</a></li>
-				<li><a href="#">cultures</a></li>
-				<li><a href="<?= $this->url('game_products')?>">produits</a></li>
+				<li class="viber"><a href="<?= $this->url('game_farm')?>" id="farm">ferme</a></li>
+				<li class="viber"><a href="<?= $this->url('game_animals')?>">bâtiments</a></li>
+				<li class="viber"><a href="<?= $this->url('game_animals')?>">animaux</a></li>
+				<li class="viber"><a href="#">cultures</a></li>
+				<li class="viber"><a href="#">produits</a></li>
 				<div class="clearfix"></div>
 			</ul>
 		</nav>
