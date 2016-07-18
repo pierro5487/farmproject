@@ -120,6 +120,23 @@ header {
         header nav ul li #farm {
           left: 35%; }
 
+.viber:hover {
+  cursor: pointer;
+  animation: vibration 2s cubic-bezier(0.2, 0.52, 0.71, 0.56) 0s; }
+
+@-webkit-keyframes vibration {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(-2deg); }
+  25% {
+    -webkit-transform: rotate(-3deg); }
+  50% {
+    -webkit-transform: rotate(3deg); }
+  75% {
+    -webkit-transform: rotate(-2deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(1deg); } }
 /*.......................................MAIN.................................... */
 main {
   padding: 50px 0; }
