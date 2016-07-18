@@ -2,7 +2,7 @@
 
 namespace Manager;
 
-class BuildingManager
+class BuildingManager extends \w\Manager\Manager
 {
     public function getListBuilding($pdo, $idUser)
     {
@@ -12,20 +12,29 @@ class BuildingManager
               WHERE id_user = :idUser
               ORDER BY building.id';
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(array('idUser'=>$idUser));
+        $stmt->bindParam(':idUser', $idUser);
+        $stmt->execute();
         return $stmt->fetchAll();
     }
 
-    public function getBuilding($pdo, $idUser, $idBuilding)
+    public function upgradeBuilding($pdo, $idBuilding)
+    {
+        $sql='UPDATE building SET level = level+1 WHERE building.id= :idBuilding';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':idBuilding', $idBuilding);
+        $stmt->execute();
+    }
+
+    public function refreshBuilding($pdo, $idBuilding)
     {
         $sql='SELECT building.id, name, level_access, building.level as level, level*5 as max_quantity, building.date_created as date, image_path, price_improvement 
-              FROM type_building 
-              INNER JOIN building ON type_building.id = building.id_type
-              WHERE id_user = :idUser
-              AND building.id = :idBuilding
-              ORDER BY building.id';
+	        FROM type_building 
+	        INNER JOIN building ON type_building.id = building.id_type
+	        WHERE building.id = :idBuilding
+	        ORDER BY building.id';
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(array('idUser'=>$idUser, 'idBuilding' =>$idBuilding));
+        $stmt->bindParam(':idBuilding', $idBuilding);
+        $stmt->execute();
         return $stmt->fetch();
     }
 }

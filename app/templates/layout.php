@@ -11,6 +11,7 @@
 	<!-- SCRIPT PERSO -->
 	<script>
 		var ajaxAnimalRefresh= '<?= $this->url('ajax_refresh_animals') ?>';
+		var ajaxBuildingUpgrade='<?= $this->url('ajax_upgrade_buldings') ?>';
 	</script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
     <script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
