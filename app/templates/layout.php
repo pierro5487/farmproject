@@ -11,10 +11,14 @@
 	<!-- SCRIPT PERSO -->
 	<script>
 		var ajaxAnimalRefresh= '<?= $this->url('ajax_refresh_animals') ?>';
+<<<<<<< HEAD
+		var ajaxBuildingUpgrade='<?= $this->url('ajax_upgrade_buldings') ?>';
+=======
 		var ajaxProductsRefresh= '<?= $this->url('ajax_refresh_products') ?>';
 		var tableBoardRefresh= '<?= $this->url('ajax_refresh_user_info') ?>';
 		var productsRefresh= '<?= $this->url('ajax_refresh_article_products') ?>';
 		var harvestRoute= '<?= $this->url('ajax_harvest') ?>';
+>>>>>>> refs/remotes/origin/master
 	</script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
     <script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
@@ -43,10 +47,10 @@
 		<nav>
 			<ul>
 				<li class="viber"><a href="<?= $this->url('game_farm')?>" id="farm">ferme</a></li>
-				<li class="viber"><a href="<?= $this->url('game_animals')?>">bâtiments</a></li>
+				<li class="viber"><a href="<?= $this->url('game_building')?>">bâtiments</a></li>
 				<li class="viber"><a href="<?= $this->url('game_animals')?>">animaux</a></li>
-				<li class="viber"><a href="#">cultures</a></li>
-				<li class="viber"><a href="#">produits</a></li>
+				<li class="viber"><a href="<?= $this->url('game_field')?>"">cultures</a></li>
+				<li class="viber"><a href="<?= $this->url('game_products')?>"">produits</a></li>
 				<div class="clearfix"></div>
 			</ul>
 		</nav>

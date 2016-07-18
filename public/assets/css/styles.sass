@@ -56,7 +56,6 @@ a
   display: block
 
 /*.................................................................................*/
-
 /*.......................................HEADER..................................*/
 header
   background: url("../img/champs.png") no-repeat top -450px right fixed
@@ -148,7 +147,6 @@ header
     -webkit-transform: rotate(1deg)
 
 
-
 /*.......................................MAIN....................................*/
 main
   padding: 50px 0
@@ -215,6 +213,72 @@ footer
     padding: 20px 0 20px
     color: lightgrey
 
+
+/*------------------------------------integration des templates-------------------------------------------*/
+/*--------page animals listing----------*/
+.avatar
+  float: left
+  width: 30%
+  img
+    width: 200px
+    height: 180px
+    float: left
+    padding: 5%
+.listing
+  border: 3px solid black
+  border-radius: 10px
+  margin: 10px
+  .information
+    float: left
+    width: 70%
+    padding: 10%
+    box-sizing: border-box
+  &::after
+    content: ''
+    display: block
+    clear: both
+
+/*--------page building listing----------*/
+.avatarBuilding
+  float: left
+  img
+    width: 250px
+    height: 200px
+    float: left
+.listingBuilding
+  border: 3px solid black
+  border-radius: 10px
+  margin: 10px
+  .informationBuilding
+    float: right
+    padding: 50px 20px 0px 0px
+  &::after
+    content: ''
+    display: block
+    clear: both
+
+/*--------page fields listing----------*/
+.avatarField
+  float: left
+  img
+    width: 80px
+    height: 100px
+    float: left
+    padding-left: 20px
+    padding-top: 10px
+.listingField
+  border: 3px solid black
+  border-radius: 10px
+  margin: 10px
+  .informationField
+    float: right
+    padding: 50px 200px 20px 0px
+  &::after
+    content: ''
+    display: block
+    clear: both
+
+
 /*..................................................................................*/
 /* ..........................RESPONSIVE DESIGN.......................................*/
 
@@ -236,8 +300,6 @@ footer
         li
           padding: 40px 5px 40px 5px
           margin-left: 5px
-          margin-top: 30px
-
   main
     #navLeft
       article
@@ -246,30 +308,63 @@ footer
         a
           padding: 10px 20px 20px 15px
 
+  /*------------------------------------integration des templates-------------------------------------------*/
+  /*--------page fields listing----------*/
+  .avatarField
+    img
+      width: 40%
+      height: 90px
+      float: left
+  .listingField
+    .informationField
+      float: left
+      padding: 10%
+      width: 50%
+      display: block
+
+  /*--------page building listing----------*/
+  .avatarBuilding
+    float: left
+    width: 40%
+    img
+      width: 80%
+      height: 80%
+      float: left
+      padding-top: 30%
+      padding-left: 20%
+  .listingBuilding
+    .informationBuilding
+      float: left
+      padding: 10%
+      width: 60%
+      box-sizing: border-box
+
 /*.................................................................................................*/
 /* ...................................PETIT ECRAN..................................................*/
 
 @media screen and (max-width: 768px)
   .container
     width: 100%
+  /*------------------------------------integration layout-------------------------------------------*/
   /*.......................HEADER..............................*/
 
   header
     #infoUser
       display: none
+      height: 30%
     button
       padding: 1px
     nav
       padding-bottom: 1px
       width: 100%
+      top: 10%
       ul
         float: none !important
         li
           width: 70px
-          padding: 5px 5px 30px 3px
-          background-color: white
-          margin-top: 15px
-          margin-left: 20px
+          padding: 5%
+          margin-top: 5px
+          margin-left: 10px
           background: url("../img/pencarte.gif") no-repeat center
           border: solid 1px #513201
           a
@@ -312,15 +407,45 @@ footer
     #navLeft.showOnPhone + a#buttonNavLeft
       background-image: url("../img/fleche1.jpg")
 
-/*------------------------------------integration des templates-------------------------------------------*/
-/*--------page animals listing----------*/
-.avatar,.information
-  float: left
-.listing
-  border: 3px solid black
-  border-radius: 10px
-  margin: 10px
-  &::after
-    content: ''
-    display: block
-    clear: both
+  /*------------------------------------integration des templates-------------------------------------------*/
+  /*--------page fields listing----------*/
+  .avatarField
+    img
+      width: 40%
+      height: 90px
+      float: left
+  .listingField
+    .informationField
+      float: left
+      padding: 10%
+      width: 100%
+      box-sizing: border-box
+      display: block
+
+  /*--------page building listing----------*/
+  .avatarBuilding
+    float: left
+    img
+      width: 50%
+      height: 40%
+      float: left
+  .listingBuilding
+    .informationBuilding
+      float: left
+      padding: 10%
+      width: 100%
+      box-sizing: border-box
+      display: block
+
+  /*--------page animals listing----------*/
+  .avatar
+    width: 70%
+    img
+      width: 80%
+      height: 70%
+  .listing
+    .information
+      float: left
+      box-sizing: border-box
+      width: 100%
+      display: block

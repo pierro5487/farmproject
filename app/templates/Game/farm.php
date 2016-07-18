@@ -15,6 +15,7 @@
             <ul>
                 <?php foreach ($allUserFarmInformations as $value => $key) : ?>
                     <?php
+
                     if ($value == 'buildings' && $key != null) {
                         echo "<h2>Vos batiments:</h2>";
                         for ($i = 0; $i< count($key); $i++) {
@@ -24,6 +25,7 @@
                             }
                         }
                     }
+
                     else if ($value == 'animals' && $key != null) {
                         echo "<h2>Vos animaux:</h2>";
                         for ($i = 0; $i< count($allNbAnimalsInformations); $i++) {
@@ -33,6 +35,7 @@
                             }
                         }
                     }
+
                     else if ($value == 'fields' && $key != null) {
                         echo "<h2>Vos champs:</h2>";
                         for ($i = 0; $i< count($key); $i++) {

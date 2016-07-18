@@ -79,6 +79,34 @@ $(function(){
         });
     }
 
+    //.................................................................................
+    //fonction pour améliorer les bâtiments
+    $('.improvement').click(function(){
+        $.ajax({
+            url: ajaxBuildingUpgrade,
+            type: 'POST',
+            //va prendre dans tout les cas le this actuel comme this .improvement dans cette requête ajax
+            context: this,
+            data: {
+                //on cherche à avoir l'id d'un bâtiment précis au travers du bouton
+                id: $(this).attr('bid')
+            },
+            dataType : 'json',
+        success: function(message){
+                var data = message;
+               ///boucle pour pouvoir afficher les nouvelles valeurs de chaque li après upgrade
+                for(attr in data){
+                    //on sélection chaque li en fonction de l'attribut et on inscrit la nouvelle valeur en html
+                    //attr => correspond à un attribut de balise que tu veux sélectionner
+                    //.html => permet de redéfinir le contenu d'une balise html
+                    $('#b_'+ $(this).attr('bid') + ' li.'+attr +' span').html(data[attr]);
+                }
+            },
+            error:function(resultat, statut, erreur){
+                $('#content').html('<p>'+resultat+statut+erreur+'</p>');
+            }
+        });
+    });
     /*-------------evenement rafraichissement des donnees production---*/
     function refreshProducts() {
         $.ajax({
