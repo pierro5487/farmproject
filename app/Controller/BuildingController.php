@@ -29,25 +29,6 @@ class BuildingController extends Controller
         $this->show('ajax/building_refresh', ['buildings2'=>$buildings2]);
     }
 
-//    public function upgradeBuilding()
-//    {
-//        $this->allowTo('user');
-//        $controller = new\Manager\ConnectManager();
-//        $pdo = $controller->connectPdo();
-//        $upgradeBuilding = new\Manager\BuildingManager();
-//        $buildings = $upgradeBuilding->upgradeBuilding($pdo, $_SESSION['user']['id']);
-//        $this->show('Game/building', ['buildings'=>$buildings]);
-//    }
-//
-//    public function refreshBuilding()
-//    {
-//        $this->allowTo('user');
-//        $controller = new\Manager\ConnectManager();
-//        $pdo = $controller->connectPdo();
-//        $refreshBuilding = new\Manager\BuildingManager();
-//        $buildings = $refreshBuilding->refreshBuilding($pdo, $_SESSION['user']['id']);
-//        $this->show('Game/building', ['buildings'=>$buildings]);
-//    }
     public function upgradeBuilding()
     {
 

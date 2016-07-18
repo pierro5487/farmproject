@@ -9,18 +9,18 @@ $( function() {
 
     //.................................................................................
     //fonction pour afficher qu'un seul bâtiment
-    $('#building').change(function(){
-        //$(this) fait référence à $('#builging')
-        if($(this).val() == "*"){
-            //si on sélectionne le tous, on affiche tous les bâtiments
-            $('.listingBuilding').show();
-        }else{
-            //on cache tous les bâtiments
-            $('.listingBuilding').hide();
-            //on affiche le bâtiment selon la valeur de l'id qu'on sélectionne
-            $('#b_'+ $('#building').val()).show();
-        }
-    });
+     $('#building').change(function(){
+         //$(this) fait référence à $('#builging')
+         if($(this).val() == "*"){
+             //si on sélectionne le tous, on affiche tous les bâtiments
+             $('.listingBuilding').show();
+         }else{
+             //on cache tous les bâtiments
+             $('.listingBuilding').hide();
+             //on affiche le bâtiment selon la valeur de l'id qu'on sélectionne
+             $('#b_'+ $('#building').val()).show();
+         }
+     });
 
 
     //.................................................................................
@@ -37,5 +37,27 @@ $( function() {
             $('#f_'+ $('#field').val()).show();
         }
     });
+
+
+    // myTable = new Array(['building'], ['field']);
+    //
+    // for(i=0;i<myTable.length;i++){
+    //     $('#'+myTable[i]+'').change(function(){
+    //         //$(this) fait référence à $('#field')
+    //         if($(this).val() == "*"){
+    //             //si on sélectionne le tous, on affiche tous les champs
+    //             $('.listing'+myTable[i]+'').show();
+    //         }else{
+    //             //on cache tous les champs
+    //             $('.listing'+myTable[i]+'').hide();
+    //             //on affiche le champ selon la valeur de l'id qu'on sélectionne
+    //             $('#'+myTable[i].substring(0,1)+'_'+ $('#'+myTable[i]+'').val()).show();
+    //         }
+    //     });
+    // }
+
+
+
+
 });
 
