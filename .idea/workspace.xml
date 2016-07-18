@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f59d9803-1548-4de2-9211-227298144672" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Controller/ProductsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Manager/ProductsManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Manager/optionsManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/Game/products.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/ajax/article_products_refresh.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/ajax/products_refresh.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/ajax/user_info_refresh.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/AjaxController.php" afterPath="$PROJECT_DIR$/app/Controller/AjaxController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" afterPath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/Game/animals.php" afterPath="$PROJECT_DIR$/app/templates/Game/animals.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/ajax/animals_refresh.php" afterPath="$PROJECT_DIR$/app/templates/ajax/animals_refresh.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/layout.php" afterPath="$PROJECT_DIR$/app/templates/layout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/w_errors/404.php" afterPath="$PROJECT_DIR$/app/templates/w_errors/404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/inscription.styles.css" afterPath="$PROJECT_DIR$/public/assets/css/inscription.styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/inscription.styles.css.map" afterPath="$PROJECT_DIR$/public/assets/css/inscription.styles.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/inscription.styles.sass" afterPath="$PROJECT_DIR$/public/assets/css/inscription.styles.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css.map" afterPath="$PROJECT_DIR$/public/assets/css/styles.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.sass" afterPath="$PROJECT_DIR$/public/assets/css/styles.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" afterPath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
     </list>
     <ignored path="farmproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -158,6 +136,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="pierro" />
         <option value="piero5487" />
         <option value="pierre" />
       </list>
@@ -404,7 +383,7 @@
       <workItem from="1468393250768" duration="16139000" />
       <workItem from="1468412703579" duration="9049000" />
       <workItem from="1468565830551" duration="26682000" />
-      <workItem from="1468845253170" duration="1650000" />
+      <workItem from="1468845253170" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="réalisation des fonctionnalité de recupération de mot de passe&#10;new-password.php&#10;recovery-password">
       <created>1468316164719</created>
@@ -413,11 +392,18 @@
       <option name="project" value="LOCAL" />
       <updated>1468316164719</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finalisation vente animaux et produits">
+      <created>1468848797876</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1468848797876</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89744000" />
+    <option name="totallyTimeSpent" value="90119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
