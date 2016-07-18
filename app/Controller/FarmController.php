@@ -19,15 +19,23 @@ class FarmController extends Controller
 
 		$dbh = new \Manager\ConnectManager();
 		$pdo = $dbh->connectPdo();
+		$id = $_SESSION['user']['id'];
 
 		$getAllUserFarmInformations = new \Manager\dataGameManager();
 		$getNbAnimalsInformations = new \Manager\dataGameManager();
-		$allUserFarmInformations = $getAllUserFarmInformations->getAllUserFarmInformations($pdo, $_SESSION['user']['id']);
-		$allNbAnimalsInformations = $getNbAnimalsInformations->getNbAnimalsInformations($pdo, $_SESSION['user']['id']);
+		$levelUp = new \Manager\usersManager();
+		
+		
+		$allUserFarmInformations = $getAllUserFarmInformations->getAllUserFarmInformations($pdo, $id);
+		$allNbAnimalsInformations = $getNbAnimalsInformations->getNbAnimalsInformations($pdo, $id);
+		$experience = 50;// Je simule le gain de 50px
+		$levelUpInformations = $levelUp->updateExperience($id, $experience);
+
 		$this->show('Game/farm',[
 			'userInformations' => $userInformations,
 			'allUserFarmInformations' => $allUserFarmInformations,
 			'allNbAnimalsInformations' => $allNbAnimalsInformations,
+			'levelUpInformations' => $levelUpInformations,
 		]);
 	}
 }

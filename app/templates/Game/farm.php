@@ -6,10 +6,12 @@
         <div class="left">login:</div><div class="right"><?= $userInformations['login'] ?></div>
         <div class="left">Niveau:</div><div class="right"><?= $userInformations['level'] ?></div>
         <div class="left">Money:</div><div class="right"><?= $userInformations['money']."po" ?></div>
-
+        <div class="left">Expérience avant niveau suivant:</div><div class="right"><?= $levelUpInformations['current_xp']."/".$levelUpInformations['max_experience']."xp" ?></div>
+        <div class="left">Xp total:</div><div class="right"><?= $userInformations['experience']."px" ?></div>
         <?php $timeStampCreated = strtotime($userInformations['date_created']) ?>
         <?= "<br>Votre ferme a ".round(((time()- $timeStampCreated)/60)/60)." heures" ?>
         <div class="box">
+            <!-- Affichage des informations relatives à la ferme -->
             <ul>
                 <?php foreach ($allUserFarmInformations as $value => $key) : ?>
                     <?php
@@ -41,7 +43,6 @@
                             }
                         }
                     }
-
                     else if ($value == 'products' && $key != null) {
                         echo "<h2>Vos produits:</h2>";
                         for ($i = 0; $i< count($key); $i++) {
@@ -52,9 +53,10 @@
                             }
                         }
                     }
-
                     ?>
                 <?php endforeach; ?>
+
+                <!-- Fin affichage des informations relatives à la ferme -->
             </ul>
         </div>
     </div>

@@ -26,7 +26,7 @@ class AjaxController extends Controller
         //je supprime l'animal
         /*$connectBdd->delete($idAnimal);*/
         //je récupere les donnees utilisateur
-        $connectBdd = new\Manager\ConnectManager();
+        $connectBdd = new \Manager\ConnectManager();
         $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         //je credit son compte
@@ -39,4 +39,14 @@ class AjaxController extends Controller
         $animals= $dataAnimals->getListAnimals($pdo,$_SESSION['user']['id']);
         $this->show('ajax/animals_refresh',['animals'=>$animals]);
     }
+
+/*    static function experienceUserRefresh()
+    {
+        // Je récupere les donnees de l'utilisateur
+        $connectBdd = new \Manager\ConnectManager();
+        $connectBdd->setTable('users');
+        $userInformations = $connectBdd->find($_SESSION['user']['id']);
+
+
+    }*/
 }
