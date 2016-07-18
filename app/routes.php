@@ -8,5 +8,10 @@
 		['GET', '/deconnect', 'Default#logOut', 'game_log_out'],
 		['GET|POST', '/new-password', 'Default#setNewPassword', 'game_new_pass'],
 		['GET', '/animals', 'Animals#displayAnimals', 'game_animals'],
-		['GET', '/ajax/refresh', 'Ajax#animalsRefreshList', 'ajax_refresh_animals'],
+		['GET', '/ajax/Animalsrefresh', 'Ajax#animalsRefreshList', 'ajax_refresh_animals'],
+		['GET', '/products', 'Products#displayProducts', 'game_products'],
+		['GET', '/ajax/productsRefresh', 'Ajax#productsRefreshList', 'ajax_refresh_products'],
+		['GET', '/ajax/userRefresh', 'Ajax#userRefresh', 'ajax_refresh_user_info'],
+        ['GET', '/ajax/articleProductsRefresh', 'Ajax#productsRefresh', 'ajax_refresh_article_products'],
+        ['GET', '/ajax/harvest', 'Ajax#harvest', 'ajax_harvest'],
 	);
