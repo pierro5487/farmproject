@@ -166,7 +166,8 @@ main {
         font-size: 17px;
         font-weight: bold; }
     main #navLeft #products {
-      position: relative; }
+      position: relative;
+      color: black; }
       main #navLeft #products button {
         padding: 4px 4px;
         border-radius: 5px;

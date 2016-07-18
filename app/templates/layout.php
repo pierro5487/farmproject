@@ -11,6 +11,10 @@
 	<!-- SCRIPT PERSO -->
 	<script>
 		var ajaxAnimalRefresh= '<?= $this->url('ajax_refresh_animals') ?>';
+		var ajaxProductsRefresh= '<?= $this->url('ajax_refresh_products') ?>';
+		var tableBoardRefresh= '<?= $this->url('ajax_refresh_user_info') ?>';
+		var productsRefresh= '<?= $this->url('ajax_refresh_article_products') ?>';
+		var harvestRoute= '<?= $this->url('ajax_harvest') ?>';
 	</script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
     <script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
@@ -62,13 +66,8 @@
 
 			<!-- Section mes produits -->
 			<article id="products">
-				<h5>mes produits</h5>
-				<!-- Nom du produit -->
-				<div></div>
-				<!-- Délais d'obtention du produit en forme de jauge -->
-				<div></div>
-				<!-- Bouton de récolte du produit -->
-				<button type="submit" name="harvest">Récolter</button>
+				<div id="listProducts"></div>
+				<button id="harvest">Récolter</button>
 			</article>
 
 			<!-- Section tchat -->

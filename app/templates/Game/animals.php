@@ -14,11 +14,13 @@
                         <li>Matricule: <?= $animal['idAnimal'] ?></li>
                         <li>Acheté le: <?= $animal['date_created']?></li>
                         <li>Poids: <?= $animal['weight']?> Kgs</li>
+                        <li>Prix vente: <?= $animal['price_sale']?> PO</li>
                     </ul>
-                    <button class="deleteAnimal">Vendre</button>
+                    <button class="deleteAnimal" value="<?= $animal['idAnimal'] ?>">Vendre</button>
                 </div>
             </article>
             <?php
     }
 ?>
 <?php $this->stop('main_content'); ?>
+
