@@ -28,7 +28,7 @@
 
                     else if ($value == 'animals' && $key != null) {
                         echo "<h2>Vos animaux:</h2>";
-                        for ($i = 0; $i< count($allNbAnimalsInformations); $i++) {
+                        for ($i = 0; $i< count($allNbAnimalsInformations)-1; $i++) {
                             $name = $key[$i]['name'];
                             if($key[$i] != $name) {
                                 echo "<li>".$allNbAnimalsInformations[$i]['nb_animals'] . "/" . $allUserFarmInformations['buildings'][$i]['max_quantity'] . " " . mb_strtolower($allNbAnimalsInformations[$i]['name'], 'utf8') . "(s)</li>";

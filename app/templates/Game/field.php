@@ -1,4 +1,4 @@
-<?php $this->layout('layout',['title'=>'animaux'])?>
+<?php $this->layout('layout',['title'=>'champs'])?>
 
 <?php $this->start('main_content'); ?>
 

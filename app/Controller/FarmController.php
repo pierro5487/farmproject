@@ -28,8 +28,7 @@ class FarmController extends Controller
 		
 		$allUserFarmInformations = $getAllUserFarmInformations->getAllUserFarmInformations($pdo, $id);
 		$allNbAnimalsInformations = $getNbAnimalsInformations->getNbAnimalsInformations($pdo, $id);
-		$experience = 50;// Je simule le gain de 50px
-		$levelUpInformations = $levelUp->updateExperience($id, $experience);
+		$levelUpInformations = $levelUp->updateExperience($id);
 
 		$this->show('Game/farm',[
 			'userInformations' => $userInformations,
