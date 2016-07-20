@@ -29,4 +29,14 @@ class AnimalsManager extends \w\Manager\Manager
         $req->execute(array('id' => $id));
         return $req->fetchAll();
     }
+
+    public function setLastHarvestNow($pdo,$idUser,$idProduct)
+    {
+        $sql=('UPDATE animals an SET last_harvest = NOW() WHERE id_user=:id AND id_species =(SELECT id_species FROM product_animal WHERE id=:idProduct)');
+        $req = $pdo->prepare($sql);
+        $req->execute(array(
+            'id'        => $idUser,
+            'idProduct' => $idProduct
+        ));
+    }
 }

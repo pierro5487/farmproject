@@ -9,8 +9,13 @@ $(function(){
     deleteAnimal();
     deleteProduct();
     refreshProducts();
-    var interval=setInterval(refreshProducts,1000);
-    getHarvest();
+    var interval=setInterval(refreshProducts,100000);
+
+
+    /********************************************************************************/
+    /*---------------------------functions------------------------------------------*/
+
+
     /*-------------evenement vente d'animaux sur la page animaux.php---*/
 
     function deleteAnimal(){
@@ -106,6 +111,7 @@ $(function(){
                 $('#content').html('<p>'+resultat+statut+erreur+'</p>');
             }
         });
+        tableBoard();
     });
     /*-------------evenement rafraichissement des donnees production---*/
     function refreshProducts() {
@@ -120,24 +126,6 @@ $(function(){
             error : function(resultat, statut, erreur){
                 sectionGame.html('<p>erreur table</p>');
             }
-        });
-    }
-    /*-------------evenement recolter---*/
-    function getHarvest(){
-        harvest.on('click',function(event){
-            console.log('recolt');
-            $.ajax({
-                url : harvestRoute, // La ressource ciblée
-                type : 'GET',
-                dataType : 'html',// Le type de données à recevoir, ici, du HTML.
-                success : function(code_html, statut){
-                    articleProduct.html(code_html);
-                },
-
-                error : function(resultat, statut, erreur){
-                    sectionGame.html('<p>erreur table</p>');
-                }
-            });
         });
     }
 });
