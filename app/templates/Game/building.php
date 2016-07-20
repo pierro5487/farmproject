@@ -26,6 +26,9 @@
         ?>
     </select>
 
+    <!-- Si pas assez de PO on crée une div-->
+<div id="errorMoney">Vous n'avez pas assez d'argent</div>
+
 <?php foreach($buildings as $building) : ?>
     <!-- Lien pour afficher le détail du bâtiment-->
     <!-- utilisation d'un préfixe b_ pour être sur que id de l'article soit unique dans toute la pâge -->
@@ -40,7 +43,16 @@
                 <li class='level_access'>Niveau d'accès: <span><?= $building['level_access']?></span></li>
                 <li class='price_improvement'>Coût de l'amélioration: <span><?= $building['price_improvement']?></span></li>
             </ul>
-            <button bid="<?= $building['id']?>" class="improvement">Améliorer</button>
+                <button bid="<?= $building['id']?>" class="improvement"
+                    <?php
+                        // vérification du niveau de l'utilisateur
+                        //possibilité de up le bâtiment qu'une fois tous les x niveau
+                        $integer = $_SESSION['user']['level']/($building['level_improvement']*$building['level']);
+                        if(!is_integer($integer)){
+                            echo ' disabled';
+                        }
+                    ?>
+                >Améliorer</button>
         </div>
     </article>
 <?php endforeach ?>

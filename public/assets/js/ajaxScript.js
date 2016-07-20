@@ -1,5 +1,10 @@
 $(function(){
 
+    // afficher le popup pas assez d'argent
+    $(document).ready(function(){
+        $('#errorMoney').hide();
+    });
+
     /*------variable par default------*/
     var sectionGame = $('#content');
     var infoUser =$('#infoUser');
@@ -103,19 +108,27 @@ $(function(){
                 //on cherche à avoir l'id d'un bâtiment précis au travers du bouton
                 id: $(this).attr('bid')
             },
-            dataType : 'json',
+            //dataType : 'json',
         success: function(message){
-                var data = message;
-               ///boucle pour pouvoir afficher les nouvelles valeurs de chaque li après upgrade
-                for(attr in data){
-                    //on sélection chaque li en fonction de l'attribut et on inscrit la nouvelle valeur en html
-                    //attr => correspond à un attribut de balise que tu veux sélectionner
-                    //.html => permet de redéfinir le contenu d'une balise html
-                    $('#b_'+ $(this).attr('bid') + ' li.'+attr +' span').html(data[attr]);
+                message = JSON.parse(message);
+                var buildingData = message.building;
+                if(message.error == undefined) {
+                    ///boucle pour pouvoir afficher les nouvelles valeurs de chaque li après upgrade
+                    for (attr in buildingData) {
+                        //on sélection chaque li en fonction de l'attribut et on inscrit la nouvelle valeur en html
+                        //attr => correspond à un attribut de balise que tu veux sélectionner
+                        //.html => permet de redéfinir le contenu d'une balise html
+                        $('#b_' + $(this).attr('bid') + ' li.' + attr + ' span').html(buildingData[attr]);
+                    }
+                    // Refresh user money
+                    $('#money').html(message.user.money + " PO");
+                }else {
+                    // Pas assez de tunes
+                    $('#errorMoney').dialog();
                 }
             },
-            error:function(resultat, statut, erreur){
-                $('#content').html('<p>'+resultat+statut+erreur+'</p>');
+            error: function(response) {
+                console.log(response.responseText);
             }
         });
         tableBoard();

@@ -58,69 +58,69 @@ header {
   background-size: cover; }
   header img {
     display: block;
-    float: left;
-    margin-top: 20px;
-    margin-left: 20px; }
+    float: left; }
   header #infoUser {
     float: right;
-    padding: 10px 0 10px 0;
+    padding: 1em 0 1em 0;
     color: #fff;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 5%;
-    width: 20%;
-    margin-top: 20px; }
+    width: 20%; }
     header #infoUser div {
-      margin: 0px 20px 0px;
+      margin: 0 1em 0;
+      width: 80%;
       padding: 5px; }
       header #infoUser div:first-child::before {
         background: url("../img/avatar.png") no-repeat center;
         background-size: cover;
         content: "";
-        width: 25px;
-        height: 30px;
+        width: 1.8em;
+        height: 1.3em;
         display: block;
         float: left;
-        margin-right: 15px; }
+        margin-right: 1em; }
       header #infoUser div:last-of-type::before {
         background: url("../img/or.png") no-repeat center;
         background-size: cover;
         content: "";
-        width: 25px;
-        height: 25px;
+        width: 1.8em;
+        height: 1.3em;
         display: block;
         float: left;
-        margin-right: 15px; }
-    header #infoUser button {
-      margin: auto;
+        margin-right: 1em; }
+    header #infoUser a {
+      margin: 0em 2em 0em;
       display: block;
-      border-radius: 5px;
-      padding: 5px; }
+      border-radius: 5%;
+      padding: 0.5em;
+      width: 80%; }
   header nav {
     position: relative;
-    top: 45px; }
+    top: 3em;
+    width: 100%; }
     header nav ul {
-      float: right; }
+      float: right;
+      width: 90%;
+      margin: auto; }
       header nav ul li {
         float: left;
         list-style: none;
         background: url("../img/pencarte.gif") no-repeat center;
         background-size: contain;
         position: relative;
-        padding: 60px 10px 60px 10px;
-        width: 130px;
-        margin-left: 20px; }
+        padding: 7% 9%;
+        margin: 0 1% 0; }
         header nav ul li a {
           text-decoration: none;
           color: #1a1a1a;
           font-weight: bold;
           position: absolute;
+          top: 1.5em;
           text-transform: capitalize;
-          padding: 30px 30px 30px 20px;
-          left: 15%;
-          bottom: 8%; }
+          padding: 3em;
+          left: 0.1em; }
         header nav ul li #farm {
-          bottom: 8%;
-          left: 25%; }
+          left: 0.7em; }
 
 .viber:hover {
   cursor: pointer;
@@ -141,18 +141,19 @@ header {
     -webkit-transform: rotate(1deg); } }
 /*.......................................MAIN.................................... */
 main {
-  padding: 50px 0; }
+  padding: 4em 0; }
   main #navLeft {
     width: 25%;
-    margin-left: 20px;
+    margin: auto;
     display: block;
     float: left;
     box-sizing: border-box; }
     main #navLeft article {
-      background: url("../img/background.jpg") center no-repeat;
-      background-size: cover;
+      background: url("../img/background.jpg") repeat-y;
+      background-size: 100%;
       border-radius: 5px;
-      margin-bottom: 5px; }
+      margin: 0 auto 0.5em;
+      box-sizing: border-box; }
       main #navLeft article h5 {
         color: white;
         padding: 20px 20px;
@@ -169,16 +170,39 @@ main {
         margin-left: 30px;
         text-decoration: none;
         font-size: 17px;
+        color: black;
+        padding: 5% 21%;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2em; }
+      main #navLeft article a {
+        display: block;
+        padding: 1em;
+        margin: auto;
+        width: 50%;
+        text-decoration: none;
+        color: white;
+        font-size: 1em;
         font-weight: bold;
         margin-left: 40px; }
-        main #navLeft article li h6 {
+        main #navLeft article a h6 {
           font-style: italic; }
     main #navLeft #products {
       position: relative;
       color: white;
-      padding: 12% 0% 0%; }
+      padding: 12% 0% 0%;
+      color: black; }
       main #navLeft #products button {
-        padding: 5%;
+        padding: 5%; }
+      main #navLeft #products #listProducts li {
+        margin: auto;
+        width: 60%;
+        padding: 0.5em 3.5em;
+        font-weight: bold;
+        color: white;
+        font-size: 1em; }
+      main #navLeft #products button {
+        padding: 4% 10%;
         border-radius: 5px;
         cursor: pointer;
         text-transform: uppercase;
@@ -246,8 +270,7 @@ main {
   main #content {
     width: 70%;
     float: right;
-    box-sizing: border-box;
-    border: 5px double #422811; }
+    box-sizing: border-box; }
 
 /*.......................................FOOTER.................................. */
 footer {
@@ -255,7 +278,7 @@ footer {
   text-align: center;
   text-transform: capitalize; }
   footer p {
-    padding: 20px 0 20px;
+    padding: 1em 0em;
     color: lightgrey; }
 
 /*------------------------------------integration des templates------------------------------------------- */
@@ -264,20 +287,25 @@ footer {
   float: left;
   width: 30%; }
   .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 80%;
+    height: 70%;
     float: left;
-    padding: 15%; }
+    padding: 15% 10%; }
 
 .listing {
   border: 3px solid black;
   border-radius: 10px;
-  margin: 10px; }
+  margin: 0.5em; }
   .listing .information {
     float: left;
     width: 70%;
     padding: 5%;
     box-sizing: border-box; }
+    .listing .information li {
+      padding: 0.1em; }
+    .listing .information button {
+      padding: 0.5em 1em;
+      margin-top: 2%; }
   .listing::after {
     content: "";
     display: block;
@@ -285,20 +313,28 @@ footer {
 
 /*--------page building listing---------- */
 .avatarBuilding {
-  float: left; }
+  float: left;
+  width: 30%; }
   .avatarBuilding img {
-    width: 150px;
-    height: 100px;
+    width: 90%;
+    height: 80%;
     float: left;
-    padding: 20%; }
+    padding: 15% 10%; }
 
 .listingBuilding {
   border: 3px solid black;
   border-radius: 10px;
-  margin: 10px; }
+  margin: 0.5em; }
   .listingBuilding .informationBuilding {
+    width: 70%;
     float: right;
-    padding: 20px 20px; }
+    padding: 5%;
+    box-sizing: border-box; }
+    .listingBuilding .informationBuilding li {
+      padding: 0.1em; }
+    .listingBuilding .informationBuilding button {
+      padding: 0.5em 1em;
+      margin-top: 2%; }
   .listingBuilding::after {
     content: "";
     display: block;
@@ -306,21 +342,25 @@ footer {
 
 /*--------page fields listing---------- */
 .avatarField {
-  float: left; }
+  float: left;
+  width: 30%; }
   .avatarField img {
-    width: 80px;
-    height: 100px;
+    width: 60%;
+    height: 50%;
     float: left;
-    padding-left: 20px;
-    padding-top: 10px; }
+    padding: 15% 10%; }
 
 .listingField {
   border: 3px solid black;
   border-radius: 10px;
   margin: 10px; }
   .listingField .informationField {
-    float: right;
-    padding: 50px 200px 20px 0px; }
+    padding: 5%; }
+    .listingField .informationField li {
+      padding: 0.1em; }
+    .listingField .informationField button {
+      padding: 0.5em 1em;
+      margin-top: 2%; }
   .listingField::after {
     content: "";
     display: block;
@@ -338,15 +378,61 @@ footer {
     width: 768px; }
 
   header #infoUser {
-    margin-right: 10px; }
-  header nav ul li {
-    padding: 40px 5px 40px 5px;
-    margin-left: 5px; }
+    margin-right: 1em; }
+  header nav ul {
+    margin-right: 1em; }
+    header nav ul li a {
+      padding: 2em;
+      top: 2em; }
 
-  main #navLeft article h5 {
-    padding: 20px 0 20px 30px; }
-  main #navLeft article a {
-    padding: 10px 20px 20px 15px; } }
+  main #navLeft article {
+    margin-left: 0.5em; }
+    main #navLeft article h5 {
+      padding: 5% 12%; }
+      main #navLeft article h5 a {
+        padding: 5%; }
+  main #navLeft #products #listProducts li {
+    font-size: 0.8em; }
+  main #navLeft #products button {
+    padding: 2% 5%;
+    left: 50%; }
+  main #navLeft #chat #messageForm {
+    width: 75%; }
+    main #navLeft #chat #messageForm #message {
+      width: 90%; }
+    main #navLeft #chat #messageForm button {
+      padding: 2% 5%; }
+
+  /*------------------------------------integration des templates------------------------------------------- */
+  /*--------page fields listing---------- */
+  .avatarField img {
+    width: 60%;
+    height: 50%;
+    float: left; }
+
+  .listingField .informationField {
+    float: left;
+    padding: 5%;
+    display: block; }
+    .listingField .informationField button {
+      padding: 0.4em 0.8em;
+      margin-top: 4%; }
+
+  /*--------page building listing---------- */
+  .avatarBuilding {
+    float: left;
+    width: 35%; }
+    .avatarBuilding img {
+      width: 100%;
+      height: 100%;
+      float: left;
+      padding: 50% 20%; }
+
+  .listingBuilding .informationBuilding {
+    float: left;
+    padding: 12%;
+    width: 60%;
+    box-sizing: border-box; } }
 /*................................................................................................. */
 /* ...................................PETIT ECRAN.................................................. */
 @media screen and (max-width: 768px) {
@@ -356,29 +442,27 @@ footer {
   /*------------------------------------integration layout------------------------------------------- */
   /*.......................HEADER.............................. */
   header #infoUser {
-    display: none;
-    height: 30%; }
-  header button {
-    padding: 1px; }
+    display: none; }
   header nav {
-    padding-bottom: 1px;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.2em;
     width: 100%;
-    top: 10%; }
+    top: 15%; }
     header nav ul {
       float: none !important; }
       header nav ul li {
-        width: 70px;
-        padding: 5%;
-        margin-top: 5px;
-        margin-left: 10px;
-        background: url("../img/pencarte.gif") no-repeat center;
-        border: solid 1px #513201; }
+        width: 20%;
+        padding: 4%;
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        background: url("../img/pencarte.gif") no-repeat center; }
         header nav ul li a {
-          font-size: 12px;
-          top: 40%;
-          left: 20%; }
+          font-size: 80%;
+          top: 28%;
+          left: 15%;
+          padding: 5%; }
         header nav ul li #farm {
-          left: 30%; }
+          left: 25%; }
 
   /*.....................MAIN.............................. */
   main #navLeft {
@@ -390,13 +474,13 @@ footer {
       width: 100%; }
       main #navLeft article h5 {
         padding: 20px 0 20px 5px;
-        font-size: 90%;
+        font-size: 1.5em;
         text-align: center; }
       main #navLeft article a {
-        padding: 10px 20px 20px 4px;
+        padding: 2%;
         text-align: center;
         color: white;
-        font-size: 75%; }
+        font-size: 1em; }
     main #navLeft #products button {
       display: block;
       padding: 2px;
@@ -409,49 +493,68 @@ footer {
     width: 15px;
     margin: 5px; }
   main #navLeft.showOnPhone + a#buttonNavLeft {
-    background-image: url("../img/fleche1.jpg"); }
+    background-image: url("../img/fleche1.jpg");
+    margin: 0 50%; }
+  main #content {
+    width: 100%;
+    font-size: 0.9em; }
 
   /*------------------------------------integration des templates------------------------------------------- */
   /*--------page fields listing---------- */
-  .avatarField img {
-    width: 40%;
-    height: 90px;
-    float: left; }
+  .avatarField {
+    width: 100%; }
+    .avatarField img {
+      width: 30%;
+      height: 20%;
+      float: left;
+      margin: 2% auto 2%;
+      padding: 2% 35%; }
 
   .listingField .informationField {
-    float: left;
-    padding: 10%;
-    width: 100%;
+    padding: 2% 0;
     box-sizing: border-box;
-    display: block; }
+    display: block;
+    margin: auto;
+    text-align: center; }
+    .listingField .informationField ul li {
+      width: 100%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
-    float: left; }
+    float: left;
+    width: 100%; }
     .avatarBuilding img {
-      width: 50%;
-      height: 40%;
-      float: left; }
+      width: 40%;
+      height: 20%;
+      float: left;
+      margin: 2% auto 2%;
+      padding: 2% 30%; }
 
   .listingBuilding .informationBuilding {
     float: left;
-    padding: 10%;
+    padding: 2% 10%;
     width: 100%;
     box-sizing: border-box;
     display: block; }
+    .listingBuilding .informationBuilding ul li {
+      width: 100%;
+      margin: auto; }
 
   /*--------page animals listing---------- */
   .avatar {
-    width: 70%; }
+    width: 100%; }
     .avatar img {
-      width: 80%;
-      height: 70%; }
+      width: 30%;
+      height: 20%;
+      margin: 2% auto 2%;
+      padding: 2% 30%; }
 
   .listing .information {
     float: left;
     box-sizing: border-box;
     width: 100%;
-    display: block; } }
+    display: block;
+    padding: 2% 22%; } }
 /*--------------bar de progression ----- */
 progress {
   display: block;

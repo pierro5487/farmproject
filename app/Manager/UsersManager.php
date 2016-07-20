@@ -48,4 +48,14 @@ class UsersManager extends UserManager
                 'current_xp' => $currentXp,
             );
     }
+    
+    public function spendMoney($idUser, $amount)
+    {
+        $pdo = $this->dbh;
+        $sql = 'UPDATE users SET money=money - :amount WHERE id=:id';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':id', $idUser, \PDO::PARAM_INT);
+        $stmt->bindParam(':amount', $amount, \PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

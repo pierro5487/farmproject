@@ -1,4 +1,4 @@
-<?php $this->layout('layout',['title'=>'Productions'])?>
+<?php $this->layout('layout',['title'=>''])?>
 
 
 
