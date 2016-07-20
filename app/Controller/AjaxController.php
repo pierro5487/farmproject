@@ -90,4 +90,29 @@ class AjaxController extends Controller
         $productsGroup = $productionController->calculHarvest();
         $this->show('ajax/article_products_refresh',['products'=> $productsGroup]);
     }
+
+    public function chatRefresh()
+    {
+        $chatManager = new \Manager\ChatManager();
+        $connectManager = new \Manager\ConnectManager();
+        $connectManager->setTable('users');
+        //je prend les 5 derniers message
+        $posts=$chatManager->getPost();
+        $posts=array_reverse($posts);
+        foreach ($posts as $key=>$post){
+            //pour chaque message je récupère le login du user et je l'insere dans les donnees messages
+            $user = $connectManager->find($post['id_user']);
+            $posts[$key]['login']=$user['login'];
+        }
+        echo json_encode($posts);
+    }
+
+    public function chatSendMessage()
+    {
+        $message=filter_var($_GET['message'],FILTER_SANITIZE_SPECIAL_CHARS);
+        $connectManager = new \Manager\ConnectManager();
+        $connectManager->setTable('tchat');
+        $connectManager->insert(['message'=>$message,'id_user'=>$_SESSION['user']['id']]);
+
+    }
 }
