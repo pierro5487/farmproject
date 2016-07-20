@@ -31,7 +31,7 @@ class UsersManager extends UserManager
         }
 
         $currentXp = $user['experience'] - $X;
-
+        $_SESSION['user']['level']=$newLevel;
         $this->update(['Level' => $newLevel], $id);
 
         //Find() à effectuer levelUp en bdd, affiche script alert levelUp

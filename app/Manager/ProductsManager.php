@@ -2,7 +2,7 @@
 
 namespace Manager;
 
-class ProductsManager
+class ProductsManager extends \W\Manager\Manager
 {
 
     public function getUserProductsInformations($pdo, $idUser)
@@ -26,5 +26,11 @@ class ProductsManager
         $stmt->bindValue(':id', $idProduct);
         $stmt->execute();
         return $stmt->fetch();
+    }
+    public function getAnimalsProductsStock($pdo,$idUser){
+        $sql='SELECT * FROM stocks WHERE stock_type=\'animal\' AND id_users= :id';
+        $req=$pdo->prepare($sql);
+        $req->execute(array('id'  =>$idUser));
+        return $req->fetchAll();
     }
 }

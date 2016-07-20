@@ -7,7 +7,7 @@ use \W\Controller\Controller;
 class ProductsController extends Controller
 {
 
-
+    /*-------page products------------*/
     public function displayProducts()
     {
         $this->allowTo('user');

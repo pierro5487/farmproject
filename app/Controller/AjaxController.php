@@ -67,7 +67,7 @@ class AjaxController extends Controller
         //je supprime la production
         $connectBdd->setTable('stocks');
         $connectBdd->delete($idProduct);
-        //je récupere la liste des animaux apartenant à mon user
+        //je récupere la liste des produits apartenant à mon user
         $dataProducts= new\Manager\ProductsManager();
         $products= $dataProducts->getUserProductsInformations($pdo,$_SESSION['user']['id']);
         $this->show('ajax/products_refresh',['products'=>$products]);
@@ -81,56 +81,13 @@ class AjaxController extends Controller
         $this->show('ajax/user_info_refresh',['user'=>$user]);
     }
 
-    private function calculHarvest()
+    public function productsRefresh()
     {
         //je créé un objet pdo
         $controller = new \Manager\ConnectManager();
         $pdo = $controller->connectPdo();
-        //récupération du temps
-        $timeManager = new\Manager\OptionsManager();
-        $timeManager->setTable('options');
-        $options = $timeManager->find(1);
-        $time=$options['time'];
-        /*---------récupération produit animaliers------*/
-        //je recupere le nombre d'animaux par espece et la caratéristique temps de production de chaque espece
-        $dataAnimals= new\Manager\AnimalsManager();
-        $animals= $dataAnimals->getAllInfoAnimals($pdo,$_SESSION['user']['id']);
-        //on parcourt un à un chaque animal pour evaluer sa production
-        $productsGroup = [];
-        foreach ($animals as $animal) {
-            //calcul production depuis la derniere récolte
-            $now = time();
-            $lastHarvest = strtotime($animal['last_harvest']);
-            $productTime = $now - $lastHarvest;
-            $timeToProduct = $animal['time_product'] * $time;
-            $nbProduct = floor($productTime / $timeToProduct);
-            //regroupement des produit
-            if (isset($productsGroup[$animal['species']])) {
-                $productsGroup[$animal['species']]['nb'] += $nbProduct;
-            } else {
-                $productsGroup[$animal['species']]['nb'] = $nbProduct;
-                $productsGroup[$animal['species']]['productName']=$animal['productName'];
-                $productsGroup[$animal['species']]['unity']=$animal['unity'];
-                $productsGroup[$animal['species']]['idProduct']=$animal['id_product'];
-            }
-        }
-        return $productsGroup;
-    }
-    public function productsRefresh()
-    {
-        $productsGroup = $this->calculHarvest();
+        $productionController = new \Controller\ProductionController();
+        $productsGroup = $productionController->calculHarvest();
         $this->show('ajax/article_products_refresh',['products'=> $productsGroup]);
     }
-    public function harvest(){
-        //on récupère la production
-        $productsGroup = $this->calculHarvest();
-        //on test si les stocks existe déja pour ce produits
-        
-        //on envoi les nouveaux produits dans la bdd
-        //on parcourt un à un chaque animal pour evaluer sa production
-
-        //on recharge la liste de la production
-        $this->productsRefresh();
-    }
-
 }

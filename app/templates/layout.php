@@ -8,7 +8,6 @@
 
 	<!-- LOCAL -->
 	<script src="<?=$this->assetUrl('js/jquery-2.2.3.min.js')?>"></script>
-	<!-- SCRIPT PERSO -->
 	<script>
 		var ajaxAnimalRefresh= '<?= $this->url('ajax_refresh_animals') ?>';
 		var ajaxBuildingUpgrade='<?= $this->url('ajax_upgrade_buldings') ?>';
@@ -68,7 +67,7 @@
 			<!-- Section mes produits -->
 			<article id="products">
 				<div id="listProducts"></div>
-				<button id="harvest">Récolter</button>
+				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
 
 			<!-- Section tchat -->
