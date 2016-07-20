@@ -5,11 +5,14 @@ $(function(){
     var infoUser =$('#infoUser');
     var articleProduct = $('#listProducts');
     var harvest= $('#harvest');
+    var chatDisplay=$('#chatDisplay');
+    var sendMessage=$('#sendMessage');
     /*---------script------------*/
     deleteAnimal();
     deleteProduct();
     refreshProducts();
-    var interval=setInterval(refreshProducts,100000);
+    var interval=setInterval(refreshProducts,1000);
+    setInterval(refreshChat(),1000);
 
 
     /********************************************************************************/
@@ -128,4 +131,51 @@ $(function(){
             }
         });
     }
+
+    /*---------------rafraichissement tchat----------------*/
+    function refreshChat() {
+        $.ajax({
+            url : chatRefresh, // La ressource ciblée
+            dataType : 'json',// Le type de données à recevoir, ici, du HTML.
+            success : function(messages, statut){
+                getAll(messages);
+            },
+
+            error : function(resultat, statut, erreur){
+                chatDisplay.html('<p>erreur table</p>');
+            }
+        });
+    }
+    /*-----------affichage messages du chat----*/
+    function getAll(message){
+        chatDisplay.html('');
+        for(var i = 0; i < message.length; i++){
+
+            var messages = message[i];
+            var pseudo = messages.login;
+            var post = messages.message;
+
+            var pseudoDOM = $('<div>'+pseudo+':</div>');
+            var messagesDOM = $('<div>'+post+'</div>');
+            chatDisplay.append(pseudoDOM)
+                .append(messagesDOM)
+                .append('<div class="clearfix"></div>')
+        }
+    }
+
+    /*---------------------EVENEMENT envoi de message chat-------*/
+    sendMessage.on('click',function(){
+        /*var message=$('#chatBoard [name=message]');*/
+        var message =$('#message').val();
+        console.log(message);
+        $.ajax({
+            url : chatSendMessage,
+            Type:'GET',
+            data:'message='+message,
+            success: function(){
+                $('#message').val('');
+                refreshChat();
+            },
+        });
+    });
 });

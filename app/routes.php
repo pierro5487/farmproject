@@ -18,4 +18,6 @@
         ['GET', '/ajax/articleProductsRefresh', 'Ajax#productsRefresh', 'ajax_refresh_article_products'],
         ['GET', '/ajax/harvest', 'Ajax#harvest', 'ajax_harvest'],
 		['GET', '/harvest', 'ProductionController#harvest', 'harvest'],
+		['GET', '/chatRefresh', 'AjaxController#chatRefresh', 'chatRefresh'],
+		['GET|POST', '/chatMessage', 'AjaxController#chatSendMessage', 'chatSendMessage']
 	);

@@ -15,6 +15,8 @@
 		var tableBoardRefresh= '<?= $this->url('ajax_refresh_user_info') ?>';
 		var productsRefresh= '<?= $this->url('ajax_refresh_article_products') ?>';
 		var harvestRoute= '<?= $this->url('ajax_harvest') ?>';
+		var chatRefresh='<?= $this->url('chatRefresh') ?>';
+		var chatSendMessage='<?= $this->url('chatSendMessage') ?>';
 	</script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
     <script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
@@ -69,16 +71,23 @@
 				<div id="listProducts"></div>
 				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
+			<!-- Section marché -->
+			<article id="marcket">
+				<h5>Marché</h5>
+			</article>
 
 			<!-- Section tchat -->
 			<article>
 				<h5>le tchat</h5>
 				<!-- Le tchat -->
 				<div id="chat">
-					<form method="post" action="#" id="messageForm">
+					<div id="chatDisplay">
+
+					</div>
+					<div id="chatboard">
 						<textarea name="message" id="message" placeholder="Message" cols="20" rows="2"></textarea>
-						<button type="submit">Envoyer</button>
-					</form>
+						<button id="sendMessage">Envoyer</button>
+					</div>
 				</div>
 			</article>
 		</section>
