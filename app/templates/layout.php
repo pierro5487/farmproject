@@ -4,10 +4,12 @@
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('js/jquery-ui/jquery-ui.css')?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
 
 	<!-- LOCAL -->
 	<script src="<?=$this->assetUrl('js/jquery-2.2.3.min.js')?>"></script>
+	<script src="<?=$this->assetUrl('js/jquery-ui/jquery-ui.min.js') ?>"></script>
 	<!-- SCRIPT PERSO -->
 	<script>
 		var ajaxAnimalRefresh= '<?= $this->url('ajax_refresh_animals') ?>';
@@ -35,7 +37,7 @@
 			<!-- affichage de l'xp -->
 			<div>Level <?= $_SESSION['user']['level'] ?></div>
 			<!-- affichage des po -->
-			<div><?= $_SESSION['user']['money'] ?> PO</div>
+			<div id="money"><?= $_SESSION['user']['money'] ?> PO</div>
 			<!-- bouton déconnexion-->
 			<a href="<?= $this->url('game_log_out')?>">Déconnexion</a>
 		</div>

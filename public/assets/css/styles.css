@@ -114,11 +114,12 @@ header {
           color: #1a1a1a;
           font-weight: bold;
           position: absolute;
-          top: 55%;
-          left: 28%;
-          text-transform: capitalize; }
+          bottom: 15px;
+          text-transform: capitalize;
+          padding: 20px;
+          left: 20px; }
         header nav ul li #farm {
-          left: 35%; }
+          left: 35px; }
 
 .viber:hover {
   cursor: pointer;
@@ -159,7 +160,7 @@ main {
         font-size: 18px; }
       main #navLeft article a {
         display: block;
-        padding: 10px 20px 20px 40px;
+        padding: 10px 20px 20px 10px;
         margin-left: 50px;
         text-decoration: none;
         color: white;
@@ -168,6 +169,12 @@ main {
     main #navLeft #products {
       position: relative;
       color: black; }
+      main #navLeft #products #listProducts li {
+        margin: auto;
+        width: 60%;
+        padding: 8px 0px 8px 20px;
+        font-weight: bold;
+        color: white; }
       main #navLeft #products button {
         padding: 4px 4px;
         border-radius: 5px;
@@ -190,8 +197,7 @@ main {
   main #content {
     width: 70%;
     float: right;
-    box-sizing: border-box;
-    border: 5px double #422811; }
+    box-sizing: border-box; }
 
 /*.......................................FOOTER.................................. */
 footer {

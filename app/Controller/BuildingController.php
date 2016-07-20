@@ -10,9 +10,8 @@ class BuildingController extends Controller
     {
         $this->allowTo('user');
         $controller = new\Manager\ConnectManager();
-        $pdo = $controller->connectPdo();
         $dataBuilding = new\Manager\BuildingManager();
-        $buildings = $dataBuilding->getListBuilding($pdo, $_SESSION['user']['id']);
+        $buildings = $dataBuilding->getListBuilding($_SESSION['user']['id']);
         $this->show('Game/building', ['buildings'=>$buildings]);
     }
 
@@ -20,29 +19,46 @@ class BuildingController extends Controller
    {
         $this->allowTo('user');
         $controller = new\Manager\ConnectManager();
-        $pdo = $controller->connectPdo();
         $refreshBuilding = new\Manager\BuildingManager();
-        $buildings = $refreshBuilding->upgradeBuilding($pdo, building.id);
+        $buildings = $refreshBuilding->upgradeBuilding($_POST['id']);
         $connectBdd = new\Manager\ConnectManager();
         $refreshBuilding2 = new\Manager\BuildingManager();
-        $buildings2 = $refreshBuilding2->refreshBuilding($pdo,$_SESSION['user']['id'] );
+        $buildings2 = $refreshBuilding2->refreshBuilding($_SESSION['user']['id'] );
         $this->show('ajax/building_refresh', ['buildings2'=>$buildings2]);
     }
 
     public function upgradeBuilding()
     {
-
+        $this->allowTo('user');
         //je crée un object PDO
         $connectBdd = new \Manager\ConnectManager();
-		$pdo = $connectBdd->connectPdo();
-        //j'upgrade le batiment sélectionné
         $buildingManager =  new\Manager\BuildingManager();
-        $buildingManager->setTable('building');
-        $building = $buildingManager->find($_POST['id']);
-        $buildingManager->update(['level'=>$building['level']+1],$_POST['id']);
-        $donnees = $buildingManager->refreshBuilding($pdo,$_POST['id']);
-        echo(json_encode($donnees));
-        
+        //tableau d'erreur
+        $errors = [];
+        $verifBuilding = $buildingManager->verifBuilding($_POST['id']);
+
+        //vérification si on a assez de po
+        if($verifBuilding['price_improvement']>$_SESSION['user']['money']){
+            $errors['money'] = true;
+        }
+
+        if(count($errors) ==0) {
+            //j'upgrade le batiment sélectionné
+            $buildingManager = new\Manager\BuildingManager();
+            $buildingManager->setTable('building');
+            $building = $buildingManager->verifBuilding($_POST['id']);
+            $buildingManager->update(['level' => $building['level'] + 1], $_POST['id']);
+
+            $donnees['building'] = $buildingManager->refreshBuilding($_POST['id']);
+            $userManager = new \Manager\UsersManager();
+            $userManager->spendMoney($_SESSION['user']['id'], $building['price_improvement']);
+
+            $_SESSION['user']['money'] -= $building['price_improvement'];
+            $donnees['user']['money'] = $_SESSION['user']['money'];
+            echo(json_encode($donnees));
+        } else {
+            echo json_encode(['error' => true]);
+        }
     }
 
 }
