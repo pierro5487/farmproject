@@ -7,10 +7,13 @@ $(function(){
     var harvest= $('#harvest');
     var chatDisplay=$('#chatDisplay');
     var sendMessage=$('#sendMessage');
+    var articleCreations = $('#listCreations');
+    var creations= $('#creations');
     /*---------script------------*/
     deleteAnimal();
     deleteProduct();
     refreshProducts();
+    refreshCreations();
     var interval=setInterval(refreshProducts,1000);
     setInterval(refreshChat(),1000);
 
@@ -51,7 +54,7 @@ $(function(){
         var deleteAnimalButton = $('.deleteProduct');
         deleteAnimalButton.on('click',function(event){
             var idProduct = $(event.target).attr("value");
-            if(confirm('etes vous sur de vouloir vendre ce stock?')){
+            if(confirm('Etes-vous sur de vouloir vendre ce stock ?')){
                 $.ajax({
                     url : ajaxProductsRefresh, // La ressource ciblée
                     type : 'GET',
@@ -77,7 +80,6 @@ $(function(){
             type : 'GET',
             dataType : 'html',// Le type de données à recevoir, ici, du HTML.
             success : function(code_html, statut){
-                console.log(code_html);
                 infoUser.html(code_html);
             },
 
@@ -178,4 +180,144 @@ $(function(){
             },
         });
     });
+    /*-------------evenement recolter---*/
+    function getHarvest(){
+        harvest.on('click',function(event){
+            $.ajax({
+                url : harvestRoute, // La ressource ciblée
+                type : 'GET',
+                dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                success : function(code_html, statut){
+                    articleProduct.html(code_html);
+                },
+
+                error : function(resultat, statut, erreur){
+                    sectionGame.html('<p>erreur table</p>');
+                }
+            });
+        });
+    }
+    /*-------------evenement rafraichissement des creations---*/
+    function refreshCreations() {
+
+            $.ajax({
+                url : creationsRefresh, // La ressource ciblée
+                type : 'GET',
+                dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                success : function(code_html, statut){
+                    articleCreations.html(code_html);
+
+                    // Définition de la boite de dialogue
+                    $( "#dialog" ).dialog({
+                        maxWidth:600,
+                        maxHeight: 250,
+                        width: 600,
+                        height: 250,
+                        modal: true,
+                        autoOpen: false,
+                        show: {
+                            //Effet de fondu à l'ouverture
+                            effect: "fade",
+                            // Durée de l'action
+                            duration: 500
+                        },
+                        hide: {
+                            // Effet de fondu à la fermeture
+                            effect: "fade",
+                            // Durée de l'action
+                            duration: 800
+                        }
+                    });
+
+                    $('.creations').on('click', function () {
+                        // Ajax: ouverture popup au click sur +
+                        $.ajax({
+                            url: creationsPopup, // La ressource ciblée
+                            type: 'GET',
+                            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                            data: {
+                                // On récupère l'id correspondant au click sur l'event
+                                idCreation: $(this).attr('data-creationId'),
+                                idCreation2: $(this).attr('data-creationId2')
+                            },
+                            success: function(response) {
+                                // On renvoi la réponse en html
+                                $('#dialog').html(response);
+                                // On ouvre le popup
+                                $("#dialog").dialog('open');
+
+                                var addBuildingButton = $('.addBuilding');
+                                addBuildingButton.on('click',function(event){
+                                    $.ajax({
+                                        url : ajaxBuildingAdd, // La ressource ciblée
+                                        type : 'GET',
+                                        dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                                        data: 'idCreation=' + typeBuildingid, // On récupère la variable php en JS
+                                        success : function(response){
+                                            $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                        },
+                                        error : function(resultat, statut, erreur){
+                                            // En cas d'erreur, on le note
+                                            sectionGame.html('<p>erreur building</p>');
+                                        }
+                                    });
+                                    // On affiche les PO correspondants
+                                    tableBoard();
+                                });
+                            }
+                        });
+                    });
+                    $('.creations2').on('click', function () {
+                        // Ajax: ouverture popup au click sur +
+                        $.ajax({
+                            url: creationsPopup2, // La ressource ciblée
+                            type: 'GET',
+                            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                            data: {
+                                // On récupère l'id correspondant au click sur l'event
+                                idCreation: $(this).attr('data-creationId'),
+                                idCreation2: $(this).attr('data-creationId2')
+                            },
+                            success: function(response) {
+                                // On renvoi la réponse en html
+                                $('#dialog').html(response);
+                                // On ouvre le popup
+                                $("#dialog").dialog('open');
+
+                                var addFieldButton = $('.addField');
+                                addFieldButton.on('click',function(event){
+                                    $.ajax({
+                                        url : ajaxFieldAdd, // La ressource ciblée
+                                        type : 'GET',
+                                        dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                                        data: 'idCreation2=' + typeFieldid, // On récupère la variable php en JS
+                                        success : function(response){
+                                            $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                        },
+                                        error : function(resultat, statut, erreur){
+                                            // En cas d'erreur, on le note
+                                            sectionGame.html('<p>erreur Field</p>');
+                                        }
+                                    });
+                                    // On affiche les PO correspondants
+                                    tableBoard();
+                                });
+                            },
+                            error : function(resultat, statut, erreur){
+                                // En cas d'erreur, on le note
+                                sectionGame.html('<p>erreur Field</p>');
+                            }
+                        });
+                        // On affiche les PO correspondants
+                        tableBoard();
+                    });
+
+                },
+                error : function(resultat, statut, erreur){
+                    sectionGame.html('<p>erreur table</p>');
+                }
+            });
+            // On affiche les PO correspondants
+            tableBoard();
+    }
 });

@@ -17,12 +17,6 @@ class AnimalsManager extends \w\Manager\Manager
         $req->execute(array('id' => $id));
         return $req->fetch();
     }
-    /*public function getGroupAnimals($pdo,$idUser)
-    {
-        $req = $pdo->prepare('SELECT COUNT(*) as nb,sp.name,time_product FROM animals an JOIN species sp ON an.id_species=sp.id WHERE an.id_user=:id GROUP BY an.id_species ');
-        $req->execute(array('id' => $idUser));
-        return $req->fetchAll();
-    }*/
     public function getAllInfoAnimals($pdo, $id)
     {
         $req = $pdo->prepare('SELECT *,an.id as idAnimal,sp.name as species,pa.name as productName,pa.id as id_product FROM animals an INNER JOIN species sp ON an.id_species=sp.id INNER JOIN product_animal pa ON pa.id_species=sp.id WHERE id_user=:id');

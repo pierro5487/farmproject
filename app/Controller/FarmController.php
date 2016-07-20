@@ -14,7 +14,6 @@ class FarmController extends Controller
 	{
 		$this->allowTo('user');
 		$getUserInformations = new \Manager\ConnectManager();
-		$getUserInformations->setTable('users');
 		$userInformations = $getUserInformations->find($_SESSION['user']['id']);
 
 		$dbh = new \Manager\ConnectManager();

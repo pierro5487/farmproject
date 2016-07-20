@@ -31,13 +31,11 @@ class BuildingController extends Controller
 
     public function upgradeBuilding()
     {
-
         //je crée un object PDO
         $connectBdd = new \Manager\ConnectManager();
 		$pdo = $connectBdd->connectPdo();
         //j'upgrade le batiment sélectionné
         $buildingManager =  new\Manager\BuildingManager();
-        $buildingManager->setTable('building');
         $building = $buildingManager->find($_POST['id']);
         $buildingManager->update(['level'=>$building['level']+1],$_POST['id']);
         $donnees = $buildingManager->refreshBuilding($pdo,$_POST['id']);

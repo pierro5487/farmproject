@@ -6,6 +6,7 @@ use W\Manager\UserManager;
 
 class UsersManager extends UserManager
 {
+    // Possibilité d'augmenter l'xp et également sans paramètre de calculé le nouveau niveau
     public function updateExperience($id, $experience = null)
     {
         /* Calcul du level*/
@@ -30,6 +31,7 @@ class UsersManager extends UserManager
             $this->update(['max_experience' => $xpRequire], $id);
         }
 
+        /* On soustrait l'xp*/
         $currentXp = $user['experience'] - $X;
         $_SESSION['user']['level']=$newLevel;
         $this->update(['Level' => $newLevel], $id);
