@@ -36,6 +36,7 @@ $(function(){
                     dataType : 'html',// Le type de données à recevoir, ici, du HTML.
                     success : function(code_html, statut){
                         sectionGame.html(code_html);
+                        refreshCreations();
                         deleteAnimal();
                     },
 
@@ -62,6 +63,7 @@ $(function(){
                     dataType : 'html',// Le type de données à recevoir, ici, du HTML.
                     success : function(code_html, statut){
                         sectionGame.html(code_html);
+                        refreshCreations();
                         deleteProduct();
                     },
 
@@ -254,6 +256,7 @@ $(function(){
                                         dataType : 'html',// Le type de données à recevoir, ici, du HTML.
                                         data: 'idCreation=' + typeBuildingid, // On récupère la variable php en JS
                                         success : function(response){
+                                            refreshCreations();
                                             $("#dialog").dialog('close'); // On ferme la boite de dialogue
                                         },
                                         error : function(resultat, statut, erreur){
@@ -292,6 +295,7 @@ $(function(){
                                         dataType : 'html',// Le type de données à recevoir, ici, du HTML.
                                         data: 'idCreation2=' + typeFieldid, // On récupère la variable php en JS
                                         success : function(response){
+                                            refreshCreations();
                                             $("#dialog").dialog('close'); // On ferme la boite de dialogue
                                         },
                                         error : function(resultat, statut, erreur){

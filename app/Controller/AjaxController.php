@@ -123,8 +123,9 @@ class AjaxController extends Controller
         $typeBuildingManager = new\Manager\BuildingTypeManager();
         $creationsGroup = $typeBuildingManager->findAll();
 
-        $typeBuildingManager = new\Manager\dataGameManager();
-        $creationsGroup2 = $typeBuildingManager->getUserFieldsInformations($pdo,$_SESSION['user']['id']);
+        $typeFieldManager = new\Manager\FieldTypeManager();
+        $creationsGroup2 = $typeFieldManager->findAll();
+        
         // Pour l'eventualité de la gestion du temps de construction
         /*$manager = new \Manager\BuildingTypeManager();
         $idCreation = $this->creationsPopup(1);
