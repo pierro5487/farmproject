@@ -1,4 +1,4 @@
-$( function() {
+$(document).ready( function() {
     //fonction d'affichage ou non de la navigation gauche
     var navigation= $('#navLeft');
     var button = $('#buttonNavLeft');
@@ -55,9 +55,6 @@ $( function() {
     //         }
     //     });
     // }
-
-
-
 
 });
 

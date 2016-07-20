@@ -2,8 +2,14 @@
 
 namespace Manager;
 
-class BuildingManager extends \w\Manager\Manager
+class BuildingManager extends \W\Manager\Manager
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTable('building');
+    }
+
     public function getListBuilding($pdo, $idUser)
     {
         $sql='SELECT building.id, name, level_access, building.level as level, level*5 as max_quantity, building.date_created as date, image_path, price_improvement 

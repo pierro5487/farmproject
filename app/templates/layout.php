@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
+
 
 	<!-- LOCAL -->
 	<script src="<?=$this->assetUrl('js/jquery-2.2.3.min.js')?>"></script>
@@ -16,9 +18,15 @@
 		var tableBoardRefresh= '<?= $this->url('ajax_refresh_user_info') ?>';
 		var productsRefresh= '<?= $this->url('ajax_refresh_article_products') ?>';
 		var harvestRoute= '<?= $this->url('ajax_harvest') ?>';
+		var creationsRefresh= '<?= $this->url('ajax_creations') ?>';
+		var creationsPopup= '<?= $this->url('ajax_creations_popup') ?>';
+		var ajaxBuildingAdd= '<?= $this->url('ajax_building_add') ?>';
+
 	</script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
-    <script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
+	<script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
 </head>
 <body>
 <header>
@@ -58,13 +66,11 @@
 	<div class="container">
 		<section id="navLeft">
 			<!-- Section création -->
-			<article>
-				<h5>les creations</h5>
-				<a href="#">Bâtiments</a>
-				<a href="#">Champs</a>
-				<div class="clearfix"></div>
+			<article id="creations">
+				<div id="dialog"></div>
+				<div id="listCreations"></div>
 			</article>
-
+			
 			<!-- Section mes produits -->
 			<article id="products">
 				<div id="listProducts"></div>

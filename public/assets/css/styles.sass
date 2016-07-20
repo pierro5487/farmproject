@@ -118,11 +118,13 @@ header
           color: #1a1a1a
           font-weight: bold
           position: absolute
-          top: 55%
-          left: 28%
           text-transform: capitalize
+          padding: 30px 30px 30px 20px
+          left: 15%
+          bottom: 8%
         #farm
-          left: 35%
+          bottom: 8%
+          left: 25%
 
 .viber:hover
   cursor: pointer
@@ -162,40 +164,94 @@ main
       border-radius: 5px
       margin-bottom: 5px
       h5
-        color: black
-        padding: 20px 0 20px 50px
+        color: white
+        padding: 20px 20px
         text-transform: uppercase
         font-weight: bold
         font-size: 18px
-      a
-        display: block
-        padding: 10px 20px 20px 40px
-        margin-left: 50px
-        text-decoration: none
+        width: 80px
+        margin: 0 auto
+      h4
         color: white
+        margin-left: 10%
+      li
+        color: grey
+        margin-left: 30px
+        text-decoration: none
         font-size: 17px
         font-weight: bold
+        margin-left: 40px
+        h6
+          font-style: italic
     #products
       position: relative
-      color: black
+      color: white
+      padding: 12% 0% 0%
       button
-        padding: 4px 4px
+        padding: 5%
         border-radius: 5px
-        position: absolute
-        left: 60%
+        cursor: pointer
+        text-transform: uppercase
+        background: rgba(255,255,255,0.5)
+        border: 0
+        width: 200px
+        margin-left: 20px
+        &:hover
+          background: rgba(255,255,255,0.8)
+        &:active
+          background: rgba(127,127,127,0.2)
+    #listProducts
+      margin-left: 30px
+    #creations
+      position: relative
+      color: white
+      padding: 12% 0% 0%
+      .red
+        color: red
+        display: inline-block
+      .green
+        color: green
+        display: inline-block
+      button
+        margin-left: 10px
+        padding: 1% 3% 1% 3%
+        cursor: pointer
+        background: rgba(255,255,255,0.5)
+        border: 0
+        &:hover
+          background: rgba(255,255,255,0.8)
+        &:active
+          background: rgba(127,127,127,0.2)
+    #listCreations
+      margin-left: 30px
     #chat
       #messageForm
         width: 90%
         padding-left: 10px
         #message
-          width: 85%
           margin: auto
           display: block
-        button
-          display: block
-          padding: 5px
-          border-radius: 2px
-          margin: 5px auto
+      button
+        padding: 5%
+        border-radius: 5px
+        cursor: pointer
+        text-transform: uppercase
+        background: rgba(255,255,255,0.5)
+        border: 0
+        width: 200px
+        margin-left: 20px
+        &:hover
+          background: rgba(255,255,255,0.8)
+        &:active
+          background: rgba(127,127,127,0.2)
+      textarea
+        width: 164px
+        max-width: 164px
+        height: 78px
+        max-height: 78px
+        background: rgba(0,0,0,0.2)
+        border-radius: 10%
+        color: white
   #buttonNavLeft
     display: none
   #content
@@ -220,10 +276,10 @@ footer
   float: left
   width: 30%
   img
-    width: 200px
-    height: 180px
+    width: 100px
+    height: 100px
     float: left
-    padding: 5%
+    padding: 15%
 .listing
   border: 3px solid black
   border-radius: 10px
@@ -231,7 +287,7 @@ footer
   .information
     float: left
     width: 70%
-    padding: 10%
+    padding: 5%
     box-sizing: border-box
   &::after
     content: ''
@@ -242,16 +298,17 @@ footer
 .avatarBuilding
   float: left
   img
-    width: 250px
-    height: 200px
+    width: 150px
+    height: 100px
     float: left
+    padding: 20%
 .listingBuilding
   border: 3px solid black
   border-radius: 10px
   margin: 10px
   .informationBuilding
     float: right
-    padding: 50px 20px 0px 0px
+    padding: 20px 20px
   &::after
     content: ''
     display: block
@@ -307,37 +364,6 @@ footer
           padding: 20px 0 20px 30px
         a
           padding: 10px 20px 20px 15px
-
-  /*------------------------------------integration des templates-------------------------------------------*/
-  /*--------page fields listing----------*/
-  .avatarField
-    img
-      width: 40%
-      height: 90px
-      float: left
-  .listingField
-    .informationField
-      float: left
-      padding: 10%
-      width: 50%
-      display: block
-
-  /*--------page building listing----------*/
-  .avatarBuilding
-    float: left
-    width: 40%
-    img
-      width: 80%
-      height: 80%
-      float: left
-      padding-top: 30%
-      padding-left: 20%
-  .listingBuilding
-    .informationBuilding
-      float: left
-      padding: 10%
-      width: 60%
-      box-sizing: border-box
 
 /*.................................................................................................*/
 /* ...................................PETIT ECRAN..................................................*/
@@ -449,3 +475,5 @@ footer
       box-sizing: border-box
       width: 100%
       display: block
+
+

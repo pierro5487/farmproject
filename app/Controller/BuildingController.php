@@ -31,7 +31,6 @@ class BuildingController extends Controller
 
     public function upgradeBuilding()
     {
-
         //je crée un object PDO
         $connectBdd = new \Manager\ConnectManager();
 		$pdo = $connectBdd->connectPdo();

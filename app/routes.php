@@ -18,4 +18,7 @@
 		['GET', '/ajax/userRefresh', 'Ajax#userRefresh', 'ajax_refresh_user_info'],
         ['GET', '/ajax/articleProductsRefresh', 'Ajax#productsRefresh', 'ajax_refresh_article_products'],
         ['GET', '/ajax/harvest', 'Ajax#harvest', 'ajax_harvest'],
+		['GET|POST', '/ajax/creations', 'Ajax#creationsRefresh', 'ajax_creations'],
+		['GET|POST', '/ajax/creations/popup', 'Ajax#creationsPopup', 'ajax_creations_popup'],
+		['GET|POST', '/ajax/creations/addBuilding', 'Ajax#addBuilding', 'ajax_building_add'],
 	);
