@@ -44,7 +44,7 @@ class BuildingManager extends \w\Manager\Manager
     public function verifBuilding($idBuilding)
     {
         $pdo = $this->dbh;
-        $sql='SELECT building.id, building.level, price_improvement, xp_improvement, level_improvement
+        $sql='SELECT building.id, building.level, price_improvement, xp_improvement
               FROM building
               INNER JOIN type_building ON type_building.id = building.id_type
               WHERE building.id = :idBuilding';

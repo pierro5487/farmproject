@@ -45,6 +45,8 @@
             </ul>
                 <button bid="<?= $building['id']?>" class="improvement"
                     <?php
+                        // vérification du niveau de l'utilisateur
+                        //possibilité de up le bâtiment qu'une fois tous les x niveau
                         $integer = $_SESSION['user']['level']/($building['level_improvement']*$building['level']);
                         if(!is_integer($integer)){
                             echo ' disabled';
