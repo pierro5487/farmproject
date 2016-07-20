@@ -230,17 +230,22 @@ class DefaultController extends Controller
 		$mail->Port = 587;                                    	// Port TCP à utiliser
 
 		$mail->Sender='mailer@monsite.fr';
-		$mail->setFrom('mailer@monsite.fr', 'Mon programme PHP', false);
-		$mail->addAddress($email, 'Joe User');     		// Ajouter un destinataire
-		$mail->addAddress('ellen@example.com');               	// Le nom est optionnel
+		$mail->setFrom('mailer@monsite.fr', 'Lore\'N Farm', false);
+		$mail->addAddress($email);     		// Ajouter un destinataire
+//		$mail->addAddress('ellen@example.com');               	// Le nom est optionnel
 		$mail->addReplyTo('contact@monsite.fr', 'Information');
-		$mail->addCC('cc@example.com');
+//		$mail->addCC('cc@example.com');
 		$mail->addBCC('bcc@example.com');
 
 		$mail->isHTML(true);                                  	 // Set email format to HTML
 
-		$mail->Subject = 'Sujet de l\'email';
-        $message = '<a href="localhost/farmproject/public/new-password?token='.$token.'&id='.$id.'">Cliquez ici</a>';
+		$mail->Subject = 'Changement de mot de passe';
+        $message = '
+			<h4>Bien le bonjour!</h4>
+			<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p>
+			<a href="localhost/farmproject/public/new-password?token='.$token.'&id='.$id.'">Cliquez ici</a>
+			<p>Bonne continuation et amusez vous bien sur Lore\'N Farm</p>
+			<p>Vous n\'êtes pas à l\'origine de ce mail? Faites donc comme si vous ne l\'aviez jamais reçu et go à la corbeille!</p>';
 		$mail->Body    = $message;
 		$mail->AltBody = 'Le message en texte brut, pour les clients qui ont désactivé l\'affichage HTML';
 

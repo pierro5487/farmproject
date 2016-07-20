@@ -13,7 +13,7 @@ class BuildingManager extends \w\Manager\Manager
               WHERE id_user = :idUser
               ORDER BY building.id';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':idUser', $idUser);
+        $stmt->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -23,7 +23,7 @@ class BuildingManager extends \w\Manager\Manager
         $pdo = $this->dbh;
         $sql='UPDATE building SET level = level+1 WHERE building.id= :idBuilding';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':idBuilding', $idBuilding);
+        $stmt->bindParam(':idBuilding', $idBuilding, \PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -36,7 +36,7 @@ class BuildingManager extends \w\Manager\Manager
 	        WHERE building.id = :idBuilding
 	        ORDER BY building.id';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':idBuilding', $idBuilding);
+        $stmt->bindParam(':idBuilding', $idBuilding, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -49,7 +49,7 @@ class BuildingManager extends \w\Manager\Manager
               INNER JOIN type_building ON type_building.id = building.id_type
               WHERE building.id = :idBuilding';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':idBuilding', $idBuilding);
+        $stmt->bindParam(':idBuilding', $idBuilding, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();
     }
