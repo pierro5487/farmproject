@@ -18,7 +18,7 @@ class DefaultController extends Controller
 			} else {
 				// Nettoyage des caractères spéciaux, avant validation
 				$email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);
-				// Facultatif
+
 				// On teste la validité du email
 				$isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
 
@@ -296,7 +296,6 @@ class DefaultController extends Controller
 					//pas d'erreurs on enregistre le nouveau password
 					$bddManager = new \Manager\ConnectManager();
 					$data=['password'=>password_hash($pass1, PASSWORD_DEFAULT)];
-					$bddManager->setTable('users');
 					$bddManager->update($data,$id);
 					//et on supprime le token
 					$controller = new \Manager\ConnectManager();

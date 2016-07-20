@@ -56,7 +56,6 @@ class AjaxController extends Controller
         $product = $productsManager->getProduct($pdo, $idProduct);
         //je récupere les donnees utilisateur
         $connectBdd = new\Manager\ConnectManager();
-        $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         //je credit son compte
         $newMoney = $user['money'] + $product['price_sale'] * $product['quantity'];
@@ -76,7 +75,6 @@ class AjaxController extends Controller
     public function userRefresh()
     {
         $userManager = new\Manager\ConnectManager();
-        $userManager->setTable('users');
         $user = $userManager->find($_SESSION['user']['id']);
         $this->show('ajax/user_info_refresh', ['user' => $user]);
     }
@@ -140,26 +138,41 @@ class AjaxController extends Controller
     {
         //je récupere les donnees utilisateur
         $connectBdd = new\Manager\ConnectManager();
-        $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         $controller = new \Manager\ConnectManager();
         $pdo = $controller->connectPdo();
         // On créé un objet dataCreations
-        $dataCreations = new\Manager\CreationsManager();
         // On récupere la liste des creations possible de mon user
-        $creationsGroup = $dataCreations->getUserCreationsInformations($pdo);
+        $typeBuildingManager = new\Manager\BuildingTypeManager();
+        $creationsGroup = $typeBuildingManager->findAll();
+
+        $typeBuildingManager = new\Manager\dataGameManager();
+        $creationsGroup2 = $typeBuildingManager->getUserFieldsInformations($pdo,$_SESSION['user']['id']);
+        // Pour l'eventualité de la gestion du temps de construction
         /*$manager = new \Manager\BuildingTypeManager();
         $idCreation = $this->creationsPopup(1);
         $typeBuilding = $manager->find($idCreation); // 1, 2 ou 3 ..*/
-        $this->show('ajax/article_creations_refresh', ['creations' => $creationsGroup, 'user' => $user, /*'typeBuilding' => $typeBuilding*/]);
+
+        $this->show('ajax/article_creations_refresh', ['creations' => $creationsGroup, 'creations2' => $creationsGroup2, 'user' => $user, /*'typeBuilding' => $typeBuilding*/]);
     }
 
     public function creationsPopup(/*$test = null*/)
     {
         $manager = new \Manager\BuildingTypeManager();
         $typeBuilding = $manager->find($_GET['idCreation']);
+
         /*if($test == null){*/
         $this->show('ajax/article_creations_popup', ['typeBuilding' => $typeBuilding]);/*}*/
+        /*$idCreation = $_GET['idCreation'];
+        return $idCreation;*/
+    }
+
+    public function creationsPopup2(/*$test = null*/)
+    {
+        $manager = new \Manager\FieldTypeManager();
+        $typeField = $manager->find($_GET['idCreation2']);
+        /*if($test == null){*/
+        $this->show('ajax/article_creations_popup2', ['typeField' => $typeField]);/*}*/
         /*$idCreation = $_GET['idCreation'];
         return $idCreation;*/
     }
@@ -167,11 +180,7 @@ class AjaxController extends Controller
     public function addBuilding()
     {
         // On crée un object PDO
-        $connectBdd = new \Manager\ConnectManager();
-        $pdo = $connectBdd->connectPdo();
         $addBuilding = new\Manager\BuildingManager();
-        $addBuilding->setTable('building');
-        $building = $addBuilding->find($_SESSION['user']['id']);
         $typeBuildingManager = new\Manager\BuildingTypeManager();
         $typeBuilding = $typeBuildingManager->find($_GET['idCreation']);
         $addBuilding->insert([
@@ -180,10 +189,29 @@ class AjaxController extends Controller
             'id_type' => $_GET['idCreation']
         ]);
         $connectBdd = new\Manager\ConnectManager();
-        $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         // On débite son compte
         $newMoney = $user['money'] - $typeBuilding['price_construction'];
+        $_SESSION['user']['money'] = $newMoney;
+        // On insere le nouveau solde de compte
+        $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);
+
+    }
+
+    public function addField()
+    {
+        // On crée un object PDO
+        $addField = new\Manager\FieldManager();
+        $typeFieldManager = new\Manager\FieldTypeManager();
+        $typeField = $typeFieldManager->find($_GET['idCreation2']);
+        $addField->insert([
+            'id_user' => $_SESSION['user']['id'],
+            'id_variety' => $_GET['idCreation2']
+        ]);
+        $connectBdd = new\Manager\ConnectManager();
+        $user = $connectBdd->find($_SESSION['user']['id']);
+        // On débite son compte
+        $newMoney = $user['money'] - $typeField['price_purchase'];
         $_SESSION['user']['money'] = $newMoney;
         // On insere le nouveau solde de compte
         $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);

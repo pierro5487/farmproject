@@ -2,8 +2,14 @@
 
 namespace Manager;
 
-class FieldManager
+class FieldManager extends \W\Manager\Manager
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTable('field');
+    }
+
     public function getListFields($pdo, $idUser)
     {
         $sql='SELECT field.id as id, variety_cereals.name as nameCereals, variety_cereals.image_path as image

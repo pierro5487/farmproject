@@ -162,11 +162,13 @@ $(function(){
                         show: {
                             //Effet de fondu à l'ouverture
                             effect: "fade",
+                            // Durée de l'action
                             duration: 500
                         },
                         hide: {
                             // Effet de fondu à la fermeture
                             effect: "fade",
+                            // Durée de l'action
                             duration: 800
                         }
                     });
@@ -179,7 +181,8 @@ $(function(){
                             dataType : 'html',// Le type de données à recevoir, ici, du HTML.
                             data: {
                                 // On récupère l'id correspondant au click sur l'event
-                                idCreation: $(this).attr('data-creationId')
+                                idCreation: $(this).attr('data-creationId'),
+                                idCreation2: $(this).attr('data-creationId2')
                             },
                             success: function(response) {
                                 // On renvoi la réponse en html
@@ -189,22 +192,67 @@ $(function(){
 
                                 var addBuildingButton = $('.addBuilding');
                                 addBuildingButton.on('click',function(event){
-                                        $.ajax({
-                                            url : ajaxBuildingAdd, // La ressource ciblée
-                                            type : 'GET',
-                                            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
-                                            data: 'idCreation=' + typeBuildingid, // On récupère la variable php en JS
-                                            success : function(response){
-                                                $("#dialog").dialog('close');
-                                            },
-                                            error : function(resultat, statut, erreur){
-                                                sectionGame.html('<p>erreur product</p>');
-                                            }
-                                        });
-                                        tableBoard();
+                                    $.ajax({
+                                        url : ajaxBuildingAdd, // La ressource ciblée
+                                        type : 'GET',
+                                        dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                                        data: 'idCreation=' + typeBuildingid, // On récupère la variable php en JS
+                                        success : function(response){
+                                            $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                        },
+                                        error : function(resultat, statut, erreur){
+                                            // En cas d'erreur, on le note
+                                            sectionGame.html('<p>erreur building</p>');
+                                        }
+                                    });
+                                    // On affiche les PO correspondants
+                                    tableBoard();
                                 });
                             }
                         });
+                    });
+                    $('.creations2').on('click', function () {
+                        // Ajax: ouverture popup au click sur +
+                        $.ajax({
+                            url: creationsPopup2, // La ressource ciblée
+                            type: 'GET',
+                            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                            data: {
+                                // On récupère l'id correspondant au click sur l'event
+                                idCreation: $(this).attr('data-creationId'),
+                                idCreation2: $(this).attr('data-creationId2')
+                            },
+                            success: function(response) {
+                                // On renvoi la réponse en html
+                                $('#dialog').html(response);
+                                // On ouvre le popup
+                                $("#dialog").dialog('open');
+
+                                var addFieldButton = $('.addField');
+                                addFieldButton.on('click',function(event){
+                                    $.ajax({
+                                        url : ajaxFieldAdd, // La ressource ciblée
+                                        type : 'GET',
+                                        dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+                                        data: 'idCreation2=' + typeFieldid, // On récupère la variable php en JS
+                                        success : function(response){
+                                            $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                        },
+                                        error : function(resultat, statut, erreur){
+                                            // En cas d'erreur, on le note
+                                            sectionGame.html('<p>erreur Field</p>');
+                                        }
+                                    });
+                                    // On affiche les PO correspondants
+                                    tableBoard();
+                                });
+                            },
+                            error : function(resultat, statut, erreur){
+                                // En cas d'erreur, on le note
+                                sectionGame.html('<p>erreur Field</p>');
+                            }
+                        });
+                        // On affiche les PO correspondants
                         tableBoard();
                     });
 

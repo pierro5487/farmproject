@@ -6,8 +6,7 @@ use \W\Controller\Controller;
 
 class CreationsController extends Controller
 {
-
-
+    // Affichage des creations
     public function displayCreations()
     {
         $this->allowTo('user');
@@ -16,12 +15,7 @@ class CreationsController extends Controller
         $pdo = $controller->connectPdo();
         // On créé un objet dataCreations
         $dataCreations= new\Manager\CreationsManager();
-        // On récupere la liste des creations possible de mon user
-        /*$id=$_GET['idCreation'];*/
-
-        /*$user = $connectBdd->find($_SESSION['user']['id']);*/
-
         // Affichage avec envoi du tableau
-        $this->show('Game/creations'/*,['creations'=>$creations,'id'=>$id]*/);
+        $this->show('Game/creations');
     }
 }

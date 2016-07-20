@@ -21,6 +21,8 @@
 		var creationsRefresh= '<?= $this->url('ajax_creations') ?>';
 		var creationsPopup= '<?= $this->url('ajax_creations_popup') ?>';
 		var ajaxBuildingAdd= '<?= $this->url('ajax_building_add') ?>';
+		var ajaxFieldAdd= '<?= $this->url('ajax_field_add') ?>';
+		var creationsPopup2= '<?= $this->url('ajax_creations_popup2') ?>';
 
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
