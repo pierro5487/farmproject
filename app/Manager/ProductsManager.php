@@ -4,6 +4,11 @@ namespace Manager;
 
 class ProductsManager extends \W\Manager\Manager
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTable('stocks');
+    }
 
     public function getUserProductsInformations($pdo, $idUser)
     {
