@@ -45,6 +45,7 @@
 			<div>Level <?= $_SESSION['user']['level'] ?></div>
 			<!-- affichage des po -->
 			<div id="money"><?= $_SESSION['user']['money'] ?> PO</div>
+			<div id="xp"><?= $info['current_xp']?>/<?= $info['max_experience']?></div>
 			<!-- bouton déconnexion-->
 			<a href="<?= $this->url('game_log_out')?>">Déconnexion</a>
 		</div>

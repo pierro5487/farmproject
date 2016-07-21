@@ -19,7 +19,7 @@ $(function(){
     deleteProduct();
     refreshProducts();
     refreshCreations();
-    var interval=setInterval(refreshProducts,1000);
+    setInterval(refreshProducts,1000);
     setInterval(refreshChat(),1000);
 
 

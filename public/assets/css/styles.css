@@ -26,10 +26,13 @@ a {
   border-radius: 5%;
   padding: 30px 50px 30px;
   box-sizing: border-box; }
-  .box ul h2 {
-    color: darkgreen; }
-  .box ul li {
-    font-style: italic; }
+  .box ul {
+    margin-left: 10px; }
+    .box ul h2 {
+      color: darkgreen; }
+    .box ul li {
+      font-style: italic;
+      margin-left: 30px; }
 
 .left {
   width: 50%;
@@ -54,8 +57,7 @@ a {
 /*................................................................................. */
 /*.......................................HEADER.................................. */
 header {
-  background: url("../img/champs.png") no-repeat top -450px right fixed;
-  background-size: cover; }
+  background: url("../img/champs.png") no-repeat bottom; }
   header img {
     display: block;
     float: left; }
@@ -63,7 +65,7 @@ header {
     float: right;
     padding: 1em 0 1em 0;
     color: #fff;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 5%;
     width: 20%; }
     header #infoUser div {
@@ -72,6 +74,15 @@ header {
       padding: 5px; }
       header #infoUser div:first-child::before {
         background: url("../img/avatar.png") no-repeat center;
+        background-size: cover;
+        content: "";
+        width: 1.8em;
+        height: 1.3em;
+        display: block;
+        float: left;
+        margin-right: 1em; }
+      header #infoUser div:nth-child(2)::before {
+        background: url("../img/xp.png") no-repeat center;
         background-size: cover;
         content: "";
         width: 1.8em;
@@ -99,7 +110,6 @@ header {
     top: 3em;
     width: 100%; }
     header nav ul {
-      float: right;
       width: 90%;
       margin: auto; }
       header nav ul li {
@@ -143,8 +153,8 @@ header {
 main {
   padding: 4em 0; }
   main #navLeft {
+    margin-top: 25px;
     width: 25%;
-    margin: auto;
     display: block;
     float: left;
     box-sizing: border-box; }
@@ -154,27 +164,31 @@ main {
       border-radius: 5px;
       margin: 0 auto 0.5em;
       box-sizing: border-box; }
+      main #navLeft article ul {
+        padding-bottom: 5%; }
       main #navLeft article h5 {
         color: white;
-        padding: 20px 20px;
+        padding: 5px;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 18px;
-        width: 80px;
-        margin: 0 auto; }
+        margin: 0 auto;
+        width: 120px;
+        text-align: center; }
       main #navLeft article h4 {
         color: white;
-        margin-left: 10%; }
+        margin-left: 15%;
+        font-size: 1.1em; }
       main #navLeft article li {
         color: grey;
-        margin-left: 30px;
+        margin-left: 48px;
         text-decoration: none;
         font-size: 17px;
         color: black;
-        padding: 5% 21%;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 1.2em; }
+        font-size: 0.9em;
+        padding: 1.5% 0% 1.5% 0%; }
       main #navLeft article a {
         display: block;
         padding: 1em;
@@ -184,16 +198,23 @@ main {
         color: white;
         font-size: 1em;
         font-weight: bold;
-        margin-left: 40px; }
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 5%;
+        text-transform: uppercase;
+        text-align: center; }
+        main #navLeft article a:hover {
+          background: rgba(0, 0, 0, 0.6); }
+        main #navLeft article a:active {
+          background: rgba(127, 127, 127, 0.3); }
         main #navLeft article a h6 {
           font-style: italic; }
     main #navLeft #products {
       position: relative;
       color: white;
-      padding: 12% 0% 0%;
-      color: black; }
+      padding: 12% 0% 0%; }
       main #navLeft #products button {
-        padding: 5%; }
+        padding: 5%;
+        color: black; }
       main #navLeft #products #listProducts li {
         margin: auto;
         width: 60%;
@@ -206,16 +227,14 @@ main {
         border-radius: 5px;
         cursor: pointer;
         text-transform: uppercase;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.5);
         border: 0;
         width: 200px;
         margin-left: 20px; }
         main #navLeft #products button:hover {
-          background: rgba(255, 255, 255, 0.8); }
+          background: rgba(0, 0, 0, 0.6); }
         main #navLeft #products button:active {
           background: rgba(127, 127, 127, 0.2); }
-    main #navLeft #listProducts {
-      margin-left: 30px; }
     main #navLeft #creations {
       position: relative;
       color: white;
@@ -226,51 +245,75 @@ main {
       main #navLeft #creations .green {
         color: green;
         display: inline-block; }
+      main #navLeft #creations::before {
+        content: "";
+        display: block;
+        clear: both; }
       main #navLeft #creations button {
-        margin-left: 10px;
+        float: right;
+        margin: 0px 40px 0px 10px;
         padding: 1% 3% 1% 3%;
         cursor: pointer;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.2);
         border: 0; }
         main #navLeft #creations button:hover {
-          background: rgba(255, 255, 255, 0.8); }
+          background: rgba(255, 255, 255, 0.6); }
         main #navLeft #creations button:active {
-          background: rgba(127, 127, 127, 0.2); }
-    main #navLeft #listCreations {
-      margin-left: 30px; }
+          background: rgba(127, 127, 127, 0.3); }
     main #navLeft #chat {
-      width: 90%;
+      width: 70%;
       margin: auto; }
       main #navLeft #chat #chatDisplay {
         background-color: white;
-        border: 1px solid black; }
+        border: 1px solid lightgrey;
+        min-height: 80px;
+        background: rgba(0, 0, 0, 0.45);
+        color: lightgreen;
+        padding: 5%; }
       main #navLeft #chat #chatboard textarea {
-        width: 164px;
-        max-width: 164px;
-        height: 78px;
-        max-height: 78px;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 10%;
-        color: white; }
+        padding: 5%;
+        width: 89%;
+        max-width: 89%;
+        height: 40px;
+        max-height: 40px;
+        background: rgba(0, 0, 0, 0.45);
+        color: lightgreen; }
       main #navLeft #chat button {
+        font-weight: bold;
+        color: white;
         padding: 5%;
         border-radius: 5px;
         cursor: pointer;
         text-transform: uppercase;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.6);
         border: 0;
-        width: 200px;
-        margin-left: 20px; }
+        width: 99%;
+        margin-bottom: 5%; }
         main #navLeft #chat button:hover {
-          background: rgba(255, 255, 255, 0.8); }
+          background: rgba(0, 0, 0, 0.5); }
         main #navLeft #chat button:active {
-          background: rgba(127, 127, 127, 0.2); }
+          background: rgba(127, 127, 127, 0.3); }
   main #buttonNavLeft {
     display: none; }
   main #content {
     width: 70%;
     float: right;
     box-sizing: border-box; }
+
+#farmcontenant {
+  background: url("../img/farmcontent.png") no-repeat;
+  background-size: 650px 700px;
+  border-radius: 5%;
+  padding: 30px;
+  margin-top: 50px;
+  height: 700px;
+  width: 650px; }
+  #farmcontenant #farmcontenu {
+    padding: 63px 63px 63px 93px; }
+  #farmcontenant progress {
+    display: block;
+    width: 30%;
+    height: 20px; }
 
 /*.......................................FOOTER.................................. */
 footer {
@@ -382,15 +425,20 @@ footer {
   header nav ul {
     margin-right: 1em; }
     header nav ul li a {
-      padding: 2em;
-      top: 2em; }
+      padding: 2em; }
 
   main #navLeft article {
     margin-left: 0.5em; }
     main #navLeft article h5 {
-      padding: 5% 12%; }
+      padding: 1% 5% 5% 1%; }
       main #navLeft article h5 a {
         padding: 5%; }
+  main #navLeft #creations #listCreations h4 {
+    margin-left: 12%; }
+  main #navLeft #creations button {
+    margin: 0px 5px 0px 0px; }
+  main #navLeft #creations li {
+    margin: 0px 0px 0px 32px; }
   main #navLeft #products #listProducts li {
     font-size: 0.8em; }
   main #navLeft #products button {
@@ -426,13 +474,14 @@ footer {
       width: 100%;
       height: 100%;
       float: left;
-      padding: 50% 20%; }
+      padding: 27% 6%; }
 
   .listingBuilding .informationBuilding {
     float: left;
-    padding: 12%;
     width: 60%;
-    box-sizing: border-box; } }
+    box-sizing: border-box; }
+    .listingBuilding .informationBuilding ul, .listingBuilding .informationBuilding button {
+      margin-left: 0%; } }
 /*................................................................................................. */
 /* ...................................PETIT ECRAN.................................................. */
 @media screen and (max-width: 768px) {
@@ -467,15 +516,16 @@ footer {
   /*.....................MAIN.............................. */
   main #navLeft {
     width: 50%;
-    display: none; }
+    display: none;
+    min-width: 255px; }
     main #navLeft.showOnPhone {
       display: block; }
     main #navLeft article {
       width: 100%; }
       main #navLeft article h5 {
-        padding: 20px 0 20px 5px;
         font-size: 1.5em;
-        text-align: center; }
+        text-align: center;
+        padding: 1px 65px 10px 1px; }
       main #navLeft article a {
         padding: 2%;
         text-align: center;
@@ -494,7 +544,8 @@ footer {
     margin: 5px; }
   main #navLeft.showOnPhone + a#buttonNavLeft {
     background-image: url("../img/fleche1.jpg");
-    margin: 0 50%; }
+    margin: 0 50%;
+    position: absolute; }
   main #content {
     width: 100%;
     font-size: 0.9em; }
@@ -554,7 +605,15 @@ footer {
     box-sizing: border-box;
     width: 100%;
     display: block;
-    padding: 2% 22%; } }
+    padding: 2% 22%; }
+
+  button {
+    margin: 0 auto;
+    display: block; }
+
+  .right {
+    width: 1%;
+    margin-left: 80px; } }
 /*--------------bar de progression ----- */
 progress {
   display: block;
