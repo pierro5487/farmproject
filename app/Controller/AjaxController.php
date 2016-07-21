@@ -25,7 +25,6 @@ class AjaxController extends Controller
         $animal = $animalsManager->getAnimal($pdo, $idAnimal);
         //je récupere les donnees utilisateur
         $connectBdd = new \Manager\ConnectManager();
-        $connectBdd->setTable('users');
         $user = $connectBdd->find($_SESSION['user']['id']);
         //je credit son compte
         $newMoney = $user['money'] + $animal['price_sale'];
@@ -64,8 +63,7 @@ class AjaxController extends Controller
         $data = ['money' => $newMoney];
         $connectBdd->update($data, $_SESSION['user']['id']);
         //je supprime la production
-        $connectBdd->setTable('stocks');
-        $connectBdd->delete($idProduct);
+        $productsManager->delete($idProduct);
         //je récupere la liste des animaux apartenant à mon user
         $dataProducts = new\Manager\ProductsManager();
         $products = $dataProducts->getUserProductsInformations($pdo, $_SESSION['user']['id']);
@@ -90,7 +88,6 @@ class AjaxController extends Controller
     {
         $chatManager = new \Manager\ChatManager();
         $connectManager = new \Manager\ConnectManager();
-        $connectManager->setTable('users');
         //je prend les 5 derniers message
         $posts=$chatManager->getPost();
         $posts=array_reverse($posts);
@@ -173,6 +170,8 @@ class AjaxController extends Controller
         $_SESSION['user']['money'] = $newMoney;
         // On insere le nouveau solde de compte
         $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);
+        $userManager= new \Manager\UsersManager();
+        $userManager->updateExperience($_SESSION['user']['id'], $typeBuilding['xp_construction']);
 
     }
 
