@@ -4,6 +4,7 @@
     <list default="true" id="9fc77e12-2494-49a7-adde-c3e55996c4fd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/Game/animals.php" afterPath="$PROJECT_DIR$/app/templates/Game/animals.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/layout.php" afterPath="$PROJECT_DIR$/app/templates/layout.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/script.js" afterPath="$PROJECT_DIR$/public/assets/js/script.js" />
@@ -13,6 +14,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/ProductsManager.php" afterPath="$PROJECT_DIR$/app/Manager/ProductsManager.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/Game/building.php" afterPath="$PROJECT_DIR$/app/templates/Game/building.php" />
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> origin/master
     </list>
     <ignored path="farmproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,9 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state relative-caret-position="648">
               <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="190" selection-end-column="8" />
@@ -89,6 +93,9 @@
               <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
 =======
             <state relative-caret-position="512">
+=======
+            <state relative-caret-position="2603">
+>>>>>>> origin/master
               <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
 >>>>>>> refs/remotes/origin/master
               <folding />
@@ -97,9 +104,22 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="field.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/Game/field.php">
 =======
+=======
+      <file leaf-file-name="layout.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> origin/master
       <file leaf-file-name="UsersManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Manager/UsersManager.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -257,7 +277,11 @@
         <option value="$PROJECT_DIR$/app/Controller/BuildingController.php" />
         <option value="$PROJECT_DIR$/app/templates/Game/building.php" />
         <option value="$PROJECT_DIR$/app/Controller/AjaxController.php" />
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+        <option value="$PROJECT_DIR$/app/templates/layout.php" />
+>>>>>>> origin/master
       </list>
     </option>
   </component>
@@ -411,6 +435,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="farmproject" />
@@ -494,6 +519,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> origin/master
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -561,10 +588,14 @@
       <workItem from="1468912139257" duration="22535000" />
       <workItem from="1468998308822" duration="20992000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1469085476241" duration="1973000" />
 =======
       <workItem from="1469085366688" duration="1572000" />
 >>>>>>> refs/remotes/origin/master
+=======
+      <workItem from="1469085366688" duration="2455000" />
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="réalisation des fonctionnalité de recupération de mot de passe&#10;new-password.php&#10;recovery-password">
       <created>1468316164719</created>
@@ -578,6 +609,7 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="153133000" />
   </component>
   <component name="ToolWindowManager">
@@ -587,9 +619,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14552239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
     <option name="totallyTimeSpent" value="152732000" />
+=======
+    <option name="totallyTimeSpent" value="153615000" />
+>>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25267094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -870,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-415">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -993,6 +1021,7 @@
     <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="648">
           <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="190" selection-end-column="8" />
           <folding />
@@ -1037,8 +1066,19 @@
           <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
 =======
         <state relative-caret-position="512">
+=======
+        <state relative-caret-position="2603">
+>>>>>>> origin/master
           <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
 >>>>>>> refs/remotes/origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
           <folding />
         </state>
       </provider>
