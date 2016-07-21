@@ -3,7 +3,7 @@
 
 <?php $this->start('main_content'); ?>
 
-<!--    select pour afficher le bâtiment qu'on veut voir-->
+<!--    select pour afficher le animaux qu'on veut voir-->
 Animaux:
 <select name="animal" id="animal">
     <option value="*">Tous</option>
@@ -12,7 +12,7 @@ Animaux:
     $inOptGroup = false;
     foreach($animals as $animal) {
         if($animal['name_species'] !== $oldSpecies) {
-            // Nouveau building
+            // Nouvel animal
             if($inOptGroup)
                 echo '</optgroup>';
             echo '<optgroup label="' . $animal['name_species'] . '">';

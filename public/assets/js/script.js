@@ -40,7 +40,7 @@ $(document).ready( function() {
     //.................................................................................
     //fonction pour afficher qu'un seul animal
     $('#animal').change(function(){
-        //$(this) fait référence à $('#field')
+        //$(this) fait référence à $('#animal')
         if($(this).val() == "*"){
             //si on sélectionne le tous, on affiche tous les animaux
             $('.listing').show();
