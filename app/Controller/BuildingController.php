@@ -46,7 +46,6 @@ class BuildingController extends Controller
         if(count($errors) ==0) {
             //j'upgrade le batiment sélectionné
             $buildingManager = new\Manager\BuildingManager();
-            $buildingManager->setTable('building');
             $building = $buildingManager->verifBuilding($_POST['id']);
             $buildingManager->update(['level' => $building['level'] + 1], $_POST['id']);
 
@@ -56,6 +55,8 @@ class BuildingController extends Controller
 
             $_SESSION['user']['money'] -= $building['price_improvement'];
             $donnees['user']['money'] = $_SESSION['user']['money'];
+            $userManager= new \Manager\UsersManager();
+            $userManager->updateExperience($_SESSION['user']['id'], $building['xp_improvement']);
             echo(json_encode($donnees));
         } else {
             echo json_encode(['error' => true]);

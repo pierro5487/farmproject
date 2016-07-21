@@ -1,5 +1,5 @@
 /vendor/
 /app/config.php
 /phpDocumentor.phar
-/.idea
+/.idea/workspace.xml
 /composer.lock
