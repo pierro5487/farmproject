@@ -22,7 +22,6 @@ $(document).ready( function() {
          }
      });
 
-
     //.................................................................................
     //fonction pour afficher qu'un seul champ
     $('#field').change(function(){
@@ -35,6 +34,21 @@ $(document).ready( function() {
             $('.listingField').hide();
             //on affiche le champ selon la valeur de l'id qu'on sélectionne
             $('#f_'+ $('#field').val()).show();
+        }
+    });
+
+    //.................................................................................
+    //fonction pour afficher qu'un seul animal
+    $('#animal').change(function(){
+        //$(this) fait référence à $('#animal')
+        if($(this).val() == "*"){
+            //si on sélectionne le tous, on affiche tous les animaux
+            $('.listing').show();
+        }else{
+            //on cache tous les animaux
+            $('.listing').hide();
+            //on affiche l'animal selon la valeur de l'id qu'on sélectionne
+            $('#a_'+ $('#animal').val()).show();
         }
     });
 

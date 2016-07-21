@@ -33,7 +33,6 @@
 <header>
 	<div class="container">
 		<div>
-			<h1><?= $this->e($title) ?></h1>
 			<!-- insertion logo -->
 			<img src="" alt="logo">
 		</div>
