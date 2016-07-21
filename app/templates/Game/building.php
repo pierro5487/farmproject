@@ -2,29 +2,29 @@
 
 <?php $this->start('main_content'); ?>
 
-    <!--    select pour afficher le bâtiment qu'on veut voir-->
-    Bâtiments:
-    <select name="building" id="building">
-        <option value="*">Tous</option>
-        <?php
-        $cpt = 1;
-        $oldBuilding = '';
-        $inOptGroup = false;
-        foreach($buildings as $building) {
-            if($building['name'] !== $oldBuilding) {
-                // Nouveau building
-                if($inOptGroup)
-                    echo '</optgroup>';
-                echo '<optgroup label="' . $building['name'] . '">';
-                $inOptGroup = true;
-            }
-            echo '<option value="'.$building['id'].'">'."n°" . $cpt.'</option>';
-            $cpt++;
-            $oldBuilding = $building['name'];
+<!--    select pour afficher le bâtiment qu'on veut voir-->
+Bâtiments:
+<select name="building" id="building">
+    <option value="*">Tous</option>
+    <?php
+    $cpt = 1;
+    $oldBuilding = '';
+    $inOptGroup = false;
+    foreach($buildings as $building) {
+        if($building['name'] !== $oldBuilding) {
+            // Nouveau building
+            if($inOptGroup)
+                echo '</optgroup>';
+            echo '<optgroup label="' . $building['name'] . '">';
+            $inOptGroup = true;
         }
-        echo '</optgroup>';
-        ?>
-    </select>
+        echo '<option value="'.$building['id'].'">'."n°" . $cpt.'</option>';
+        $cpt++;
+        $oldBuilding = $building['name'];
+    }
+    echo '</optgroup>';
+    ?>
+</select>
 
     <!-- Si pas assez de PO on crée une div-->
 <div id="errorMoney">Vous n'avez pas assez d'argent</div>
