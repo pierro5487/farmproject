@@ -2,7 +2,6 @@ $(document).ready( function() {
     //fonction d'affichage ou non de la navigation gauche
     var navigation= $('#navLeft');
     var button = $('#buttonNavLeft');
-
     button.on('click', function(event){
         navigation.toggleClass('showOnPhone');
     });
@@ -51,8 +50,6 @@ $(document).ready( function() {
             $('#a_'+ $('#animal').val()).show();
         }
     });
-
-
     // myTable = new Array(['building'], ['field']);
     //
     // for(i=0;i<myTable.length;i++){
@@ -69,6 +66,5 @@ $(document).ready( function() {
     //         }
     //     });
     // }
-
 });
 

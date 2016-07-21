@@ -1,4 +1,26 @@
+<!--    select pour afficher le animaux qu'on veut voir-->
+Animaux:
+<select name="animal" id="animal">
+    <option value="*">Tous</option>
+    <?php
+    $oldSpecies = '';
+    $inOptGroup = false;
+    foreach($animals as $animal) {
+        if($animal['name_species'] !== $oldSpecies) {
+            // Nouvel animal
+            if($inOptGroup)
+                echo '</optgroup>';
+            echo '<optgroup label="' . $animal['name_species'] . '">';
+            $inOptGroup = true;
+        }
+        echo '<option value="'.$animal['idAnimal'].'">'.$animal['nameAnimal'].'</option>';
+        $oldSpecies = $animal['name_species'];
+    }
+    echo '</optgroup>';
+    ?>
+</select>
 <?php
+
 foreach ($animals as $animal){
     ?>
     <article class="listing">

@@ -17,7 +17,7 @@ class BuildingManager extends \W\Manager\Manager
               FROM type_building 
               INNER JOIN building ON type_building.id = building.id_type
               WHERE id_user = :idUser
-              ORDER BY building.id';
+              ORDER BY type_building.name';
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
         $stmt->execute();

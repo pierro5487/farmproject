@@ -18,8 +18,7 @@ Animaux:
             echo '<optgroup label="' . $animal['name_species'] . '">';
             $inOptGroup = true;
         }
-        echo '<option value="'.$animal['id'].'">'.$animal['nameAnimal'].'</option>';
-        $cpt++;
+        echo '<option value="'.$animal['idAnimal'].'">'.$animal['nameAnimal'].'</option>';
         $oldSpecies = $animal['name_species'];
     }
     echo '</optgroup>';
@@ -29,7 +28,7 @@ Animaux:
 <?php
     foreach ($animals as $animal){
             ?>
-            <article id="a_<?= $animal['id']?>" class="listing">
+            <article id="a_<?= $animal['idAnimal']?>" class="listing">
                 <div class="avatar"><img src="<?= $this->assetUrl($animal['image_path'])?>"/></div>
                 <div class="information">
                     <ul>

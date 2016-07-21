@@ -14,6 +14,7 @@ $(function(){
     var sendMessage=$('#sendMessage');
     var articleCreations = $('#listCreations');
     var creations= $('#creations');
+    var listingField=$('.listingField');
     /*---------script------------*/
     deleteAnimal();
     deleteProduct();
@@ -21,6 +22,14 @@ $(function(){
     refreshCreations();
     var interval=setInterval(refreshProducts,1000);
     setInterval(refreshChat(),1000);
+    //on récupere l'url
+    var url =$(location).attr('href');
+    var testUrl = url.indexOf("field");
+    //si on se trouve sur la page field alors on lance un raffraichissement
+    if(testUrl!=(-1)){
+        harvestFieldsEvent();
+        setInterval(fieldRefresh,1000);
+    }
 
 
     /********************************************************************************/
@@ -337,4 +346,46 @@ $(function(){
             // On affiche les PO correspondants
             tableBoard();
     }
+    /*---------------raffraichissement de la liste des champs------*/
+    function fieldRefresh(){
+        $.ajax({
+            url : refreshFields, // La ressource ciblée
+            type : 'GET',
+            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+            success : function(code_html, statut){
+             $('#fieldsList').html(code_html);
+                harvestFieldsEvent();
+            },
+
+            error : function(resultat, statut, erreur){
+                sectionGame.html('<p>erreur table</p>');
+            }
+        });
+    }
+    /*--------------fonction récolter les cereals-------*/
+    function harvestFieldsEvent(){
+        $('.harvest').off();
+        $('.harvest').on('click',function(){
+            $.ajax({
+                url: fieldHarvestRoute,
+                type: 'GET',
+                //va prendre dans tout les cas le this actuel comme this .improvement dans cette requête ajax
+                context: this,
+                data: {
+                    //on cherche à avoir l'id d'un bâtiment précis au travers du bouton
+                    id: $(this).parent().parent().attr('id')
+                },
+                success: function(message){
+                    $('#fieldsList').html(message);
+                },
+                error: function(response) {
+                    console.log(response.responseText);
+                }
+            });
+            tableBoard();
+
+        });
+    }
+
+
 });
