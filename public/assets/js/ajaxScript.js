@@ -30,7 +30,10 @@ $(function(){
         harvestFieldsEvent();
         setInterval(fieldRefresh,1000);
     }
-
+    var testUrl = url.indexOf("market");
+    if(testUrl!=(-1)){
+       /* setInterval(market,1000);*/
+    }
 
     /********************************************************************************/
     /*---------------------------functions------------------------------------------*/
@@ -376,7 +379,7 @@ $(function(){
     /*-------------evenement rafraichissement des donnees du marché---*/
     function refreshMarket() {
         $.ajax({
-            url : Market, // La ressource ciblée
+            url : market, // La ressource ciblée
             type : 'GET',
             dataType : 'html',// Le type de données à recevoir, ici, du HTML.
             success : function(code_html, statut){

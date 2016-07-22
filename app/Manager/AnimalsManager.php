@@ -2,7 +2,7 @@
 
 namespace Manager;
 
-class AnimalsManager extends \w\Manager\Manager
+class AnimalsManager extends \W\Manager\Manager
 {
     public function getListAnimals($pdo, $id)
     {

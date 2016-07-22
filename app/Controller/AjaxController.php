@@ -237,15 +237,24 @@ class AjaxController extends Controller
 
     // Garder une logique id species 1.2.3.4.5.6 ...
     public function market()
-    {
-        $controller = new \Manager\AnimalsManager();
+    {   
+        $controller = new\Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        $animalsManager = new \Manager\AnimalsManager();
 
-        $speciesController = $controller->getNbSpecies();
-        $idNbSpecies = rand(1, $speciesController);
+        $speciesController = $animalsManager->getNbSpecies($pdo);
 
         $animal = new \Classes\Animals($idNbSpecies);
 
         $nbAnimals = rand(2, 10);
-        $this->show('ajax/market', ['idNbSpecies' => $idNbSpecies]);
+        
+        for ($i=1;$i< $nbAnimals; $i++){
+            $idNbSpecies = rand(1, $speciesController);
+            $animals[] = new \Classes\Animals($idNbSpecies);
+            //print_r($animals);
+        }
+ 
+        echo json_encode($animals);
+        //$this->show('ajax/market', ['animals' => $animals]);
     }
 }
