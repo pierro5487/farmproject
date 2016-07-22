@@ -231,7 +231,19 @@ class AjaxController extends Controller
         $userManager->updateExperience($_SESSION['user']['id'],$field['xp_harvest']);
         //on supprime le champs
         $fieldManager->delete($idField);
-        /*$this->refreshFields();*/
         echo $idField;
+
+    // Garder une logique id species 1.2.3.4.5.6 ...
+    public function market()
+    {
+        $controller = new \Manager\AnimalsManager();
+
+        $speciesController = $controller->getNbSpecies();
+        $idNbSpecies = rand(1, $speciesController);
+
+        $animal = new \Classes\Animals($idNbSpecies);
+
+        $nbAnimals = rand(2,10);
+        $this->show('ajax/market', ['idNbSpecies' => $idNbSpecies]);
     }
 }

@@ -20,7 +20,7 @@ $(function(){
     deleteProduct();
     refreshProducts();
     refreshCreations();
-    var interval=setInterval(refreshProducts,1000);
+    setInterval(refreshProducts,1000);
     setInterval(refreshChat(),1000);
     //on récupere l'url
     var url =$(location).attr('href');
@@ -363,6 +363,15 @@ $(function(){
                     }
                 }
                 harvestFieldsEvent();
+
+    /*-------------evenement rafraichissement des donnees du marché---*/
+    function refreshMarket() {
+        $.ajax({
+            url : Market, // La ressource ciblée
+            type : 'GET',
+            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+            success : function(code_html, statut){
+                articleProduct.html(code_html);
             },
 
             error : function(resultat, statut, erreur){
@@ -397,6 +406,4 @@ $(function(){
 
         });
     }
-
-
 });

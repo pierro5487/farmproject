@@ -27,4 +27,5 @@
 		['GET|POST', '/ajax/creations/popup2', 'Ajax#creationsPopup2', 'ajax_creations_popup2'],
 		['GET', '/refreshFields', 'AjaxController#refreshFields', 'refreshFields'],
 		['GET|POST', '/fieldHarvest', 'AjaxController#fieldHarvest', 'fieldHarvestRoute'],
+		['GET', '/ajax/market', 'Ajax#market', 'ajax_market'],
 	);

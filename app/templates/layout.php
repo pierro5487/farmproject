@@ -36,7 +36,7 @@
 	<div class="container">
 		<div>
 			<!-- insertion logo -->
-			<img src="" alt="logo">
+			<img src="<?= $this->assetUrl('img/logo.png') ?>" height="100px width= "100px" alt="logo">
 		</div>
 
 		<div id="infoUser">
@@ -46,6 +46,7 @@
 			<div>Level <?= $_SESSION['user']['level'] ?></div>
 			<!-- affichage des po -->
 			<div id="money"><?= $_SESSION['user']['money'] ?> PO</div>
+			<div id="xp"><?= $info['current_xp']?>/<?= $info['max_experience']?></div>
 			<!-- bouton déconnexion-->
 			<a href="<?= $this->url('game_log_out')?>">Déconnexion</a>
 		</div>
@@ -79,7 +80,7 @@
 				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
 			<!-- Section marché -->
-			<article id="marcket">
+			<article id="market">
 				<h5>Marché</h5>
 			</article>
 

@@ -18,6 +18,7 @@ class AnimalsController extends Controller
 		$dataAnimals= new\Manager\AnimalsManager();
 		//je récupere la liste des animaux apartenant à mon user
 		$animals= $dataAnimals->getListAnimals($pdo,$_SESSION['user']['id']);
+		
 		$this->show('Game/animals',['animals'=>$animals]);
 	}
 }
