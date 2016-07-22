@@ -80,8 +80,19 @@ class AjaxController extends Controller
     public function productsRefresh()
     {
         $productionController = new \Controller\ProductionController();
+        //on recupères les produits animaliers
         $productsGroup = $productionController->calculHarvest();
-        $this->show('ajax/article_products_refresh',['products'=> $productsGroup]);    
+        //on récupères la liste des champs semés
+        $fieldsController= new \Controller\FieldController();
+        $fields=$fieldsController->getFields();
+        //on vérifie si des champs sont pret à récolter
+        $nbrFieldReady=0;
+        foreach ($fields as $field){
+            if($field['fieldValue']>=100){
+                $nbrFieldReady++;
+            }
+        }
+        $this->show('ajax/article_products_refresh',['products'=> $productsGroup,'fieldsReady'=>$nbrFieldReady]);
     }
 
     public function chatRefresh()
@@ -193,5 +204,34 @@ class AjaxController extends Controller
         // On insere le nouveau solde de compte
         $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);
 
+    }
+
+    public function refreshFields()
+    {
+        $fieldController = new \Controller\FieldController();
+        $fields=$fieldController->getFields();
+        echo json_encode($fields);
+    }
+
+    public function fieldHarvest()
+    {
+        //je créé un objet pdo
+        $controller = new \Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        //je recupere l'id du champs moissonné
+        $idField=substr($_GET['id'],2);
+        //je récupere le champs moissonné
+        $fieldManager= new \Manager\FieldManager();
+        $field=$fieldManager->getField($pdo,$idField);
+        //on insere la moisson dans le stock
+        $productionController= new \Controller\ProductionController();
+        $productionController->cerealHarvest($field);
+        //on augmente l 'experience
+        $userManager= new \Manager\UsersManager();
+        $userManager->updateExperience($_SESSION['user']['id'],$field['xp_harvest']);
+        //on supprime le champs
+        $fieldManager->delete($idField);
+        /*$this->refreshFields();*/
+        echo $idField;
     }
 }

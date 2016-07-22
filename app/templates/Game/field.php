@@ -14,6 +14,7 @@
     </select>
 
     <!-- Affichage du détail -->
+<div id="fieldsList">
     <?php foreach ($fields as $field2) : ?>
         <article id="f_<?= $field2['id']?>" class="listingField">
             <div class="avatarField"><img src="<?= $this->assetUrl($field2['image'])?>"/></div>
@@ -21,9 +22,10 @@
                 <ul>
                     <li>Plantation: <?= $field2['nameCereals']?></li>
                 </ul>
-                <button class="harvest">Récolter</button>
+                <progress value="<?= $field2['fieldValue'] ?>" max="100">loading</progress>
+                <button class="harvest"<?php if($field2['fieldValue']<100){ echo 'disabled';} ?>>Récolter</button>
              </div>
         </article>
     <?php endforeach ?>
-
+</div>
 <?php $this->stop('main_content'); ?>

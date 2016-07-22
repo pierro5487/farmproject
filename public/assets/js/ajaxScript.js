@@ -14,6 +14,7 @@ $(function(){
     var sendMessage=$('#sendMessage');
     var articleCreations = $('#listCreations');
     var creations= $('#creations');
+    var listingField=$('.listingField');
     /*---------script------------*/
     deleteAnimal();
     deleteProduct();
@@ -21,6 +22,14 @@ $(function(){
     refreshCreations();
     var interval=setInterval(refreshProducts,1000);
     setInterval(refreshChat(),1000);
+    //on récupere l'url
+    var url =$(location).attr('href');
+    var testUrl = url.indexOf("field");
+    //si on se trouve sur la page field alors on lance un raffraichissement
+    if(testUrl!=(-1)){
+        harvestFieldsEvent();
+        setInterval(fieldRefresh,1000);
+    }
 
 
     /********************************************************************************/
@@ -310,6 +319,7 @@ $(function(){
                                         success : function(response){
                                             refreshCreations();
                                             $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                            document.location.href="http://localhost/farmproject/public/field";
                                         },
                                         error : function(resultat, statut, erreur){
                                             // En cas d'erreur, on le note
@@ -337,4 +347,56 @@ $(function(){
             // On affiche les PO correspondants
             tableBoard();
     }
+    /*---------------raffraichissement de la liste des champs------*/
+    function fieldRefresh(){
+        $.ajax({
+            url : refreshFields, // La ressource ciblée
+            type : 'GET',
+            dataType : 'json',// Le type de données à recevoir, ici, du HTML.
+            success : function(fields, statut){
+                for(i=0;i<fields.length;i++){
+                    //je charge la nouvelle valeur du progress
+                    $('#f_'+fields[i].id).find('progress').attr('value',fields[i].fieldValue);
+                    //je teste si le champs peut etre récolté
+                    if(fields[i].fieldValue>=100){
+                        $('#f_'+fields[i].id).find('button').prop("disabled", false);;
+                    }
+                }
+                harvestFieldsEvent();
+            },
+
+            error : function(resultat, statut, erreur){
+                sectionGame.html('<p>erreur table</p>');
+            }
+        });
+    }
+    /*--------------fonction récolter les cereals-------*/
+    function harvestFieldsEvent(){
+        $('.harvest').off();
+        $('.harvest').on('click',function(){
+            $.ajax({
+                url: fieldHarvestRoute,
+                type: 'GET',
+                //va prendre dans tout les cas le this actuel comme this .improvement dans cette requête ajax
+                context: this,
+                data: {
+                    //on cherche à avoir l'id d'un bâtiment précis au travers du bouton
+                    id: $(this).parent().parent().attr('id')
+                },
+                success: function(idFieldDeleted){
+                    //je supprime le champs récolté
+                    $('#f_'+idFieldDeleted).remove();
+                    //je supprime le champs récolté du select
+                    $('option[value='+idFieldDeleted+']').remove();
+                },
+                error: function(response) {
+                    console.log(response.responseText);
+                }
+            });
+            tableBoard();
+
+        });
+    }
+
+
 });

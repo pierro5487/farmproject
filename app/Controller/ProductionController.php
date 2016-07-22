@@ -11,7 +11,6 @@ class ProductionController extends \W\Controller\Controller
         $pdo = $controller->connectPdo();
         //récupération du temps
         $timeManager = new\Manager\OptionsManager();
-        $timeManager->setTable('options');
         $options = $timeManager->find(1);
         $time=$options['time'];
         /*---------récupération produit animaliers------*/
@@ -93,5 +92,45 @@ class ProductionController extends \W\Controller\Controller
             }
         }
         $this->redirectToRoute('game_products');
+    }
+    public function cerealHarvest($field)
+    {
+        //je créé un objet pdo
+        $controller = new \Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        //récupération du temps
+        $timeManager = new\Manager\OptionsManager();
+        $options = $timeManager->find(1);
+        //je récupère tout les stocks existant
+        $dataProducts= new\Manager\ProductsManager();
+        $stocks= $dataProducts->getCerealsProductsStock($pdo,$_SESSION['user']['id']);
+        //on teste si le champs est bien pret à etre récolté en cas de triche(modification html)
+        $timeHarvest = $field['timestamp_harvest']*$options['time'];
+        $timeNow=time()-strtotime($field['date_sow']);
+        $fieldValue=floor(($timeNow*100)/$timeHarvest);
+        if($fieldValue>=100){
+            //si champs est pret
+            //on teste si les céréales récoltés ont déja un stock existant
+            $stockExist=false;
+            foreach ($stocks as $stock){
+                if($field['id_variety'] == $stock['id_product']){
+                    //si le stock existe on ajoute la quantité
+                    $stockUpdating = $dataProducts->find($stock['id']);
+                    $dataProducts->update(['quantity'=>$stockUpdating['quantity']+$field['harvest_quantity']],$stock['id']);
+                    $stockExist=true;
+                }
+            }
+            if(!$stockExist ){
+                //on créé le stock si il n'existe pas
+                $data=[
+                    'id_users'    => $_SESSION['user']['id'],
+                    'id_product'  => $field['id_variety'],
+                    'quantity'    => $field['harvest_quantity'],
+                    'stock_type'  => 'field'
+                ];
+                $dataProducts->insert($data);
+            }
+
+        }
     }
 }

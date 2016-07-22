@@ -6,7 +6,7 @@ class AnimalsManager extends \w\Manager\Manager
 {
     public function getListAnimals($pdo, $id)
     {
-        $req = $pdo->prepare('SELECT *,animals.id as idAnimal,species.name as name_species, animals.name as nameAnimal FROM animals INNER JOIN species ON animals.id_species=species.id WHERE id_user=:id');
+        $req = $pdo->prepare('SELECT *,animals.id as idAnimal,species.name as name_species, animals.name as nameAnimal FROM animals INNER JOIN species ON animals.id_species=species.id WHERE id_user=:id ORDER BY species.name');
         $req->execute(array('id' => $id));
         return $req->fetchAll();
     }

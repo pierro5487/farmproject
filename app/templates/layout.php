@@ -22,6 +22,8 @@
 		var ajaxBuildingAdd= '<?= $this->url('ajax_building_add') ?>';
 		var ajaxFieldAdd= '<?= $this->url('ajax_field_add') ?>';
 		var creationsPopup2= '<?= $this->url('ajax_creations_popup2') ?>';
+		var refreshFields='<?= $this->url('refreshFields') ?>';
+		var fieldHarvestRoute='<?= $this->url('fieldHarvestRoute') ?>';
 
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>

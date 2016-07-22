@@ -38,4 +38,10 @@ class ProductsManager extends \W\Manager\Manager
         $req->execute(array('id'  =>$idUser));
         return $req->fetchAll();
     }
+    public function getCerealsProductsStock($pdo,$idUser){
+        $sql='SELECT * FROM stocks WHERE stock_type=\'field\' AND id_users= :id';
+        $req=$pdo->prepare($sql);
+        $req->execute(array('id'  =>$idUser));
+        return $req->fetchAll();
+    }
 }
