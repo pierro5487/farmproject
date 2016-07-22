@@ -83,16 +83,16 @@ class AjaxController extends Controller
         //on recupères les produits animaliers
         $productsGroup = $productionController->calculHarvest();
         //on récupères la liste des champs semés
-        $fieldsController= new \Controller\FieldController();
-        $fields=$fieldsController->getFields();
+        $fieldsController = new \Controller\FieldController();
+        $fields = $fieldsController->getFields();
         //on vérifie si des champs sont pret à récolter
-        $nbrFieldReady=0;
-        foreach ($fields as $field){
-            if($field['fieldValue']>=100){
+        $nbrFieldReady = 0;
+        foreach ($fields as $field) {
+            if ($field['fieldValue'] >= 100) {
                 $nbrFieldReady++;
             }
         }
-        $this->show('ajax/article_products_refresh',['products'=> $productsGroup,'fieldsReady'=>$nbrFieldReady]);
+        $this->show('ajax/article_products_refresh', ['products' => $productsGroup, 'fieldsReady' => $nbrFieldReady]);
     }
 
     public function chatRefresh()
@@ -100,12 +100,12 @@ class AjaxController extends Controller
         $chatManager = new \Manager\ChatManager();
         $connectManager = new \Manager\ConnectManager();
         //je prend les 5 derniers message
-        $posts=$chatManager->getPost();
-        $posts=array_reverse($posts);
-        foreach ($posts as $key=>$post){
+        $posts = $chatManager->getPost();
+        $posts = array_reverse($posts);
+        foreach ($posts as $key => $post) {
             //pour chaque message je récupère le login du user et je l'insere dans les donnees messages
             $user = $connectManager->find($post['id_user']);
-            $posts[$key]['login']=$user['login'];
+            $posts[$key]['login'] = $user['login'];
         }
         echo json_encode($posts);
     }
@@ -113,10 +113,10 @@ class AjaxController extends Controller
 
     public function chatSendMessage()
     {
-        $message=filter_var($_GET['message'],FILTER_SANITIZE_SPECIAL_CHARS);
+        $message = filter_var($_GET['message'], FILTER_SANITIZE_SPECIAL_CHARS);
         $connectManager = new \Manager\ConnectManager();
         $connectManager->setTable('tchat');
-        $connectManager->insert(['message'=>$message,'id_user'=>$_SESSION['user']['id']]);
+        $connectManager->insert(['message' => $message, 'id_user' => $_SESSION['user']['id']]);
     }
 
     public function creationsRefresh()
@@ -133,7 +133,7 @@ class AjaxController extends Controller
 
         $typeFieldManager = new\Manager\FieldTypeManager();
         $creationsGroup2 = $typeFieldManager->findAll();
-        
+
         // Pour l'eventualité de la gestion du temps de construction
         /*$manager = new \Manager\BuildingTypeManager();
         $idCreation = $this->creationsPopup(1);
@@ -181,7 +181,7 @@ class AjaxController extends Controller
         $_SESSION['user']['money'] = $newMoney;
         // On insere le nouveau solde de compte
         $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);
-        $userManager= new \Manager\UsersManager();
+        $userManager = new \Manager\UsersManager();
         $userManager->updateExperience($_SESSION['user']['id'], $typeBuilding['xp_construction']);
 
     }
@@ -209,7 +209,7 @@ class AjaxController extends Controller
     public function refreshFields()
     {
         $fieldController = new \Controller\FieldController();
-        $fields=$fieldController->getFields();
+        $fields = $fieldController->getFields();
         echo json_encode($fields);
     }
 
@@ -219,19 +219,21 @@ class AjaxController extends Controller
         $controller = new \Manager\ConnectManager();
         $pdo = $controller->connectPdo();
         //je recupere l'id du champs moissonné
-        $idField=substr($_GET['id'],2);
+        $idField = substr($_GET['id'], 2);
         //je récupere le champs moissonné
-        $fieldManager= new \Manager\FieldManager();
-        $field=$fieldManager->getField($pdo,$idField);
+        $fieldManager = new \Manager\FieldManager();
+        $field = $fieldManager->getField($pdo, $idField);
         //on insere la moisson dans le stock
-        $productionController= new \Controller\ProductionController();
+        $productionController = new \Controller\ProductionController();
         $productionController->cerealHarvest($field);
         //on augmente l 'experience
-        $userManager= new \Manager\UsersManager();
-        $userManager->updateExperience($_SESSION['user']['id'],$field['xp_harvest']);
+        $userManager = new \Manager\UsersManager();
+        $userManager->updateExperience($_SESSION['user']['id'], $field['xp_harvest']);
         //on supprime le champs
         $fieldManager->delete($idField);
         echo $idField;
+
+    }
 
     // Garder une logique id species 1.2.3.4.5.6 ...
     public function market()
@@ -243,7 +245,7 @@ class AjaxController extends Controller
 
         $animal = new \Classes\Animals($idNbSpecies);
 
-        $nbAnimals = rand(2,10);
+        $nbAnimals = rand(2, 10);
         $this->show('ajax/market', ['idNbSpecies' => $idNbSpecies]);
     }
 }

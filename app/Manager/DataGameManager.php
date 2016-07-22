@@ -3,7 +3,7 @@
 namespace Manager;
 
 
-class dataGameManager
+class DataGameManager
 {
     /**
      * Récupére les informations de l'utilisateur

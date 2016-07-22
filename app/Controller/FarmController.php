@@ -20,9 +20,9 @@ class FarmController extends Controller
 		$pdo = $dbh->connectPdo();
 		$id = $_SESSION['user']['id'];
 
-		$getAllUserFarmInformations = new \Manager\dataGameManager();
+		$getAllUserFarmInformations = new \Manager\DataGameManager();
 		$getNbAnimalsInformations = new \Manager\dataGameManager();
-		$levelUp = new \Manager\usersManager();
+		$levelUp = new \Manager\UsersManager();
 		
 		
 		$allUserFarmInformations = $getAllUserFarmInformations->getAllUserFarmInformations($pdo, $id);

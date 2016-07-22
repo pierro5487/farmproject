@@ -21,7 +21,7 @@ $(function(){
     refreshProducts();
     refreshCreations();
     setInterval(refreshProducts,1000);
-    setInterval(refreshChat(),1000);
+    /*setInterval(refreshChat(),1000);*/
     //on récupere l'url
     var url =$(location).attr('href');
     var testUrl = url.indexOf("field");
@@ -144,6 +144,7 @@ $(function(){
     });
     /*-------------evenement rafraichissement des donnees production---*/
     function refreshProducts() {
+        refreshChat();
         $.ajax({
             url : productsRefresh, // La ressource ciblée
             type : 'GET',
@@ -348,21 +349,29 @@ $(function(){
             tableBoard();
     }
     /*---------------raffraichissement de la liste des champs------*/
-    function fieldRefresh(){
+    function fieldRefresh() {
         $.ajax({
-            url : refreshFields, // La ressource ciblée
-            type : 'GET',
-            dataType : 'json',// Le type de données à recevoir, ici, du HTML.
-            success : function(fields, statut){
-                for(i=0;i<fields.length;i++){
+            url: refreshFields, // La ressource ciblée
+            type: 'GET',
+            dataType: 'json',// Le type de données à recevoir, ici, du HTML.
+            success: function (fields, statut) {
+                for (i = 0; i < fields.length; i++) {
                     //je charge la nouvelle valeur du progress
-                    $('#f_'+fields[i].id).find('progress').attr('value',fields[i].fieldValue);
+                    $('#f_' + fields[i].id).find('progress').attr('value', fields[i].fieldValue);
                     //je teste si le champs peut etre récolté
-                    if(fields[i].fieldValue>=100){
-                        $('#f_'+fields[i].id).find('button').prop("disabled", false);;
+                    if (fields[i].fieldValue >= 100) {
+                        $('#f_' + fields[i].id).find('button').prop("disabled", false);
+                        ;
                     }
                 }
                 harvestFieldsEvent();
+            },
+
+            error : function(resultat, statut, erreur){
+              sectionGame.html('<p>erreur table</p>');
+           }
+       });
+    }
 
     /*-------------evenement rafraichissement des donnees du marché---*/
     function refreshMarket() {

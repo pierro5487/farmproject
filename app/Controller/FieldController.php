@@ -20,7 +20,7 @@ class FieldController extends Controller
         $dataFields = new\Manager\FieldManager();
         $fields = $dataFields->getListFields($pdo, $_SESSION['user']['id']);
         //on récupere le temps
-        $timeManager = new\Manager\OptionsManager();
+        $timeManager = new \Manager\OptionsManager();
         $options = $timeManager->find(1);
         //on affiche le template
         foreach ($fields as $key=>$field){
