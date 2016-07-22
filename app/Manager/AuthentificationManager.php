@@ -61,7 +61,7 @@ class AuthentificationManager extends AManager
      */
     public function insertUser($pdo, $login, $email, $password, $lastname, $firstname)
     {
-        $sqlInsert = 'INSERT INTO Users (login, email, password, lastname, firstname, role) VALUES ' .
+        $sqlInsert = 'INSERT INTO users (login, email, password, lastname, firstname, role) VALUES ' .
             '(:login, :email, :pass, :lname, :fname, :role)';
         $stmt = $pdo->prepare($sqlInsert);
         $stmt->bindValue(':login', $login);
