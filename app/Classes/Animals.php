@@ -8,11 +8,10 @@ class Animals
     private $idSpecies;
     private $owner;
 
-    public function __construct($name=null,$idSpecies=null,$owner=null)
+    public function __construct($idSpecies=null,$name=null)
     {
         $this->name=$name;
         $this->idSpecies=$idSpecies;
-        $this->owner=$owner;
     }
     /**
      * @return mixed
@@ -33,22 +32,6 @@ class Animals
     /**
      * @return mixed
      */
-    public function getOwner()
-    {
-        return $this->owner;
-    }
-
-    /**
-     * @param mixed $owner
-     */
-    public function setOwner($owner)
-    {
-        $this->owner = $owner;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getIdSpecies()
     {
         return $this->idSpecies;
@@ -61,4 +44,5 @@ class Animals
     {
         $this->idSpecies = $idSpecies;
     }
+    
 }

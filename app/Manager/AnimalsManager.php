@@ -33,4 +33,18 @@ class AnimalsManager extends \w\Manager\Manager
             'idProduct' => $idProduct
         ));
     }
+
+    /**
+     * Récupère le nombre d'espèces
+     *
+     * @param PDO $pdo Connexion à la base de données
+     */
+    public function getNbSpecies($pdo)
+    {
+        $sql = 'SELECT count(*) FROM species ';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchColumn(0);
+    }
 }

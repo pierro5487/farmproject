@@ -60,7 +60,8 @@ header {
   background: url("../img/champs.png") no-repeat bottom; }
   header img {
     display: block;
-    float: left; }
+    float: left;
+    padding: 30px; }
   header #infoUser {
     float: right;
     padding: 1em 0 1em 0;

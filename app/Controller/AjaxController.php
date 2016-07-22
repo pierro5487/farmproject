@@ -194,4 +194,18 @@ class AjaxController extends Controller
         $connectBdd->update(['money' => $newMoney], $_SESSION['user']['id']);
 
     }
+
+    // Garder une logique id species 1.2.3.4.5.6 ...
+    public function market()
+    {
+        $controller = new \Manager\AnimalsManager();
+
+        $speciesController = $controller->getNbSpecies();
+        $idNbSpecies = rand(1, $speciesController);
+
+        $animal = new \Classes\Animals($idNbSpecies);
+
+        $nbAnimals = rand(2,10);
+        $this->show('ajax/market', ['idNbSpecies' => $idNbSpecies]);
+    }
 }

@@ -337,4 +337,20 @@ $(function(){
             // On affiche les PO correspondants
             tableBoard();
     }
+
+    /*-------------evenement rafraichissement des donnees du marché---*/
+    function refreshMarket() {
+        $.ajax({
+            url : Market, // La ressource ciblée
+            type : 'GET',
+            dataType : 'html',// Le type de données à recevoir, ici, du HTML.
+            success : function(code_html, statut){
+                articleProduct.html(code_html);
+            },
+
+            error : function(resultat, statut, erreur){
+                sectionGame.html('<p>erreur table</p>');
+            }
+        });
+    }
 });

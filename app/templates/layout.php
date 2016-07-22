@@ -33,9 +33,8 @@
 <header>
 	<div class="container">
 		<div>
-			<h1><?= $this->e($title) ?></h1>
 			<!-- insertion logo -->
-			<img src="" alt="logo">
+			<img src="<?= $this->assetUrl('img/logo.png') ?>" height="100px width= "100px" alt="logo">
 		</div>
 
 		<div id="infoUser">
@@ -79,7 +78,7 @@
 				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
 			<!-- Section marché -->
-			<article id="marcket">
+			<article id="market">
 				<h5>Marché</h5>
 			</article>
 

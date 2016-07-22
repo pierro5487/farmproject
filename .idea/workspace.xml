@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fc77e12-2494-49a7-adde-c3e55996c4fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/colza.png" afterPath="$PROJECT_DIR$/public/assets/img/colza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/ajax/market.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Animals.php" afterPath="$PROJECT_DIR$/app/Classes/Animals.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/AjaxController.php" afterPath="$PROJECT_DIR$/app/Controller/AjaxController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" afterPath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/DataGameManager.php" afterPath="$PROJECT_DIR$/app/Manager/DataGameManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/layout.php" afterPath="$PROJECT_DIR$/app/templates/layout.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css.map" afterPath="$PROJECT_DIR$/public/assets/css/styles.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.sass" afterPath="$PROJECT_DIR$/public/assets/css/styles.sass" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" afterPath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
     </list>
     <ignored path="farmproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,87 +35,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2737">
-              <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
+            <state relative-caret-position="560">
+              <caret line="207" column="32" selection-start-line="207" selection-start-column="32" selection-end-line="207" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FarmController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Controller/FarmController.php">
+      <file leaf-file-name="market.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/ajax/market.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="68">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.sass" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
+      <file leaf-file-name="AnimalsManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Manager/AnimalsManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="409" column="41" selection-start-line="409" selection-start-column="41" selection-end-line="409" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="animals.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/Game/animals.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="animals_refresh.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/ajax/animals_refresh.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="field.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/Game/field.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+            <state relative-caret-position="574">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
-                <marker date="1469106913613" expanded="true" signature="2267:2322" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="2275:2322" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="2773:3084" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="2798:3084" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="2823:3084" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="2880:2957" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3021:3084" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3177:3211" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3251:3564" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3315:3550" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3343:3356" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3382:3539" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3642:3665" ph="..." />
-                <marker date="1469106913613" expanded="true" signature="3722:3788" ph="..." />
+                <marker date="1469174209758" expanded="true" signature="159:302" ph="SELECT *,ani... animals" />
+                <marker date="1469174209758" expanded="true" signature="466:612" ph="SELECT *,ani... animals" />
+                <marker date="1469174209758" expanded="true" signature="780:999" ph="SELECT *,an.... animals" />
+                <marker date="1469174209758" expanded="true" signature="1170:1306" ph="UPDATE anima... " />
+                <marker date="1469174209758" expanded="true" signature="1642:1670" ph="SELECT count... species" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animals.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Classes/Animals.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataGameManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Manager/DataGameManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <folding>
+                <marker date="1469174209753" expanded="true" signature="331:374" ph="SELECT * FRO... Users" />
+                <marker date="1469174209753" expanded="true" signature="1421:1519" ph="SELECT * FRO... animals" />
+                <marker date="1469174209753" expanded="true" signature="1977:2121" ph="SELECT speci... animals" />
+                <marker date="1469174209753" expanded="true" signature="2549:2789" ph="SELECT speci... building" />
+                <marker date="1469174209753" expanded="true" signature="3212:3365" ph="SELECT *, co... field" />
+                <marker date="1469174209753" expanded="true" signature="4162:4326" ph="SELECT s.qua... stocks" />
+                <marker date="1469174209753" expanded="true" signature="4162:4498" ph="SELECT s.qua... " />
+                <marker date="1469174209753" expanded="true" signature="4333:4498" ph="SELECT s.qua... stocks" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnimalsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Controller/AnimalsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,21 +123,9 @@
       <file leaf-file-name="ajaxScript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="498">
+              <caret line="343" column="24" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="farm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/Game/farm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="96" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
-              <folding>
-                <marker date="1469109966871" expanded="true" signature="955:1193" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -166,14 +161,11 @@
         <option value="$PROJECT_DIR$/app/Controller/GameController.php" />
         <option value="$PROJECT_DIR$/public/assets/css/style.sass" />
         <option value="$PROJECT_DIR$/app/Controller/FarmController.php" />
-        <option value="$PROJECT_DIR$/app/Manager/AnimalsManager.php" />
         <option value="$PROJECT_DIR$/app/templates/ajax/animals_refresh.php" />
         <option value="$PROJECT_DIR$/app/templates/Game/animals.php" />
-        <option value="$PROJECT_DIR$/app/Manager/DataGameManager.php" />
         <option value="$PROJECT_DIR$/app/Controller/FieldController.php" />
         <option value="$PROJECT_DIR$/app/Manager/FieldManager.php" />
         <option value="$PROJECT_DIR$/public/assets/css/inscription.styles.sass" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/templates/ajax/building_refresh.php" />
         <option value="$PROJECT_DIR$/app/templates/Game/field.php" />
         <option value="$PROJECT_DIR$/public/assets/js/script.js" />
@@ -184,14 +176,19 @@
         <option value="$PROJECT_DIR$/app/Manager/ProductsManager.php" />
         <option value="$PROJECT_DIR$/app/Controller/BuildingController.php" />
         <option value="$PROJECT_DIR$/app/templates/Game/building.php" />
-        <option value="$PROJECT_DIR$/app/Controller/AjaxController.php" />
         <option value="$PROJECT_DIR$/public/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/app/templates/ajax/article_creations_refresh.php" />
-        <option value="$PROJECT_DIR$/app/templates/layout.php" />
-        <option value="$PROJECT_DIR$/app/Controller/AnimalsController.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
         <option value="$PROJECT_DIR$/app/templates/Game/farm.php" />
+        <option value="$PROJECT_DIR$/app/templates/layout.php" />
         <option value="$PROJECT_DIR$/public/assets/css/styles.sass" />
+        <option value="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
+        <option value="$PROJECT_DIR$/app/templates/ajax/market.php" />
+        <option value="$PROJECT_DIR$/app/Controller/AnimalsController.php" />
+        <option value="$PROJECT_DIR$/app/Manager/DataGameManager.php" />
+        <option value="$PROJECT_DIR$/app/Manager/AnimalsManager.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/Classes/Animals.php" />
+        <option value="$PROJECT_DIR$/app/Controller/AjaxController.php" />
       </list>
     </option>
   </component>
@@ -206,10 +203,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="72" />
-    <option name="y" value="69" />
-    <option name="width" value="1598" />
-    <option name="height" value="720" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -468,6 +465,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -536,7 +551,7 @@
       <workItem from="1468998308822" duration="20992000" />
       <workItem from="1469085366688" duration="1572000" />
       <workItem from="1469087110557" duration="337000" />
-      <workItem from="1469087490326" duration="22229000" />
+      <workItem from="1469087490326" duration="28675000" />
     </task>
     <task id="LOCAL-00001" summary="réalisation des fonctionnalité de recupération de mot de passe&#10;new-password.php&#10;recovery-password">
       <created>1468316164719</created>
@@ -552,17 +567,24 @@
       <option name="project" value="LOCAL" />
       <updated>1469110915580</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Gestion responsive design &amp; divers réglages design update">
+      <created>1469113265467</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1469113265467</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175298000" />
+    <option name="totallyTimeSpent" value="181744000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="69" width="1598" height="720" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2590909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25609756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -595,7 +617,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="réalisation des fonctionnalité de recupération de mot de passe&#10;new-password.php&#10;recovery-password" />
     <MESSAGE value="Gestion responsive design &amp; divers réglages design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gestion responsive design &amp; divers réglages design" />
+    <MESSAGE value="Gestion responsive design &amp; divers réglages design update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestion responsive design &amp; divers réglages design update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,8 +627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/phpmailer/phpmailer/examples/sendmail.phps" />
     <entry file="file://$PROJECT_DIR$/app/templates/default/new-password" />
     <entry file="file://$PROJECT_DIR$/app/templates/default/recovery-password.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -658,13 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Manager/AnimalsManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="170" selection-start-line="15" selection-start-column="170" selection-end-line="15" selection-end-column="170" />
         </state>
       </provider>
     </entry>
@@ -794,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/ajax/article_creations_refresh.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/ajax/article_creations_popup2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -815,14 +821,14 @@
         <state relative-caret-position="430">
           <caret line="614" column="0" selection-start-line="614" selection-start-column="0" selection-end-line="614" selection-end-column="0" />
           <folding>
-            <marker date="1469113171519" expanded="true" signature="4632:4881" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="5243:5245" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="8149:8153" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="8215:8293" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="11162:11168" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="11963:11986" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="14223:14228" ph="{...}" />
-            <marker date="1469113171519" expanded="true" signature="14393:14462" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="4651:4900" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="5262:5264" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="8168:8172" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="8234:8312" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="11162:11168" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="11963:11986" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="14223:14228" ph="{...}" />
+            <marker date="1469113806464" expanded="true" signature="14393:14462" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -840,14 +846,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/FieldController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -856,65 +854,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/AnimalsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/FarmController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Manager/DataGameManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-          <folding>
-            <marker date="1469106913613" expanded="true" signature="2267:2322" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="2275:2322" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="2773:3084" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="2798:3084" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="2823:3084" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="2880:2957" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3021:3084" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3177:3211" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3251:3564" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3315:3550" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3343:3356" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3382:3539" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3642:3665" ph="..." />
-            <marker date="1469106913613" expanded="true" signature="3722:3788" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -953,10 +896,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
+          <folding>
+            <marker date="1469113652842" expanded="true" signature="2298:2353" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="2306:2353" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="2804:3115" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="2829:3115" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="2854:3115" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="2911:2988" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3052:3115" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3207:3241" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3281:3594" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3345:3580" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3373:3386" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3412:3569" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3672:3695" ph="..." />
+            <marker date="1469113652842" expanded="true" signature="3752:3818" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="409" column="41" selection-start-line="409" selection-start-column="41" selection-end-line="409" selection-end-column="41" />
+        <state relative-caret-position="476">
+          <caret line="359" column="20" selection-start-line="359" selection-start-column="20" selection-end-line="359" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="343" column="24" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/ajax/article_creations_refresh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="48" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Manager/DataGameManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <marker date="1469174209753" expanded="true" signature="331:374" ph="SELECT * FRO... Users" />
+            <marker date="1469174209753" expanded="true" signature="1421:1519" ph="SELECT * FRO... animals" />
+            <marker date="1469174209753" expanded="true" signature="1977:2121" ph="SELECT speci... animals" />
+            <marker date="1469174209753" expanded="true" signature="2549:2789" ph="SELECT speci... building" />
+            <marker date="1469174209753" expanded="true" signature="3212:3365" ph="SELECT *, co... field" />
+            <marker date="1469174209753" expanded="true" signature="4162:4326" ph="SELECT s.qua... stocks" />
+            <marker date="1469174209753" expanded="true" signature="4162:4498" ph="SELECT s.qua... " />
+            <marker date="1469174209753" expanded="true" signature="4333:4498" ph="SELECT s.qua... stocks" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/AnimalsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/ajax/market.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Manager/AnimalsManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <marker date="1469174209758" expanded="true" signature="159:302" ph="SELECT *,ani... animals" />
+            <marker date="1469174209758" expanded="true" signature="466:612" ph="SELECT *,ani... animals" />
+            <marker date="1469174209758" expanded="true" signature="780:999" ph="SELECT *,an.... animals" />
+            <marker date="1469174209758" expanded="true" signature="1170:1306" ph="UPDATE anima... " />
+            <marker date="1469174209758" expanded="true" signature="1642:1670" ph="SELECT count... species" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Classes/Animals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="207" column="32" selection-start-line="207" selection-start-column="32" selection-end-line="207" selection-end-column="32" />
           <folding />
         </state>
       </provider>

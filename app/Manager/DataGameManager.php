@@ -106,13 +106,13 @@ class dataGameManager
         return $stmt->fetchAll();
     }
 
-    /*    /**
-         * Récupére les produits de l'utilisateur
-         *
-         * @param PDO $pdo Connexion à la base de données
-         * @param string $email E-mail
-         * @return tableau multidimensionnel
-         */
+    /**
+     * Récupére les produits de l'utilisateur
+     *
+     * @param PDO $pdo Connexion à la base de données
+     * @param string $email E-mail
+     * @return tableau multidimensionnel
+     */
     public function getUserProductsAnimalsInformations($pdo, $id)
     {
 
@@ -126,5 +126,6 @@ class dataGameManager
 
         return $stmt->fetchAll();
     }
+
 
 }

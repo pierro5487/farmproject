@@ -25,4 +25,5 @@
 		['GET|POST', '/ajax/creations/addBuilding', 'Ajax#addBuilding', 'ajax_building_add'],
 		['GET|POST', '/ajax/creations/addField', 'Ajax#addField', 'ajax_field_add'],
 		['GET|POST', '/ajax/creations/popup2', 'Ajax#creationsPopup2', 'ajax_creations_popup2'],
+		['GET', '/ajax/market', 'Ajax#market', 'ajax_market'],
 	);
