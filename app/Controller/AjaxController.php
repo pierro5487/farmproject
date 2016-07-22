@@ -210,7 +210,7 @@ class AjaxController extends Controller
     {
         $fieldController = new \Controller\FieldController();
         $fields=$fieldController->getFields();
-        $this->show('ajax/refresh_fields',['fields'=>$fields]);
+        echo json_encode($fields);
     }
 
     public function fieldHarvest()
@@ -231,6 +231,7 @@ class AjaxController extends Controller
         $userManager->updateExperience($_SESSION['user']['id'],$field['xp_harvest']);
         //on supprime le champs
         $fieldManager->delete($idField);
-        $this->refreshFields();
+        /*$this->refreshFields();*/
+        echo $idField;
     }
 }
