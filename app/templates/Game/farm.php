@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="left">Expérience: (<?= $levelUpInformations['current_xp'] ?>/<?= $levelUpInformations['max_experience'] ?>)</div>
                 <div class="right"><progress id="avancement" value="<?= $levelUpInformations['current_xp'] ?>" max="<?= $levelUpInformations['max_experience'] ?>"></progress></div>
-                <div class="left">Xp total: <?= $userInformations['experience']."px" ?></div>
+                <div class="left">Xp total: <?= $userInformations['experience']."xp" ?></div>
                 <?php $timeStampCreated = strtotime($userInformations['date_created']) ?><br>
                 <?= "<br>Votre ferme a ".round(((time()- $timeStampCreated)/60)/60)." heures" ?>
                 <div class="box">

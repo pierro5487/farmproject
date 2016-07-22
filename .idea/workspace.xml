@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fc77e12-2494-49a7-adde-c3e55996c4fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/ajax/market.php" />
+    <list default="true" id="9fc77e12-2494-49a7-adde-c3e55996c4fd" name="Default" comment="Gestion responsive design &amp; divers réglages design update">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/img/404.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/bergerie.jpg" afterPath="$PROJECT_DIR$/public/assets/img/bergerie.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/laine.png" afterPath="$PROJECT_DIR$/public/assets/img/laine.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/mouton.png" afterPath="$PROJECT_DIR$/public/assets/img/mouton.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/oeuf.png" afterPath="$PROJECT_DIR$/public/assets/img/oeuf.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/poule.png" afterPath="$PROJECT_DIR$/public/assets/img/poule.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/img/vache.png" afterPath="$PROJECT_DIR$/public/assets/img/vache.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Animals.php" afterPath="$PROJECT_DIR$/app/Classes/Animals.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/AjaxController.php" afterPath="$PROJECT_DIR$/app/Controller/AjaxController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" afterPath="$PROJECT_DIR$/app/Manager/AnimalsManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Manager/DataGameManager.php" afterPath="$PROJECT_DIR$/app/Manager/DataGameManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/layout.php" afterPath="$PROJECT_DIR$/app/templates/layout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/Game/farm.php" afterPath="$PROJECT_DIR$/app/templates/Game/farm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/w_errors/404.php" afterPath="$PROJECT_DIR$/app/templates/w_errors/404.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.css.map" afterPath="$PROJECT_DIR$/public/assets/css/styles.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/styles.sass" afterPath="$PROJECT_DIR$/public/assets/css/styles.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" afterPath="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
     </list>
     <ignored path="farmproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,17 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
@@ -61,6 +52,62 @@
             <state relative-caret-position="68">
               <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.sass" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="404.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/w_errors/404.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="403.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/w_errors/403.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="farm.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/Game/farm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10438">
+              <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+              <folding>
+                <marker date="1469183371495" expanded="true" signature="568:571" ph="{...}" />
+                <marker date="1469183371495" expanded="true" signature="4826:5075" ph="{...}" />
+                <marker date="1469183371495" expanded="true" signature="5437:5439" ph="{...}" />
+                <marker date="1469183371495" expanded="true" signature="8343:8347" ph="{...}" />
+                <marker date="1469183371495" expanded="true" signature="8409:8487" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,40 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataGameManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Manager/DataGameManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-              <folding>
-                <marker date="1469174209753" expanded="true" signature="331:374" ph="SELECT * FRO... Users" />
-                <marker date="1469174209753" expanded="true" signature="1421:1519" ph="SELECT * FRO... animals" />
-                <marker date="1469174209753" expanded="true" signature="1977:2121" ph="SELECT speci... animals" />
-                <marker date="1469174209753" expanded="true" signature="2549:2789" ph="SELECT speci... building" />
-                <marker date="1469174209753" expanded="true" signature="3212:3365" ph="SELECT *, co... field" />
-                <marker date="1469174209753" expanded="true" signature="4162:4326" ph="SELECT s.qua... stocks" />
-                <marker date="1469174209753" expanded="true" signature="4162:4498" ph="SELECT s.qua... " />
-                <marker date="1469174209753" expanded="true" signature="4333:4498" ph="SELECT s.qua... stocks" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnimalsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Controller/AnimalsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ajaxScript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="343" column="24" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
+            <state relative-caret-position="511">
+              <caret line="320" column="35" selection-start-line="320" selection-start-column="35" selection-end-line="320" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -142,7 +160,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ResponsiveDesign" />
       </map>
     </option>
   </component>
@@ -178,9 +196,7 @@
         <option value="$PROJECT_DIR$/app/templates/Game/building.php" />
         <option value="$PROJECT_DIR$/public/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/app/templates/ajax/article_creations_refresh.php" />
-        <option value="$PROJECT_DIR$/app/templates/Game/farm.php" />
         <option value="$PROJECT_DIR$/app/templates/layout.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/styles.sass" />
         <option value="$PROJECT_DIR$/public/assets/js/ajaxScript.js" />
         <option value="$PROJECT_DIR$/app/templates/ajax/market.php" />
         <option value="$PROJECT_DIR$/app/Controller/AnimalsController.php" />
@@ -189,6 +205,9 @@
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/Classes/Animals.php" />
         <option value="$PROJECT_DIR$/app/Controller/AjaxController.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/styles.sass" />
+        <option value="$PROJECT_DIR$/app/templates/w_errors/404.php" />
+        <option value="$PROJECT_DIR$/app/templates/Game/farm.php" />
       </list>
     </option>
   </component>
@@ -323,6 +342,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -382,6 +423,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmproject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="w_errors" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,7 +614,7 @@
       <workItem from="1468998308822" duration="20992000" />
       <workItem from="1469085366688" duration="1572000" />
       <workItem from="1469087110557" duration="337000" />
-      <workItem from="1469087490326" duration="28675000" />
+      <workItem from="1469087490326" duration="35538000" />
     </task>
     <task id="LOCAL-00001" summary="réalisation des fonctionnalité de recupération de mot de passe&#10;new-password.php&#10;recovery-password">
       <created>1468316164719</created>
@@ -578,7 +641,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181744000" />
+    <option name="totallyTimeSpent" value="188607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -627,14 +690,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/default/new-password" />
-    <entry file="file://$PROJECT_DIR$/app/templates/default/recovery-password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/connexion.styles.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -816,23 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="614" column="0" selection-start-line="614" selection-start-column="0" selection-end-line="614" selection-end-column="0" />
-          <folding>
-            <marker date="1469113806464" expanded="true" signature="4651:4900" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="5262:5264" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="8168:8172" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="8234:8312" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="11162:11168" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="11963:11986" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="14223:14228" ph="{...}" />
-            <marker date="1469113806464" expanded="true" signature="14393:14462" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/ajax/article_creations_popup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -859,16 +897,6 @@
         <state relative-caret-position="136">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/Game/farm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="96" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
-          <folding>
-            <marker date="1469109966871" expanded="true" signature="955:1193" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,22 +944,6 @@
             <marker date="1469113652842" expanded="true" signature="3672:3695" ph="..." />
             <marker date="1469113652842" expanded="true" signature="3752:3818" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="359" column="20" selection-start-line="359" selection-start-column="20" selection-end-line="359" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="343" column="24" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,6 +1022,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="207" column="32" selection-start-line="207" selection-start-column="32" selection-end-line="207" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/ajaxScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="320" column="35" selection-start-line="320" selection-start-column="35" selection-end-line="320" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10438">
+          <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+          <folding>
+            <marker date="1469183371495" expanded="true" signature="568:571" ph="{...}" />
+            <marker date="1469183371495" expanded="true" signature="4826:5075" ph="{...}" />
+            <marker date="1469183371495" expanded="true" signature="5437:5439" ph="{...}" />
+            <marker date="1469183371495" expanded="true" signature="8343:8347" ph="{...}" />
+            <marker date="1469183371495" expanded="true" signature="8409:8487" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/styles.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/w_errors/403.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/w_errors/404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/Game/farm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>

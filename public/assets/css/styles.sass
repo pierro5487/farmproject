@@ -2,7 +2,12 @@
 html, body
   font-family: Consolas, monaco, monospace
   color: #62c462
-
+  #error404
+    display: block
+    color: red
+    width: 200px
+    height: 200px
+    background: url("../img/404.jpg")
 .container
   width: 980px
   height: 100%
@@ -61,6 +66,7 @@ a
 /*.......................................HEADER..................................*/
 header
   background: url("../img/champs.png") no-repeat bottom
+  background-size: cover
   img
     display: block
     float: left
@@ -343,10 +349,10 @@ footer
   float: left
   width: 30%
   img
-    width: 40%
+    width: 75%
     margin: 0 auto
-    margin-left: 75px
-    margin-top: 25px
+    margin-left: 30px
+    margin-top: 12px
 .listing
   border: 3px solid black
   border-radius: 10px
