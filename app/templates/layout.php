@@ -35,9 +35,9 @@
 <body>
 <header>
 	<div class="container">
-		<div>
+		<div id="logo">
 			<!-- insertion logo -->
-			<img id="logo" src="<?= $this->assetUrl('img/logo.png') ?>" alt="logo">
+			<img id="logo2" src="<?= $this->assetUrl('img/logo.png') ?>" alt="logo">
 		</div>
 
 		<div id="infoUser">

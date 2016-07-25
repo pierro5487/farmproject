@@ -109,17 +109,16 @@ a {
   clear: both;
   display: block; }
 
-/* logo */
-#logo {
-  width: 25%;
-  height: 25%;
-  padding-left: 2%; }
-
 /*................................................................................. */
 /*.......................................HEADER.................................. */
 header {
   background: url("../img/champs.png") no-repeat bottom;
-  background-size: cover; }
+  background-size: cover;
+  /* logo */ }
+  header #logo #logo2 {
+    width: 25%;
+    height: 25%;
+    padding: 1% 10%; }
   header img {
     display: block;
     float: left;
@@ -130,7 +129,8 @@ header {
     color: #fff;
     background: rgba(0, 0, 0, 0.45);
     border-radius: 5%;
-    width: 20%; }
+    width: 20%;
+    margin-top: 5%; }
     header #infoUser div {
       margin: 0 1em 0;
       width: 80%;
