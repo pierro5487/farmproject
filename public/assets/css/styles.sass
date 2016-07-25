@@ -323,9 +323,27 @@ main
       .red
         color: red
         display: inline-block
+        &::after
+          content: ""
+          display: block
+          background: url("../img/or.png") no-repeat center
+          width: 15px
+          height: 15px
+          background-size: cover
+          float: right
+          margin-left: 5px
       .green
         color: green
         display: inline-block
+        &::after
+          content: ""
+          display: block
+          background: url("../img/or.png") no-repeat center
+          width: 15px
+          height: 15px
+          background-size: cover
+          float: right
+          margin-left: 5px
       &::before
         content: ''
         display: block

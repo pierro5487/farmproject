@@ -311,9 +311,27 @@ main {
       main #navLeft #creations .red {
         color: red;
         display: inline-block; }
+        main #navLeft #creations .red::after {
+          content: "";
+          display: block;
+          background: url("../img/or.png") no-repeat center;
+          width: 15px;
+          height: 15px;
+          background-size: cover;
+          float: right;
+          margin-left: 5px; }
       main #navLeft #creations .green {
         color: green;
         display: inline-block; }
+        main #navLeft #creations .green::after {
+          content: "";
+          display: block;
+          background: url("../img/or.png") no-repeat center;
+          width: 15px;
+          height: 15px;
+          background-size: cover;
+          float: right;
+          margin-left: 5px; }
       main #navLeft #creations::before {
         content: "";
         display: block;
