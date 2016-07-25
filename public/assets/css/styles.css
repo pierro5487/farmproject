@@ -485,7 +485,8 @@ footer {
   border-radius: 10px;
   margin: 10px; }
   .listingField .informationField {
-    padding: 3%; }
+    padding: 3%;
+    width: 70%; }
     .listingField .informationField li {
       padding: 0.1em; }
     .listingField .informationField button {
@@ -501,6 +502,9 @@ footer {
         background: rgba(0, 0, 0, 0.6); }
       .listingField .informationField button:active {
         background: rgba(127, 127, 127, 0.2); }
+    .listingField .informationField progress {
+      width: 90%;
+      margin-left: 30%; }
   .listingField::after {
     content: "";
     display: block;
@@ -559,10 +563,13 @@ footer {
   .listingField .informationField {
     float: left;
     padding: 5%;
-    display: block; }
+    display: block;
+    margin-left: 10%; }
     .listingField .informationField button {
       padding: 0.4em 0.8em;
       margin-top: 4%; }
+    .listingField .informationField progress {
+      margin-left: 2%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
@@ -680,6 +687,11 @@ footer {
     text-align: center; }
     .listingField .informationField ul li {
       width: 100%; }
+    .listingField .informationField progress {
+      margin-left: 2%; }
+    .listingField .informationField button {
+      padding: 0.2em 0.4em;
+      width: 80%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
