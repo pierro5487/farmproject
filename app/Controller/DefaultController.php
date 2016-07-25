@@ -12,6 +12,9 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
+		if(isset($_SESSION['user']['id'])){
+			$this->redirectToRoute('game_farm');
+		}
 		if(isset($_POST['sendConnexion'])){
 			if (empty($_POST['email'])) {
 				$errors['email']['empty'] = true;
@@ -79,6 +82,9 @@ class DefaultController extends Controller
 	 */
 	public function subscription()
 	{
+		if(isset($_SESSION['user']['id'])){
+			$this->redirectToRoute('game_farm');
+		}
 		if (isset($_POST['save_user'])) {
 			$errors = array();
 
