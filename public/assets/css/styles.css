@@ -2,12 +2,6 @@
 html, body {
   font-family: Consolas, monaco, monospace;
   color: #62c462; }
-  html #error404, body #error404 {
-    display: block;
-    color: red;
-    width: 200px;
-    height: 200px;
-    background: url("../img/404.jpg"); }
 
 .container {
   width: 980px;
@@ -130,7 +124,7 @@ header {
     background: rgba(0, 0, 0, 0.45);
     border-radius: 5%;
     width: 20%;
-    margin-top: 5%; }
+    margin-top: 4%; }
     header #infoUser div {
       margin: 0 1em 0;
       width: 80%;
@@ -229,24 +223,22 @@ main {
       box-sizing: border-box; }
       main #navLeft article ul {
         padding-bottom: 5%; }
-      main #navLeft article h5 {
-        color: white;
+      main #navLeft article h4 {
+        color: black;
         padding: 5px;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 19px;
         margin: 0 auto;
         width: 120px;
         text-align: center; }
-      main #navLeft article h4 {
+      main #navLeft article h5 {
         color: white;
         margin-left: 15%;
         font-size: 1.1em; }
       main #navLeft article li {
-        color: grey;
         margin-left: 48px;
         text-decoration: none;
-        font-size: 17px;
         color: black;
         text-transform: uppercase;
         font-weight: bold;
@@ -269,8 +261,13 @@ main {
           background: rgba(0, 0, 0, 0.6); }
         main #navLeft article a:active {
           background: rgba(127, 127, 127, 0.3); }
-        main #navLeft article a h6 {
-          font-style: italic; }
+    main #navLeft h6 {
+      font-style: italic;
+      font-weight: bold;
+      margin-left: 15%;
+      font-size: 1.1em;
+      color: white;
+      padding: 5% 2% 2%; }
     main #navLeft #products {
       position: relative;
       color: white;
@@ -285,6 +282,12 @@ main {
         font-weight: bold;
         color: white;
         font-size: 1em; }
+      main #navLeft #products #listProducts p {
+        font-size: 15px;
+        text-align: center;
+        padding: 2%;
+        color: black;
+        font-weight: bold; }
       main #navLeft #products button {
         padding: 4% 10%;
         border-radius: 5px;
@@ -618,9 +621,11 @@ footer {
     main #navLeft article {
       width: 100%; }
       main #navLeft article h5 {
-        font-size: 1.5em;
+        font-size: 1em;
         text-align: center;
         padding: 1px 65px 10px 1px; }
+      main #navLeft article h6 {
+        font-size: 1em; }
       main #navLeft article a {
         padding: 2%;
         text-align: center;
@@ -644,6 +649,17 @@ footer {
   main #content {
     width: 100%;
     font-size: 0.9em; }
+  main #farmcontenant {
+    background: none;
+    border-radius: 5%;
+    padding: 1%;
+    width: 95%; }
+    main #farmcontenant #farmcontenu {
+      padding: 4%;
+      background: rgba(10, 10, 10, 0.45);
+      border-radius: 5%; }
+    main #farmcontenant progress {
+      display: none; }
 
   /*------------------------------------integration des templates------------------------------------------- */
   /*--------page fields listing---------- */

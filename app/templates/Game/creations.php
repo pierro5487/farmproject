@@ -2,8 +2,8 @@
 
 <?php $this->start('main_content'); ?>
     <article>
-        <h5>Creations</h5>
-        <h4>Bâtiments</h4>
+        <h4>Creations</h4>
+        <h5>Bâtiments</h5>
 
         <ul>
             <?php foreach ($creations as $creation) : ?>
@@ -11,7 +11,7 @@
             <?php endforeach; ?>
         </ul>
 
-        <h4>Champs</h4>
+        <h5>Champs</h5>
         <ul>
             <li><a href="#">Champs1</a></li>
             <li><a href="#">Champs2</a></li>
