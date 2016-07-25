@@ -79,11 +79,7 @@
 			<article id="products">
 				<div id="listProducts"></div>
 			</article>
-			<!-- Section marché -->
-			<article id="market">
-				<h4>Marché</h4>
-			</article>
-
+			
 			<!-- Section tchat -->
 			<article>
 				<h4>le tchat</h4>

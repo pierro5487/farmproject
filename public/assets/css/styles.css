@@ -58,12 +58,14 @@ a {
     border-radius: 6%;
     width: 100%; }
     #error404 #errorSection #errorTitle {
-      float: left;
       display: block;
       color: black;
       font-weight: bold;
       font-size: 2em;
-      padding: 5% 5%; }
+      padding: 5% 0%;
+      text-align: center;
+      margin: auto;
+      width: 100%; }
     #error404 #errorSection .errorP {
       color: black;
       padding: 5% 5%;
@@ -75,26 +77,27 @@ a {
       width: 80%;
       padding-top: 10%;
       position: absolute;
-      left: 25%; }
+      left: 5%;
+      text-align: center; }
     #error404 #errorSection .errorDiv {
-      position: relative; }
+      position: relative;
+      margin: auto; }
       #error404 #errorSection .errorDiv::before {
-        display: block;
         float: left;
         content: "";
         background: url("../img/fermier.png") no-repeat;
         width: 250px;
         height: 250px;
-        padding: 2%; }
+        margin-left: 10%; }
       #error404 #errorSection .errorDiv::after {
-        display: block;
+        float: left;
         content: "";
         background: url("../img/cow2.png") no-repeat;
         background-size: contain;
         width: 200px;
         height: 200px;
         padding: 2%;
-        margin-left: 60%; }
+        margin-left: 30%; }
 
 /*---------------integration layout--------------------------------------- */
 /*---------------------------------------------------------------------------- */
@@ -748,6 +751,7 @@ progress {
   background-color: #d4d4d4;
   box-shadow: 0 0 0 3px #b6b6b6; }
 
+/********************************************************************** */
 @-webkit-keyframes progress {
   from {
     background-position: 0 0; }
