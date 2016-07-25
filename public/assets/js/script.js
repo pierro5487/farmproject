@@ -50,6 +50,20 @@ $(document).ready( function() {
             $('#a_'+ $('#animal').val()).show();
         }
     });
+    
+    /*---------------------function -----------------------*/
+    $('#market_select').change(function(){
+        //$(this) fait référence à $('#animal')
+        if($(this).val() == "*"){
+            //si on sélectionne le tous, on affiche tous les animaux
+            $('.listing').show();
+        }else{
+            //on cache tous les animaux
+            $('.listing').hide();
+            //on affiche l'animal selon la valeur de l'id qu'on sélectionne
+            $('article[specieName='+$('#market_select').val()+']').show();
+        }
+    });
     // myTable = new Array(['building'], ['field']);
     //
     // for(i=0;i<myTable.length;i++){

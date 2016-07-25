@@ -28,4 +28,6 @@
 		['GET', '/refreshFields', 'AjaxController#refreshFields', 'refreshFields'],
 		['GET|POST', '/fieldHarvest', 'AjaxController#fieldHarvest', 'fieldHarvestRoute'],
 		['GET', '/market', 'Market#displayMarket', 'game_market'],
+		['GET', '/marketRefresh', 'Ajax#refreshMarket', 'refresh_market'],
+        ['GET', '/buyAnimal', 'Ajax#buyAnimal', 'buy_animal']
 	);

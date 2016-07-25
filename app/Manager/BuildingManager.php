@@ -59,4 +59,15 @@ class BuildingManager extends \W\Manager\Manager
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    public function getBuildingListOfType($idType,$idUser)
+    {
+        $pdo = $this->dbh;
+        $sql='SELECT * FROM building b JOIN type_building tb ON b.id_type=tb.id WHERE b.id_user=:idUser AND b.id_type=:idType ';
+        $req=$pdo->prepare($sql);
+        $req->bindParam(':idUser',$idUser, \PDO::PARAM_INT);
+        $req->bindParam(':idType',$idType, \PDO::PARAM_INT);
+        $req->execute();
+        return $req->fetchAll();
+    }
 }

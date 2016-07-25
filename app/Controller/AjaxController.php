@@ -235,26 +235,76 @@ class AjaxController extends Controller
 
     }
 
-    // Garder une logique id species 1.2.3.4.5.6 ...
-    public function market()
-    {   
+    public function refreshMarket()
+    {
         $controller = new\Manager\ConnectManager();
         $pdo = $controller->connectPdo();
-        $animalsManager = new \Manager\AnimalsManager();
-
-        $speciesController = $animalsManager->getNbSpecies($pdo);
-
-        $animal = new \Classes\Animals($idNbSpecies);
-
-        $nbAnimals = rand(2, 10);
-        
-        for ($i=1;$i< $nbAnimals; $i++){
-            $idNbSpecies = rand(1, $speciesController);
-            $animals[] = new \Classes\Animals($idNbSpecies);
-            //print_r($animals);
+        $marketController = new\Controller\MarketController();
+        $marketManager=$marketController->marketAnimalsRefresh();
+        //on récupere la liste d'animaux et on les affiches
+        $animalsList=$marketManager->getMarketAnimalsList($pdo);
+        $marketController= new \Controller\MarketController();
+        $animalsList=$marketController->calculFreeLocation($animalsList);
+        $this->show('ajax/market_refresh',['animalsList' => $animalsList]);
+    }
+    public function buyAnimal()
+    {
+        //je créé un objet pdo
+        $controller = new \Manager\ConnectManager();
+        $pdo = $controller->connectPdo();
+        //je récupère l'id du marché à conclure
+        $idMarket=$_GET['idAnimal'];
+        //je récupere l'animal acheté
+        $marketManager=new \Manager\MarketManager();
+        $animal =$marketManager->find($idMarket);
+        //je récupere l'argent de l'utilisateur
+        $money=$_SESSION['user']['money'];
+        //je verife si l'user à le batiment requis ainsi que la place pour l'animal
+        //je recupere le type_building correspondant a mon animal
+        $typeBuildingManager= new \Manager\BuildingTypeManager();
+        $typeBuilding=$typeBuildingManager->find($animal['id_species']);
+        //je recupere le nombre de batiment correspondant au type de l'animal
+        $buildingManager= new \Manager\BuildingManager();
+        $buildings=$buildingManager->getBuildingListOfType($typeBuilding['id'],$_SESSION['user']['id']);
+        //je calcul la place qu'offre ces batiments
+        $location=0;
+        foreach ($buildings as $building){
+            $location+=$building['level']*5;
         }
- 
-        echo json_encode($animals);
-        //$this->show('ajax/market', ['animals' => $animals]);
+        //je récupère le nombre d'animal de ce type
+        $animalsManager= new \Manager\AnimalsManager();
+        $nbAnimals=$animalsManager->getAnimalsSameTypeList($pdo,$_SESSION['user']['id'],$animal['id_species']);
+        //je récupère le prix de vente de l'animal
+        $specie=$animalsManager->getPurchasePrice($pdo,$animal['id_species']);
+        //je verifie que l'utilisateur à l'argent et la place pour habriter cet animal
+        if($nbAnimals<$location && $money>$specie['price_purchase'] ){
+            //on achete l'animal
+            //je le supprime du marché
+            $marketManager->delete($idMarket);
+            //j'insere ce nouvel animal dans la bdd
+            $data=[
+                'name'=>$specie['name'].($nbAnimals+1),
+                'id_user'=>$_SESSION['user']['id'],
+                'id_species'=>$animal['id_species']
+            ];
+            //je retire de l'argent
+            $animalsManager->insert($data);
+            //je récupere les donnees utilisateur
+            $connectBdd = new\Manager\ConnectManager();
+            $user = $connectBdd->find($_SESSION['user']['id']);
+            //je credit son compte
+            $newMoney = $user['money'] - $specie['price_purchase'];
+            $_SESSION['user']['money'] = $newMoney;
+            //j'insere la nouvelle solde
+            $data = ['money' => $newMoney];
+            $connectBdd->update($data, $_SESSION['user']['id']);
+            //j'insere de l'experience
+            //on ajoute l'experience
+            $newXp = $specie['xp_purchase'];
+            $userManager = new \Manager\UsersManager();
+            $userManager->updateExperience($_SESSION['user']['id'],$newXp);
+        }else{
+            //sinon on redirige vers la page marché les button étant désactivé ce cas ne peut arriver qu'en modifiant html
+        }
     }
 }

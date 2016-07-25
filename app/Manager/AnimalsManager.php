@@ -4,6 +4,12 @@ namespace Manager;
 
 class AnimalsManager extends \W\Manager\Manager
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTable('animals');
+    }
+
     public function getListAnimals($pdo, $id)
     {
         $req = $pdo->prepare('SELECT *,animals.id as idAnimal,species.name as name_species, animals.name as nameAnimal FROM animals INNER JOIN species ON animals.id_species=species.id WHERE id_user=:id ORDER BY species.name');
@@ -46,5 +52,25 @@ class AnimalsManager extends \W\Manager\Manager
         $stmt->execute();
 
         return $stmt->fetchColumn(0);
+    }
+
+    public function getAnimalsSameTypeList($pdo,$idUser,$idSpecies)
+    {
+        $sql='SELECT count(*) as nb FROM animals WHERE id_user=:idUser AND id_species=:idSpecies';
+        $req=$pdo->prepare($sql);
+        $req->execute(array(
+            ':idUser'=>$idUser,
+            ':idSpecies'=>$idSpecies
+        ));
+        $donnees= $req->fetch();
+        return $donnees['nb'];
+    }
+
+    public function getPurchasePrice($pdo,$idSpecies)
+    {
+        $req=$pdo->prepare('SELECT price_purchase,name,xp_purchase FROM species WHERE id=:idSpecies');
+        $req->execute(array('idSpecies'=>$idSpecies));
+        return $req->fetch();
+
     }
 }

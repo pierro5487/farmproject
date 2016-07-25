@@ -24,7 +24,8 @@
 		var creationsPopup2= '<?= $this->url('ajax_creations_popup2') ?>';
 		var refreshFields='<?= $this->url('refreshFields') ?>';
 		var fieldHarvestRoute='<?= $this->url('fieldHarvestRoute') ?>';
-		var market='<?= $this->url('game_market') ?>';
+		var market='<?= $this->url('refresh_market') ?>';
+		var ajaxBuyAnimal='<?= $this->url('buy_animal') ?>';
 
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
