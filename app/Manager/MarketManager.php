@@ -25,7 +25,7 @@ class MarketManager extends \W\Manager\Manager
 
     public function getMarketAnimalsList($pdo)
     {
-        $sql = 'SELECT *,market_items.id as idMarket FROM market_items INNER JOIN species ON id_species = species.id';
+        $sql = 'SELECT *,market_items.id as idMarket FROM market_items INNER JOIN species ON id_species = species.id ORDER BY id_species';
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll();
     }

@@ -15,11 +15,13 @@ $(function(){
     var articleCreations = $('#listCreations');
     var creations= $('#creations');
     var listingField=$('.listingField');
+    var marketList=$('#marketList');
     /*---------script------------*/
     deleteAnimal();
     deleteProduct();
     refreshProducts();
     refreshCreations();
+    buyAnimal();
     setInterval(refreshProducts,1000);
     /*setInterval(refreshChat(),1000);*/
     //on récupere l'url
@@ -33,7 +35,7 @@ $(function(){
     //si on se trouve sur la page market alors on lance un raffraichissement
     testUrl = url.indexOf("market");
     if(testUrl!=(-1)){
-       /* setInterval(refreshMarket,1000);*/
+       setInterval(refreshMarket,1000);
     }
 
     /********************************************************************************/
@@ -383,14 +385,27 @@ $(function(){
             url : market, // La ressource ciblée
             type : 'GET',
             dataType : 'html',// Le type de données à recevoir, ici, du HTML.
-            success : function(code_html, statut){
-                articleProduct.html(code_html);
+            success : function(animalsList, statut){
+                marketList.html(animalsList);
+                var selectValue=$('#market_select').val();
+                if(selectValue == "*"){
+                    //si on sélectionne le tous, on affiche tous les animaux
+                    $('.listing').show();
+                }else{
+                    //on cache tous les animaux
+                    $('.listing').hide();
+                    //on affiche l'animal selon la valeur de l'id qu'on sélectionne
+                    $('article[specieName='+selectValue+']').show();
+                }
+                buyAnimal();
+
             },
 
             error : function(resultat, statut, erreur){
-                sectionGame.html('<p>erreur table</p>');
+                marketList.html('<p>erreur table</p>');
             }
         });
+
     }
     /*--------------fonction récolter les cereals-------*/
     function harvestFieldsEvent(){
@@ -417,6 +432,30 @@ $(function(){
             });
             tableBoard();
 
+        });
+    }
+
+    /*---------------fonction achat marché-----------------*/
+    function buyAnimal(){
+        $('.buyAnimal').off();
+        $('.buyAnimal').on('click',function(event){
+            var idAnimal = $(event.target).attr("value");
+            if(confirm('Etes-vous sur de vouloir acheter cet animal ?')){
+                $.ajax({
+                    url : ajaxBuyAnimal, // La ressource ciblée
+                    type : 'GET',
+                    dataType : 'html',
+                    data : 'idAnimal=' + idAnimal,
+                    success : function(statut){
+                        refreshMarket();
+                    },
+
+                    error : function(resultat, statut, erreur){
+                        sectionGame.html('<p>erreur product</p>');
+                    }
+                });
+                tableBoard();
+            }
         });
     }
 
