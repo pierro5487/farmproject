@@ -16,7 +16,7 @@
                         }
                     }
                     else{
-                        echo "<i class=\"red\"> (LvL insuffisant)</i>";
+                        echo "<i class=\"lvlnotsuffisant\"> (LvL insuffisant)</i>";
                     }
                 }
             ?>
@@ -40,7 +40,7 @@
                     }
                 }
                 else{
-                    echo "<i class=\"red\"> (LvL insuffisant)</i>";
+                    echo "<i class=\"lvlnotsuffisant\"> (LvL insuffisant)</i>";
                 }
             }
             ?>
