@@ -35,9 +35,9 @@
 <body>
 <header>
 	<div class="container">
-		<div>
+		<div id="logo">
 			<!-- insertion logo -->
-			<img id="logo" src="<?= $this->assetUrl('img/logo.png') ?>" alt="logo">
+			<img id="logo2" src="<?= $this->assetUrl('img/logo.png') ?>" alt="logo">
 		</div>
 
 		<div id="infoUser">
@@ -78,16 +78,15 @@
 			<!-- Section mes produits -->
 			<article id="products">
 				<div id="listProducts"></div>
-				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
 			<!-- Section marché -->
 			<article id="market">
-				<h5>Marché</h5>
+				<h4>Marché</h4>
 			</article>
 
 			<!-- Section tchat -->
 			<article>
-				<h5>le tchat</h5>
+				<h4>le tchat</h4>
 				<!-- Le tchat -->
 				<div id="chat">
 					<div id="chatDisplay">

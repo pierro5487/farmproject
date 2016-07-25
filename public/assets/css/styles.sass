@@ -2,12 +2,6 @@
 html, body
   font-family: Consolas, monaco, monospace
   color: #62c462
-  #error404
-    display: block
-    color: red
-    width: 200px
-    height: 200px
-    background: url("../img/404.jpg")
 .container
   width: 980px
   height: 100%
@@ -113,19 +107,17 @@ a
   clear: both
   display: block
 
-/* logo */
-#logo
-  width: 25%
-  height: 25%
-  padding-left: 2%
-
-
-
 /*.................................................................................*/
 /*.......................................HEADER..................................*/
 header
   background: url("../img/champs.png") no-repeat bottom
   background-size: cover
+  /* logo */
+  #logo
+    #logo2
+      width: 25%
+      height: 25%
+      padding: 1% 10%
   img
     display: block
     float: left
@@ -137,6 +129,7 @@ header
     background: rgba(0, 0, 0, 0.45)
     border-radius: 5%
     width: 20%
+    margin-top: 4%
     div
       margin: 0 1em 0
       width: 80%
@@ -241,30 +234,27 @@ main
       box-sizing: border-box
       ul
         padding-bottom: 5%
-      h5
-        color: white
+      h4
+        color: black
         padding: 5px
         text-transform: uppercase
         font-weight: bold
-        font-size: 18px
+        font-size: 19px
         margin: 0 auto
         width: 120px
         text-align: center
-      h4
+      h5
         color: white
         margin-left: 15%
         font-size: 1.1em
       li
-        color: grey
         margin-left: 48px
         text-decoration: none
-        font-size: 17px
         color: black
         text-transform: uppercase
         font-weight: bold
         font-size: 0.9em
         padding: 1.5% 0% 1.5% 0%
-
       a
         display: block
         padding: 1em
@@ -282,8 +272,13 @@ main
           background: rgba(0,0,0,0.6)
         &:active
           background: rgba(127,127,127,0.3)
-        h6
-          font-style: italic
+    h6
+      font-style: italic
+      font-weight: bold
+      margin-left: 15%
+      font-size: 1.1em
+      color: white
+      padding: 5% 2% 2%
     #products
       position: relative
       color: white
@@ -299,6 +294,12 @@ main
           font-weight: bold
           color: white
           font-size: 1em
+        .fieldsReady
+          font-size: 15px
+          text-align: center
+          padding: 4% 2% 6%
+          color: black
+          font-weight: bold
       button
         padding: 4% 10%
         border-radius: 5px
@@ -651,10 +652,11 @@ footer
       article
         width: 100%
         h5
-          font-size: 1.5em
+          font-size: 1em
           text-align: center
           padding: 1px 65px 10px 1px
-
+        h6
+          font-size: 1em
         a
           padding: 2%
           text-align: center
@@ -679,6 +681,18 @@ footer
     #content
       width: 100%
       font-size: 0.9em
+    #farmcontenant
+      background: none
+      border-radius: 5%
+      padding: 1%
+      width: 95%
+      #farmcontenu
+        padding: 4%
+        background: rgba(10, 10, 10, 0.45)
+        border-radius: 5%
+      progress
+        display: none
+
 
   /*------------------------------------integration des templates-------------------------------------------*/
   /*--------page fields listing----------*/
