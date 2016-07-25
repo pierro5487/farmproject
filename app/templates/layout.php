@@ -57,9 +57,10 @@
 			<ul>
 				<li class="viber"><a href="<?= $this->url('game_farm')?>" id="farm">ferme</a></li>
 				<li class="viber"><a href="<?= $this->url('game_building')?>">bâtiments</a></li>
-				<li class="viber"><a href="<?= $this->url('game_animals')?>">animaux</a></li>
-				<li class="viber"><a href="<?= $this->url('game_field')?>"">cultures</a></li>
-				<li class="viber"><a href="<?= $this->url('game_products')?>"">produits</a></li>
+				<li class="viber"><a href="<?= $this->url('game_animals')?>" id="animals">animaux</a></li>
+				<li class="viber"><a href="<?= $this->url('game_field')?>">cultures</a></li>
+				<li class="viber"><a href="<?= $this->url('game_products')?>">produits</a></li>
+				<li class="viber"><a href="<?= $this->url('game_market')?>" id="market">marché</a></li>
 				<div class="clearfix"></div>
 			</ul>
 		</nav>
