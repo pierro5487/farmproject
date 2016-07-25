@@ -257,4 +257,9 @@ class AjaxController extends Controller
         echo json_encode($animals);
         //$this->show('ajax/market', ['animals' => $animals]);
     }
+
+    public function marketRefresh()
+    {
+        
+    }
 }

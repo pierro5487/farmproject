@@ -30,9 +30,10 @@ $(function(){
         harvestFieldsEvent();
         setInterval(fieldRefresh,1000);
     }
-    var testUrl = url.indexOf("market");
+    //si on se trouve sur la page market alors on lance un raffraichissement
+    testUrl = url.indexOf("market");
     if(testUrl!=(-1)){
-       /* setInterval(market,1000);*/
+       /* setInterval(refreshMarket,1000);*/
     }
 
     /********************************************************************************/
@@ -418,4 +419,5 @@ $(function(){
 
         });
     }
+
 });
