@@ -78,7 +78,6 @@
 			<!-- Section mes produits -->
 			<article id="products">
 				<div id="listProducts"></div>
-				<a href="<?= $this->url('harvest')?>">Récolter</a>
 			</article>
 			<!-- Section marché -->
 			<article id="market">

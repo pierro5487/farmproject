@@ -13,12 +13,14 @@
         echo '</li>';
     }
     ?>
+    <a href="<?= $this->url('harvest')?>">Récolter</a>
 </ul>
 <h6>Céréalier</h6>
 <?php
     if($fieldsReady!=0){
-        echo '<p>Vous avez '.$fieldsReady.' champs prêt à récolter</p>';
+        echo '<p class="fieldsReady">Vous avez '.$fieldsReady.' champs prêt(s) à récolter</p>';
     }else{
-        echo '<p>Vous n\'avez aucun champ prêt à récolter</p>';
+        echo '<p class="fieldsReady">Vous n\'avez aucun champ prêt à récolter</p>';
     }
 ?>
+

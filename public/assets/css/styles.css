@@ -282,10 +282,10 @@ main {
         font-weight: bold;
         color: white;
         font-size: 1em; }
-      main #navLeft #products #listProducts p {
+      main #navLeft #products #listProducts .fieldsReady {
         font-size: 15px;
         text-align: center;
-        padding: 2%;
+        padding: 4% 2% 6%;
         color: black;
         font-weight: bold; }
       main #navLeft #products button {
