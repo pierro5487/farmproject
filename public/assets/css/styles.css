@@ -58,12 +58,14 @@ a {
     border-radius: 6%;
     width: 100%; }
     #error404 #errorSection #errorTitle {
-      float: left;
       display: block;
       color: black;
       font-weight: bold;
       font-size: 2em;
-      padding: 5% 5%; }
+      padding: 5% 0%;
+      text-align: center;
+      margin: auto;
+      width: 100%; }
     #error404 #errorSection .errorP {
       color: black;
       padding: 5% 5%;
@@ -75,26 +77,27 @@ a {
       width: 80%;
       padding-top: 10%;
       position: absolute;
-      left: 25%; }
+      left: 5%;
+      text-align: center; }
     #error404 #errorSection .errorDiv {
-      position: relative; }
+      position: relative;
+      margin: auto; }
       #error404 #errorSection .errorDiv::before {
-        display: block;
         float: left;
         content: "";
         background: url("../img/fermier.png") no-repeat;
         width: 250px;
         height: 250px;
-        padding: 2%; }
+        margin-left: 10%; }
       #error404 #errorSection .errorDiv::after {
-        display: block;
+        float: left;
         content: "";
         background: url("../img/cow2.png") no-repeat;
         background-size: contain;
         width: 200px;
         height: 200px;
         padding: 2%;
-        margin-left: 60%; }
+        margin-left: 30%; }
 
 /*---------------integration layout--------------------------------------- */
 /*---------------------------------------------------------------------------- */
@@ -308,9 +311,27 @@ main {
       main #navLeft #creations .red {
         color: red;
         display: inline-block; }
+        main #navLeft #creations .red::after {
+          content: "";
+          display: block;
+          background: url("../img/or.png") no-repeat center;
+          width: 15px;
+          height: 15px;
+          background-size: cover;
+          float: right;
+          margin-left: 5px; }
       main #navLeft #creations .green {
         color: green;
         display: inline-block; }
+        main #navLeft #creations .green::after {
+          content: "";
+          display: block;
+          background: url("../img/or.png") no-repeat center;
+          width: 15px;
+          height: 15px;
+          background-size: cover;
+          float: right;
+          margin-left: 5px; }
       main #navLeft #creations::before {
         content: "";
         display: block;
@@ -485,7 +506,8 @@ footer {
   border-radius: 10px;
   margin: 10px; }
   .listingField .informationField {
-    padding: 3%; }
+    padding: 3%;
+    width: 70%; }
     .listingField .informationField li {
       padding: 0.1em; }
     .listingField .informationField button {
@@ -501,6 +523,9 @@ footer {
         background: rgba(0, 0, 0, 0.6); }
       .listingField .informationField button:active {
         background: rgba(127, 127, 127, 0.2); }
+    .listingField .informationField progress {
+      width: 90%;
+      margin-left: 30%; }
   .listingField::after {
     content: "";
     display: block;
@@ -559,10 +584,13 @@ footer {
   .listingField .informationField {
     float: left;
     padding: 5%;
-    display: block; }
+    display: block;
+    margin-left: 10%; }
     .listingField .informationField button {
       padding: 0.4em 0.8em;
       margin-top: 4%; }
+    .listingField .informationField progress {
+      margin-left: 2%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
@@ -680,6 +708,11 @@ footer {
     text-align: center; }
     .listingField .informationField ul li {
       width: 100%; }
+    .listingField .informationField progress {
+      margin-left: 2%; }
+    .listingField .informationField button {
+      padding: 0.2em 0.4em;
+      width: 80%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
@@ -736,6 +769,7 @@ progress {
   background-color: #d4d4d4;
   box-shadow: 0 0 0 3px #b6b6b6; }
 
+/********************************************************************** */
 @-webkit-keyframes progress {
   from {
     background-position: 0 0; }
