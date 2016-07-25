@@ -230,7 +230,7 @@ class DefaultController extends Controller
 		$mail->Port = 587;                                    	// Port TCP à utiliser
 
 		$mail->Sender='mailer@monsite.fr';
-		$mail->setFrom('mailer@monsite.fr', 'Lore\'N Farm', false);
+		$mail->setFrom('mailer@monsite.fr', 'Lor\'N Farm', false);
 		$mail->addAddress($email);     		// Ajouter un destinataire
 //		$mail->addAddress('ellen@example.com');               	// Le nom est optionnel
 		$mail->addReplyTo('contact@monsite.fr', 'Information');
@@ -238,14 +238,57 @@ class DefaultController extends Controller
 		$mail->addBCC('bcc@example.com');
 
 		$mail->isHTML(true);                                  	 // Set email format to HTML
+		$mail->CharSet = 'UTF-8';
 
+
+		$mail->addEmbeddedImage('../public/assets/img/cow.png','cow_image');
+		$mail->addEmbeddedImage('../public/assets/img/cow2.png','cow2_image');
 		$mail->Subject = 'Changement de mot de passe';
-        $message = '
-			<h4>Bien le bonjour!</h4>
-			<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p>
-			<a href="localhost/farmproject/public/new-password?token='.$token.'&id='.$id.'">Cliquez ici</a>
-			<p>Bonne continuation et amusez vous bien sur Lore\'N Farm</p>
-			<p>Vous n\'êtes pas à l\'origine de ce mail? Faites donc comme si vous ne l\'aviez jamais reçu et go à la corbeille!</p>';
+        $message = "
+			<style type=\"text/css\">
+				section{
+					display: block;
+					width: 100%;
+				}
+				section::before{
+				content:'';
+				display: block;
+				clear: both;
+				}
+				h4{
+					font-size: 2em;
+					font-weight: bold;
+					padding: 20px 0px;
+					float: left;
+					display: block;
+				}
+				img{
+					display: block;
+					float: left;
+					width: 100px;
+					height: 100px;
+					margin-left: 20px;
+					margin-right: 20px;
+				}
+				a{
+					font-weight: bold;
+				}
+			</style>
+			<section>
+				<img tag put src=\"cid:cow_image\">
+				<h4>Bien le bonjour!</h4>
+				<img tag put src=\"cid:cow2_image\">
+			</section>
+			<div class='clearfix''></div>
+			
+			<section>
+				<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p><br>
+				<p><a href=\"localhost / farmproject /public/new-password ? token = '.$token.' & id = '.$id.'\">Cliquez ici</a></p><br>
+				<p>Bonne continuation et amusez vous bien sur <strong>Lor'N Farm</strong></p><br>
+				<p>Vous n'êtes pas à l'origine de ce mail? Faites donc comme si vous ne l'aviez jamais reçu et go à la corbeille!</p><br>
+			</section>";
+
+
 		$mail->Body    = $message;
 		$mail->AltBody = 'Le message en texte brut, pour les clients qui ont désactivé l\'affichage HTML';
 

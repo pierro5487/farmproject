@@ -34,7 +34,7 @@
 	<div class="container">
 		<div>
 			<!-- insertion logo -->
-			<img src="" alt="logo">
+			<img id="logo" src="assets/img/logo.png" alt="logo">
 		</div>
 
 		<div id="infoUser">
