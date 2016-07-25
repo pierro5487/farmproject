@@ -4,8 +4,6 @@ body {
   margin: 0; }
 
 .vid-container {
-  position: relative;
-  height: 100vh;
   overflow: hidden; }
 
 .bgvid {
@@ -30,15 +28,25 @@ body {
   -ms-filter: blur(10px);
   -o-filter: blur(10px);
   filter: blur(10px); }
+  .bgvid.inner video {
+    position: absolute;
+    z-index: 1; }
 
 .box {
-  position: relative;
   width: 400px;
+  height: 400px;
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 200px);
+  overflow: hidden;
+  width: 25em;
   font-family: Helvetica;
   color: #fff;
   background: rgba(0, 0, 0, 0.13);
   border-radius: 5%;
-  padding: 10px 0px 30px; }
+  padding: 10px 0px 0px;
+  vertical-align: middle;
+  margin: 0 auto; }
   .box h1 {
     text-align: center;
     margin: 30px 0;
@@ -62,7 +70,7 @@ body {
     color: #fff;
     padding: 10px;
     font-size: 20px;
-    width: 220px;
+    width: 13.5em;
     margin: 20px auto;
     display: block;
     cursor: pointer;
@@ -95,21 +103,28 @@ div.error {
 /* M├®diaqueries */
 /*************** */
 @media screen and (max-width: 1024px) {
-  .container {
-    width: 60%; }
-
   .bgvid {
     position: absolute;
     left: 0;
     top: 0;
     width: 155vw; } }
 @media screen and (max-width: 687px) {
-  .box {
-    width: 100%; }
-    .box input {
-      width: 60%; }
-
-  .container {
-    width: 100%; } }
+  html {
+    background: url("../img/backgroundHerbe.png") no-repeat;
+    background-size: cover; }
+    html .box {
+      position: initial;
+      width: 95%;
+      margin: 20px auto; }
+      html .box input {
+        width: 60%; }
+      html .box button {
+        width: 10.5em; }
+    html .container {
+      width: 100%; }
+    html .vid-container {
+      display: none; }
+      html .vid-container video {
+        display: none; } }
 
 /*# sourceMappingURL=connexion.styles.css.map */
