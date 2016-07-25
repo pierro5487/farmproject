@@ -52,6 +52,57 @@ a
   width: 50%
   margin: 0 auto
 
+//intégration page 404
+#error404
+  background: url("../img/champs.png") no-repeat
+  background-size: cover
+  #errorSection
+    float: right
+    margin-top: 5%
+    color: #fff
+    background: rgba(0, 0, 0, 0.2)
+    border-radius: 6%
+    width: 100%
+    #errorTitle
+      float: left
+      display: block
+      color: black
+      font-weight: bold
+      font-size: 2em
+      padding: 5% 5%
+    .errorP
+      color: black
+      padding: 5% 5%
+      font-weight: bold
+      font-size: 1.2em
+    #errorParagraphe
+      display: block
+      float: right
+      width: 80%
+      padding-top: 10%
+      position: absolute
+      left: 25%
+    .errorDiv
+      position: relative
+      &::before
+        display: block
+        float: left
+        content: ""
+        background: url("../img/fermier.png") no-repeat
+        width: 250px
+        height: 250px
+        padding: 2%
+      &::after
+        display: block
+        content: ""
+        background: url("../img/cow2.png") no-repeat
+        background-size: contain
+        width: 200px
+        height: 200px
+        padding: 2%
+        margin-left: 60%
+
+
 
 
 /*---------------integration layout---------------------------------------*/
@@ -61,6 +112,14 @@ a
 .clearfix
   clear: both
   display: block
+
+/* logo */
+#logo
+  width: 25%
+  height: 25%
+  padding-left: 2%
+
+
 
 /*.................................................................................*/
 /*.......................................HEADER..................................*/

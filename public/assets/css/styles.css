@@ -53,12 +53,67 @@ a {
   width: 50%;
   margin: 0 auto; }
 
+#error404 {
+  background: url("../img/champs.png") no-repeat;
+  background-size: cover; }
+  #error404 #errorSection {
+    float: right;
+    margin-top: 5%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6%;
+    width: 100%; }
+    #error404 #errorSection #errorTitle {
+      float: left;
+      display: block;
+      color: black;
+      font-weight: bold;
+      font-size: 2em;
+      padding: 5% 5%; }
+    #error404 #errorSection .errorP {
+      color: black;
+      padding: 5% 5%;
+      font-weight: bold;
+      font-size: 1.2em; }
+    #error404 #errorSection #errorParagraphe {
+      display: block;
+      float: right;
+      width: 80%;
+      padding-top: 10%;
+      position: absolute;
+      left: 25%; }
+    #error404 #errorSection .errorDiv {
+      position: relative; }
+      #error404 #errorSection .errorDiv::before {
+        display: block;
+        float: left;
+        content: "";
+        background: url("../img/fermier.png") no-repeat;
+        width: 250px;
+        height: 250px;
+        padding: 2%; }
+      #error404 #errorSection .errorDiv::after {
+        display: block;
+        content: "";
+        background: url("../img/cow2.png") no-repeat;
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+        padding: 2%;
+        margin-left: 60%; }
+
 /*---------------integration layout--------------------------------------- */
 /*---------------------------------------------------------------------------- */
 /* utilities */
 .clearfix {
   clear: both;
   display: block; }
+
+/* logo */
+#logo {
+  width: 25%;
+  height: 25%;
+  padding-left: 2%; }
 
 /*................................................................................. */
 /*.......................................HEADER.................................. */

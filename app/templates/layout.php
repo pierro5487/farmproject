@@ -37,7 +37,7 @@
 	<div class="container">
 		<div>
 			<!-- insertion logo -->
-			<img src="<?= $this->assetUrl('img/logo.png') ?>" height="100px width= "100px" alt="logo">
+			<img id="logo" src="<?= $this->assetUrl('img/logo.png') ?>" alt="logo">
 		</div>
 
 		<div id="infoUser">
