@@ -10,7 +10,7 @@
 <body>
 <?php
     if(isset($_POST['recovery'])&& !isset($errors)){
-        echo '<p>un mail à été envoyé" blabla</p>';
+        /*On ne fait rien car le controller s'en charge*/
     }else{
     //j'affiche formulaire
 ?>

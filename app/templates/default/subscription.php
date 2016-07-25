@@ -9,7 +9,7 @@
         <?php
         if (!empty($_POST) && empty($errors)) :
             ?>
-            L'utilisateur a été ajouté en base de données
+            <!--On ne fait rien car le controller s'en charge-->
             <?php
         else :
         ?>
