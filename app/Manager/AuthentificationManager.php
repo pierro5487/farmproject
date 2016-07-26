@@ -81,7 +81,7 @@ class AuthentificationManager extends AManager
         $bddManager->setTable('recovery_token');
         $bddManager->deleteToken($pdo,$id_user);
         //puis on insere
-        $stmt = $pdo->prepare('INSERT INTO recovery_Token (id_user, token) VALUES(:id_user, :token)');
+        $stmt = $pdo->prepare('INSERT INTO recovery_token (id_user, token) VALUES(:id_user, :token)');
         $stmt->bindParam(':id_user', $id_user);
         $stmt->bindParam(':token', $token);
         $stmt->execute();
