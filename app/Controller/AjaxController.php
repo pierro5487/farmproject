@@ -283,7 +283,7 @@ class AjaxController extends Controller
             $marketManager->delete($idMarket);
             //j'insere ce nouvel animal dans la bdd
             $data=[
-                'name'=>$specie['name'].($nbAnimals+1),
+                'name'=>$specie['name'].$idMarket,
                 'id_user'=>$_SESSION['user']['id'],
                 'id_species'=>$animal['id_species']
             ];
