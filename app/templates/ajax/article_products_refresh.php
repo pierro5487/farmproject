@@ -13,7 +13,7 @@
         echo '</li>';
     }
     ?>
-    <a href="<?= $this->url('harvest')?>">Récolter</a>
+    <a href="<?= $this->url('harvest')?>">Ramasser</a>
 </ul>
 <h6>Céréalier</h6>
 <?php

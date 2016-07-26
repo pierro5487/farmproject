@@ -42,4 +42,11 @@
         </article>
     <?php endforeach ?>
 </div>
+
+<?php
+    if(!isset($field)){
+        echo "<div id=\"empty\">Oups .. Pas de champs en location !<br><br><- C'est juste à gauche !</div>";
+   }
+?>
+
 <?php $this->stop('main_content'); ?>

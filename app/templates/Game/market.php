@@ -39,15 +39,21 @@ foreach ($animalsList as $animal){
             >Acheter</button>
                 <?php
                     if(!$animal['location']){
-                        echo '<p>Plus de place!!!</p>';
+                        echo '<p>Plus de place !</p>';
                     }else if($animal['price_purchase']>$_SESSION['user']['money']){
-                        echo '<p>Pas assez de monnaie!!!</p>';
+                        echo '<p>Pas assez de monnaie !</p>';
                     }
                 ?>
         </div>
     </article>
-    <?php
-}
-?>
+        <?php
+            }
+        ?>
 </div>
+    <?php
+        if(!isset($animal)){
+            echo "<div id=\"empty\">Oups .. Le marché c'est fait dévaliser !<br>Rendez-vous demain !</div>";
+        }
+    ?>
+
 <?php $this->stop('main_content'); ?>

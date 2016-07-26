@@ -2,6 +2,20 @@
 html, body {
   font-family: Consolas, monaco, monospace;
   color: #62c462; }
+  html #empty, body #empty {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10%;
+    text-align: center; }
+    html #empty::after, body #empty::after {
+      margin-top: 10%;
+      float: left;
+      content: "";
+      background: url("../img/fermier.png") no-repeat;
+      width: 250px;
+      height: 250px;
+      margin-left: 10%; }
 
 .container {
   width: 980px;

@@ -20,9 +20,9 @@ foreach ($animalsList as $animal){
             >Acheter</button>
             <?php
             if(!$animal['location']){
-                echo '<p>Plus de place!!!</p>';
+                echo '<p>Pas assez de place !</p>';
             }else if($animal['price_purchase']>$_SESSION['user']['money']){
-                echo '<p>Pas assez de monnaie!!!</p>';
+                echo '<p>Pas assez de monnaie !</p>';
             }
             ?>
         </div>
