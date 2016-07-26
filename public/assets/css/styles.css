@@ -800,8 +800,8 @@ footer {
     .listingField .informationField progress {
       margin-left: 2%; }
     .listingField .informationField button {
-      padding: 0.2em 0.4em;
-      width: 80%; }
+      padding: 0.2em 0em;
+      width: 100%; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
