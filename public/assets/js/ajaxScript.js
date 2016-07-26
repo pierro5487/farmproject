@@ -290,6 +290,7 @@ $(function(){
                                         success : function(response){
                                             refreshCreations();
                                             $("#dialog").dialog('close'); // On ferme la boite de dialogue
+                                            document.location.href=displayBuilding;
                                         },
                                         error : function(resultat, statut, erreur){
                                             // En cas d'erreur, on le note
