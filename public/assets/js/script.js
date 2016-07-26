@@ -50,6 +50,21 @@ $(document).ready( function() {
             $('#a_'+ $('#animal').val()).show();
         }
     });
+
+    //.................................................................................
+    //fonction pour afficher qu'un seul produit
+    $('#productSelect').change(function(){
+        //$(this) fait référence à $('#productSelect')
+        if($(this).val() == "*"){
+            //si on sélectionne le tous, on affiche tous les produits
+            $('.listing').show();
+        }else{
+            //on cache tous les produits
+            $('.listing').hide();
+            //on affiche le produit selon la valeur de l'id qu'on sélectionne
+            $('#p_'+ $('#productSelect').val()).show();
+        }
+    });
     
     /*---------------------function -----------------------*/
     $('#market_select').change(function(){

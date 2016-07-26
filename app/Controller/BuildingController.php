@@ -44,19 +44,21 @@ class BuildingController extends Controller
         }
 
         if(count($errors) ==0) {
-            //j'upgrade le batiment sélectionné
+            //j'upgrade le batiment sélectionné si nous n'avons pas d'erreur
             $buildingManager = new\Manager\BuildingManager();
             $building = $buildingManager->verifBuilding($_POST['id']);
+            //amélioration du niveau du batiment
             $buildingManager->update(['level' => $building['level'] + 1], $_POST['id']);
-
+            //on rafraichit l'article contenant le building que l'on souhaite améliorer
             $donnees['building'] = $buildingManager->refreshBuilding($_POST['id']);
             $userManager = new \Manager\UsersManager();
+            //retrait des po
             $userManager->spendMoney($_SESSION['user']['id'], $building['price_improvement']*(1+($building['level'])/5));
-
             $_SESSION['user']['money'] -= $building['price_improvement']*(1+($building['level'])/5);
             $donnees['user']['money'] = $_SESSION['user']['money'];
             $donnees['user']['level']= $_SESSION['user']['level'];
             $userManager= new \Manager\UsersManager();
+            //on ajoute l'expérience
             $userManager->updateExperience($_SESSION['user']['id'], $building['xp_improvement']);
             echo(json_encode($donnees));
         } else {
