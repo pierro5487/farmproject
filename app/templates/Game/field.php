@@ -15,15 +15,29 @@
 
     <!-- Affichage du détail -->
 <div id="fieldsList">
-    <?php foreach ($fields as $field2) : ?>
-        <article id="f_<?= $field2['id']?>" class="listingField">
-            <div class="avatarField"><img src="<?= $this->assetUrl($field2['image'])?>"/></div>
+    <?php foreach ($fields as $field) : ?>
+        <article id="f_<?= $field['id']?>" class="listingField">
+            <div class="avatarField"><img src="<?= $this->assetUrl($field['image'])?>"/></div>
              <div class="informationField">
                 <ul>
-                    <li>Plantation: <?= $field2['nameCereals']?></li>
+                    <li>Plantation: <?= $field['nameCereals']?></li>
                 </ul>
-                <progress value="<?= $field2['fieldValue'] ?>" max="100">loading</progress>
-                <button class="harvest"<?php if($field2['fieldValue']<100){ echo 'disabled';} ?>>Récolter</button>
+                <progress value="<?= $field['fieldValue'] ?>" max="100">loading</progress>
+                <button class="harvest"
+                    <?php
+                        if($field['fieldValue']<100){
+                            echo 'disabled';
+                        }
+                    ?>
+                >
+                    <?php
+                    if($field['fieldValue']<100){
+                        echo 'en cours..'.$field['fieldValue'].'%';
+                    }else{
+                        echo 'Récolter';
+                    }
+                    ?>
+                </button>
              </div>
         </article>
     <?php endforeach ?>

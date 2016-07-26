@@ -27,7 +27,7 @@
 		var fieldHarvestRoute='<?= $this->url('fieldHarvestRoute') ?>';
 		var market='<?= $this->url('refresh_market') ?>';
 		var ajaxBuyAnimal='<?= $this->url('buy_animal') ?>';
-
+		var displayFields='<?= $this->url('game_field') ?>';
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>

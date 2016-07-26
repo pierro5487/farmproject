@@ -134,6 +134,9 @@ $(function(){
                         //attr => correspond à un attribut de balise que tu veux sélectionner
                         //.html => permet de redéfinir le contenu d'une balise html
                         $('#b_' + $(this).attr('bid') + ' li.' + attr + ' span').html(buildingData[attr]);
+                        if(message.user.level<buildingData.level_improvement*buildingData.level){
+                            $(this).prop("disabled", true);
+                        }
                     }
                     // Refresh user money
                     $('#money').html(message.user.money + " PO");
@@ -326,7 +329,7 @@ $(function(){
                                         success : function(response){
                                             refreshCreations();
                                             $("#dialog").dialog('close'); // On ferme la boite de dialogue
-                                            document.location.href="http://localhost/farmproject/public/field";
+                                            document.location.href=displayFields;
                                         },
                                         error : function(resultat, statut, erreur){
                                             // En cas d'erreur, on le note
@@ -366,8 +369,9 @@ $(function(){
                     $('#f_' + fields[i].id).find('progress').attr('value', fields[i].fieldValue);
                     //je teste si le champs peut etre récolté
                     if (fields[i].fieldValue >= 100) {
-                        $('#f_' + fields[i].id).find('button').prop("disabled", false);
-                        ;
+                        $('#f_' + fields[i].id).find('button').prop("disabled", false).html('Récolter');
+                    }else{
+                        $('#f_' + fields[i].id).find('button').html('En cours..'+fields[i].fieldValue+'%');
                     }
                 }
                 harvestFieldsEvent();
@@ -417,7 +421,6 @@ $(function(){
                 //va prendre dans tout les cas le this actuel comme this .improvement dans cette requête ajax
                 context: this,
                 data: {
-                    //on cherche à avoir l'id d'un bâtiment précis au travers du bouton
                     id: $(this).parent().parent().attr('id')
                 },
                 success: function(idFieldDeleted){

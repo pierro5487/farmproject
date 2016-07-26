@@ -55,6 +55,7 @@ class BuildingController extends Controller
 
             $_SESSION['user']['money'] -= $building['price_improvement'];
             $donnees['user']['money'] = $_SESSION['user']['money'];
+            $donnees['user']['level']= $_SESSION['user']['level'];
             $userManager= new \Manager\UsersManager();
             $userManager->updateExperience($_SESSION['user']['id'], $building['xp_improvement']);
             echo(json_encode($donnees));
