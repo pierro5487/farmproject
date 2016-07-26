@@ -11,8 +11,7 @@ class ProductionController extends \W\Controller\Controller
         $pdo = $controller->connectPdo();
         //récupération du temps
         $timeManager = new\Manager\OptionsManager();
-        $options = $timeManager->find(1);
-        $time=$options['time'];
+        $time=$timeManager->getTime();
         /*---------récupération produit animaliers------*/
         //je recupere le nombre d'animaux par espece et la caratéristique temps de production de chaque espece
         $dataAnimals= new\Manager\AnimalsManager();

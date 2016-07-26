@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=yes"/>
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css">
@@ -48,7 +49,6 @@
 			<div>Level <?= $_SESSION['user']['level'] ?></div>
 			<!-- affichage des po -->
 			<div id="money"><?= $_SESSION['user']['money'] ?> PO</div>
-			<div id="xp"><?= $info['current_xp']?>/<?= $info['max_experience']?></div>
 			<!-- bouton déconnexion-->
 			<a href="<?= $this->url('game_log_out')?>">Déconnexion</a>
 		</div>

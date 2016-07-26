@@ -35,8 +35,11 @@ class MarketController extends \W\Controller\Controller
         // On recupere les animaux encore présent sur le marché
         $marketManager= new \Manager\MarketManager();
         $animal=$marketManager->findAll();
+        //je récupere le jour de création
+        $timeManager = new\Manager\OptionsManager();
+        $time=$timeManager->getTimestampMarket();
         //on test si la liste est du jour
-        if(date('N',strtotime($animal[0]['date_created'])) != date('N')){
+        if(date('N',$time) != date('N')){
             //on vide le marché des animaux restant
             $marketManager->deleteAll($pdo);
             //on créé les animaux aléatoirement
@@ -51,6 +54,8 @@ class MarketController extends \W\Controller\Controller
                 ];
                 $marketManager->insert($data);
             }
+            //on change la date du marché
+            $timeManager->updateTimestamp();
         }
         return $marketManager;
     }
