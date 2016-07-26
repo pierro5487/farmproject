@@ -99,12 +99,12 @@ class ProductionController extends \W\Controller\Controller
         $pdo = $controller->connectPdo();
         //récupération du temps
         $timeManager = new\Manager\OptionsManager();
-        $options = $timeManager->find(1);
+        $time=$timeManager->getTime();
         //je récupère tout les stocks existant
         $dataProducts= new\Manager\ProductsManager();
         $stocks= $dataProducts->getCerealsProductsStock($pdo,$_SESSION['user']['id']);
         //on teste si le champs est bien pret à etre récolté en cas de triche(modification html)
-        $timeHarvest = $field['timestamp_harvest']*$options['time'];
+        $timeHarvest = $field['timestamp_harvest']*$time;
         $timeNow=time()-strtotime($field['date_sow']);
         $fieldValue=floor(($timeNow*100)/$timeHarvest);
         if($fieldValue>=100){

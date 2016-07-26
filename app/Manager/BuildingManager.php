@@ -36,7 +36,7 @@ class BuildingManager extends \W\Manager\Manager
     public function refreshBuilding($idBuilding)
     {
         $pdo = $this->dbh;
-        $sql='SELECT building.id, name, level_access, building.level as level, level*5 as max_quantity, building.date_created as date, image_path, price_improvement 
+        $sql='SELECT building.id, name, level_access, building.level as level, level*5 as max_quantity, building.date_created as date, image_path, price_improvement ,level_improvement
 	        FROM type_building 
 	        INNER JOIN building ON type_building.id = building.id_type
 	        WHERE building.id = :idBuilding
