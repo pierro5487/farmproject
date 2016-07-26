@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=yes">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
+
     <link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
 
     <title>Oppppssss</title>

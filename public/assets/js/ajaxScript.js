@@ -243,9 +243,9 @@ $(function(){
 
                     // Définition de la boite de dialogue
                     $( "#dialog" ).dialog({
-                        maxWidth:600,
+                        maxWidth: 150,
                         maxHeight: 250,
-                        width: 600,
+                        width: 'auto',
                         height: 250,
                         modal: true,
                         autoOpen: false,

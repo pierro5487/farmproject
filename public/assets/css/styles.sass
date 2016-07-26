@@ -102,6 +102,8 @@ a
 
 
 
+
+
 /*---------------integration layout---------------------------------------*/
 /*----------------------------------------------------------------------------*/
 /* utilities */
@@ -561,6 +563,30 @@ footer
 @media screen and (min-width: 768px) and (max-width: 980px)
   .container
     width: 768px
+
+  /*--------------page erreur 404 -----*/
+  //intégration page 404
+  #error404
+    #errorSection
+      font-size: 1em
+      text-align: center
+      #errorTitle
+        font-size: 2em
+      #errorParagraphe
+        width: 83%
+        color: white
+        font-size: 1.5em
+      .errorDiv
+        &::before
+          width: 180px
+          height: 180px
+          background: url("../img/cow.png") no-repeat
+          background-size: contain
+        &::after
+          margin-left: 40%
+          width: 150px
+          height: 150px
+
   header
     #infoUser
       margin-right: 1em
@@ -568,9 +594,11 @@ footer
       ul
         margin-right: 1em
         li
+          padding: 8% 7%
           a
             padding: 2em
-
+            top: 2em
+            font-size: 0.9em
   main
     #navLeft
       article
@@ -601,6 +629,22 @@ footer
             width: 90%
           button
             padding: 2% 5%
+    #farmcontenant
+      background: url('../img/farmcontent.png') no-repeat
+      background-size: 580px 700px
+      border-radius: 5%
+      padding: 30px
+      margin-top: 50px
+      height: 700px
+      width: auto
+      #farmcontenu
+        padding: 63px 63px 63px 93px
+    progress
+      display: block
+      width: 30%
+      height: 20px
+      margin-left: 10%
+
 
 
   /*------------------------------------integration des templates-------------------------------------------*/
@@ -648,12 +692,42 @@ footer
   .container
     width: 100%
 
+  /*--------------page erreur 404 -----*/
+  //intégration page 404
+  #error404
+    #errorSection
+      font-size: 1em
+      text-align: center
+      #errorTitle
+        font-size: 1.5em
+      #errorParagraphe
+        width: 50%
+        color: white
+        font-size: 1.2em
+      .errorDiv
+        &::before
+          display: none
+        &::after
+          margin-left: 60%
+          width: 100px
+          height: 100px
+
+
   /*------------------------------------integration layout-------------------------------------------*/
   /*.......................HEADER..............................*/
 
   header
+    #logo
+      width: 40%
+      #logo2
+        width: 60%
+        height: 60%
     #infoUser
-      display: none
+      display: block
+      float: left
+      width: 50%
+      margin: 2% auto
+      font-size: 0.8em
     nav
       padding-bottom: 0.1em
       margin-bottom: 0.2em
@@ -668,13 +742,17 @@ footer
           margin-left: 0.5em
           background: url("../img/pencarte.gif") no-repeat center
           a
-            font-size: 80%
-            top: 28%
+            font-size: 68%
+            top: 25%
             left: 15%
             padding: 5%
-
           #farm
-            left: 25%
+            left: 20%
+          #animals
+            left: 20%
+          #market
+            left: 20%
+
 
   /*.....................MAIN..............................*/
   main
@@ -757,7 +835,6 @@ footer
 
   /*--------page building listing----------*/
   .avatarBuilding
-    float: left
     width: 100%
     img
       width: 40%
@@ -780,11 +857,12 @@ footer
   /*--------page animals listing----------*/
   .avatar
     width: 100%
+    display: block
     img
       width: 30%
       height: 20%
-      margin: 2% auto 2%
-      padding: 2% 30%
+      display: block
+      margin: 0 auto
   .listing
     .information
       float: left
@@ -792,9 +870,10 @@ footer
       width: 100%
       display: block
       padding: 2% 22%
-  button
-    margin: 0 auto
-    display: block
+      button
+        margin: 0 auto
+        display: block
+        width: 80%
   .right
     width: 1%
     margin-left: 80px

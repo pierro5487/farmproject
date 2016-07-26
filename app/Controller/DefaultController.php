@@ -273,10 +273,9 @@ class DefaultController extends Controller
 				img{
 					display: block;
 					float: left;
-					width: 100px;
-					height: 100px;
-					margin-left: 20px;
-					margin-right: 20px;
+					width: 15%;
+					height: 15%;
+					margin: 0 3% 2%;
 				}
 				a{
 					font-weight: bold;
