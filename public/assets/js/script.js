@@ -3,7 +3,7 @@ $(document).ready( function() {
     var navigation= $('#navLeft');
     var button = $('#buttonNavLeft');
     button.on('click', function(event){
-        navigation.toggleClass('showOnPhone');
+        navigation.toggle('slide'); // Déplacement navigation
     });
 
     //.................................................................................
