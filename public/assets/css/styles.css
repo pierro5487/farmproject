@@ -769,6 +769,9 @@ footer {
   .avatarField {
     width: 100%; }
     .avatarField img {
+      width: 30%;
+      height: 20%;
+      float: left;
       margin: 2% auto 2%;
       padding: 2% 35%; }
 
@@ -783,10 +786,8 @@ footer {
     .listingField .informationField progress {
       margin-left: 2%; }
     .listingField .informationField button {
-      padding: 0.2em 0.5em;
+      padding: 0.2em 0em;
       width: 100%; }
-    .listingField .informationField #addField {
-      padding: 0.2em 1em; }
 
   /*--------page building listing---------- */
   .avatarBuilding {
@@ -807,6 +808,9 @@ footer {
     .listingBuilding .informationBuilding ul li {
       width: 100%;
       margin: auto; }
+    .listingBuilding .informationBuilding button {
+      padding: 0.2em 0.4em;
+      width: 100%; }
 
   /*--------page animals listing---------- */
   .avatar {

@@ -248,7 +248,7 @@ $(function(){
                     $( "#dialog" ).dialog({
                         maxWidth: 600,
                         maxHeight: 400,
-                        minWidth: 150,
+                        minWidth: 160,
                         minHeight: 250,
                         width: 'auto',
                         height: 'auto',
