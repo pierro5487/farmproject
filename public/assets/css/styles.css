@@ -822,6 +822,9 @@ footer {
     .listingBuilding .informationBuilding ul li {
       width: 100%;
       margin: auto; }
+    .listingBuilding .informationBuilding button {
+      padding: 0.2em 0.4em;
+      width: 100%; }
 
   /*--------page animals listing---------- */
   .avatar {
