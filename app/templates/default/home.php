@@ -16,11 +16,13 @@
 					<video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
 						<source src="https://d2v9y0dukr6mq2.cloudfront.net/video/preview/okUindP/tractor-cycle-cartoon_hupss54n__PM.mp4?random=1" type="video/webm">
 					</video>
-
 				</div>
 			</div>
+
 			<div class="container">
+
 				<div class="box">
+					<img src="<?= $this->assetUrl('img/connexion_cow.png')?>">
 					<?php if(!empty($_SESSION['user']['message'])) : ?>
 						<script>
 							/*On passe la variable php à JS*/
@@ -35,7 +37,7 @@
 					<?php $_SESSION['user']['message'] = ''; ?>
 					<?php if (isset($errors['connexion']['nbTries'])) echo '<div class="error">Le compte est bloqué en raison d\'un trop grand nombre de tentatives</div>'; ?>
 					<?php if (isset($errors['connexion']['fail'])) echo '<div class="error">Le mot de passe ne correspond pas</div>'; ?>
-					<h1>Connexion</h1>
+					<h1>Lor'N Farm</h1>
 					<div class="field">
 						<input type="email" name ="email" placeholder="E-mail"/>
 						<?php if (isset($errors['email']['empty'])) echo '<div class="error">Entrez un e-mail</div>'; ?>

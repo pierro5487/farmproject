@@ -244,15 +244,14 @@ class DefaultController extends Controller
         $mail->addReplyTo('contact@monsite.fr', 'Information');
 //		$mail->addCC('cc@example.com');
         $mail->addBCC('bcc@example.com');
+		$mail->isHTML(true);                                  	 // Set email format to HTML
+		$mail->CharSet = 'UTF-8';
 
-        $mail->isHTML(true);                                  	 // Set email format to HTML
-        $mail->CharSet = 'UTF-8';
 
-
-        $mail->addEmbeddedImage('../public/assets/img/cow.png','cow_image');
-        $mail->addEmbeddedImage('../public/assets/img/cow2.png','cow2_image');
-        $mail->Subject = 'Changement de mot de passe';
-        $message = "
+		$mail->addEmbeddedImage('../public/assets/img/cow.png','cow_image');
+		$mail->addEmbeddedImage('../public/assets/img/cow2.png','cow2_image');
+		$mail->Subject = 'Changement de mot de passe';
+		$message = "
 			<style type=\"text/css\">
 				section{
 					display: block;
@@ -296,6 +295,7 @@ class DefaultController extends Controller
 			</section>";
 		$mail->Body    = $message;
 		$mail->AltBody = 'Le message en texte brut, pour les clients qui ont désactivé l\'affichage HTML';
+
 
 		if(!$mail->send()) {
 			$_SESSION['user']['message'] = 'Le message n\'a pas pu être envoyé<br>Mailer Error: '. $mail->ErrorInfo;
