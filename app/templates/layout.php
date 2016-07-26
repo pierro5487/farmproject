@@ -27,6 +27,7 @@
 		var market='<?= $this->url('refresh_market') ?>';
 		var ajaxBuyAnimal='<?= $this->url('buy_animal') ?>';
 		var displayFields='<?= $this->url('game_field') ?>';
+		var displayBuilding='<?= $this->url('game_building') ?>';
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="<?=$this->assetUrl('jquery-ui-1.12.0.custom/jquery-ui.js')?>"></script>
