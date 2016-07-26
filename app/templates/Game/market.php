@@ -26,6 +26,7 @@ foreach ($animalsList as $animal){
         <div class="information">
             <ul>
                 <li>Espece: <?= $animal['name']?></li>
+                <li>Nom:<?= $animal['name'].$animal['idMarket']?></li>
                 <li>Poids: <?= $animal['weight']?> Kgs</li>
                 <li>Prix d'achat: <?= $animal['price_purchase']?> PO</li>
             </ul>
