@@ -21,10 +21,10 @@ class FieldController extends Controller
         $fields = $dataFields->getListFields($pdo, $_SESSION['user']['id']);
         //on récupere le temps
         $timeManager = new \Manager\OptionsManager();
-        $options = $timeManager->find(1);
+        $time=$timeManager->getTime();
         //on affiche le template
         foreach ($fields as $key=>$field){
-            $timeHarvest = $field['timestamp_harvest']*$options['time'];
+            $timeHarvest = $field['timestamp_harvest']*$time;
             $timeNow=time()-strtotime($field['date_sow']);
             $fieldValue=floor(($timeNow*100)/$timeHarvest);
             $fields[$key]['fieldValue']=$fieldValue;
