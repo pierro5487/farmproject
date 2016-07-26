@@ -43,6 +43,10 @@ Animaux:
                 </div>
             </article>
             <?php
+
+    }
+    if(!isset($animal)){
+        echo "<div id=\"empty\">Oups .. Plus d'animaux dans ta ferme !<br> As-tu étais faire un tour au <a href=\"".$this->url('game_market')."\">marché</a> ?</div>";
     }
 ?>
 <?php $this->stop('main_content'); ?>

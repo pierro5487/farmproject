@@ -56,5 +56,9 @@ Bâtiments:
         </div>
     </article>
 <?php endforeach ?>
-
+<?php
+    if(!isset($building)){
+        echo "<div id=\"empty\">Tu n'as pas encore de bâtiments ?<br><br><- C'est juste à gauche !</div>";
+    }
+?>
 <?php $this->stop('main_content'); ?>

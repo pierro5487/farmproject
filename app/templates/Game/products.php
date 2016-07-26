@@ -20,6 +20,9 @@ foreach ($products as $product){
     </article>
     <?php
 }
+if(!isset($product)){
+    echo "<div id=\"empty\">Tu n'as pas de produit pour l'instant ..</div>";
+}
 ?>
 <?php $this->stop('main_content'); ?>
 
