@@ -128,6 +128,9 @@ $(function(){
                 message = JSON.parse(message);
                 var buildingData = message.building;
                 if(message.error == undefined) {
+                    //on redefinit d'abord le nouveau prix d'amélioration avant dafficher les nouvelles valeurs
+                    var newPrice_improvement=buildingData.price_improvement*(1+(buildingData.level)/5);
+                    buildingData.price_improvement=newPrice_improvement;
                     ///boucle pour pouvoir afficher les nouvelles valeurs de chaque li après upgrade
                     for (attr in buildingData) {
                         //on sélection chaque li en fonction de l'attribut et on inscrit la nouvelle valeur en html

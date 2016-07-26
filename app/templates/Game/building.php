@@ -41,7 +41,7 @@ Bâtiments:
                 <li class='max_quantity'>Nombre d'animaux maximum: <span><?= $building['max_quantity'] ?></span></li>
                 <li class='date'>Date de création: <span><?= $building['date'] ?></span></li>
                 <li class='level_access'>Niveau d'accès: <span><?= $building['level_access']?></span></li>
-                <li class='price_improvement'>Coût de l'amélioration: <span><?= $building['price_improvement']?></span></li>
+                <li class='price_improvement'>Coût de l'amélioration: <span><?= $building['price_improvement']*(1+($building['level'])/5)?></span></li>
                 <li class='level_improvement'>Amélioration possible tous les: <span><?= $building['level_improvement']?></span> levels</li>
             </ul>
                 <button bid="<?= $building['id']?>" class="improvement"

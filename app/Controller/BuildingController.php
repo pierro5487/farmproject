@@ -39,7 +39,7 @@ class BuildingController extends Controller
         $verifBuilding = $buildingManager->verifBuilding($_POST['id']);
 
         //vérification si on a assez de po
-        if($verifBuilding['price_improvement']>$_SESSION['user']['money']){
+        if($verifBuilding['price_improvement']*(1+($verifBuilding['level'])/5)>$_SESSION['user']['money']){
             $errors['money'] = true;
         }
 
@@ -51,9 +51,9 @@ class BuildingController extends Controller
 
             $donnees['building'] = $buildingManager->refreshBuilding($_POST['id']);
             $userManager = new \Manager\UsersManager();
-            $userManager->spendMoney($_SESSION['user']['id'], $building['price_improvement']);
+            $userManager->spendMoney($_SESSION['user']['id'], $building['price_improvement']*(1+($building['level'])/5));
 
-            $_SESSION['user']['money'] -= $building['price_improvement'];
+            $_SESSION['user']['money'] -= $building['price_improvement']*(1+($building['level'])/5);
             $donnees['user']['money'] = $_SESSION['user']['money'];
             $donnees['user']['level']= $_SESSION['user']['level'];
             $userManager= new \Manager\UsersManager();
