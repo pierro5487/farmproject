@@ -108,6 +108,7 @@
 
 <footer>
 	<p class="container">&copy; copyright - 2016 &reg;</p>
+	<a href="mailto: contact@lornfarm.com">Des questions ?</a>
 </footer>
 </body>
 </html>
