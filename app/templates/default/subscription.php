@@ -1,8 +1,9 @@
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
         <title>Insertion d'un utilisateur</title>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="<?= $this->assetUrl('css/inscription.styles.css')?>">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" href="<?= $this->assetUrl('css/inscription.styles.css')?>"/>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
     </head>
     <body>
