@@ -602,6 +602,21 @@ footer {
       width: 90%; }
     main #navLeft #chat #messageForm button {
       padding: 2% 5%; }
+  main #farmcontenant {
+    background: url("../img/farmcontent.png") no-repeat;
+    background-size: 580px 700px;
+    border-radius: 5%;
+    padding: 30px;
+    margin-top: 50px;
+    height: 700px;
+    width: auto; }
+    main #farmcontenant #farmcontenu {
+      padding: 63px 63px 63px 93px; }
+  main progress {
+    display: block;
+    width: 30%;
+    height: 20px;
+    margin-left: 10%; }
 
   /*------------------------------------integration des templates------------------------------------------- */
   /*--------page fields listing---------- */
@@ -796,13 +811,10 @@ footer {
       margin: auto; }
 
   /*--------page animals listing---------- */
-  .avatar {
-    width: 100%; }
-    .avatar img {
-      width: 30%;
-      height: 20%;
-      margin: 2% auto 2%;
-      padding: 2% 30%; }
+  .avatar img {
+    width: 100%;
+    height: 20%;
+    margin: 0 auto; }
 
   .listing .information {
     float: left;
@@ -828,6 +840,10 @@ progress {
   border-radius: 5px;
   background-color: #d4d4d4;
   box-shadow: 0 0 0 3px #b6b6b6; }
+
+.ui-dialog .ui-corner-all .ui-widget .ui-widget-content .ui-front .ui-draggable .ui-resizable {
+  width: 50%;
+  color: red; }
 
 /********************************************************************** */
 @-webkit-keyframes progress {

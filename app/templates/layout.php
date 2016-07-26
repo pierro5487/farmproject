@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('js/jquery-ui/jquery-ui.css')?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('jquery-ui-1.12.0.custom/jquery-ui.css')?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
 
 	<script>
@@ -29,7 +28,7 @@
 
 	</script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script src="<?=$this->assetUrl('jquery-ui-1.12.0.custom/jquery-ui.js')?>"></script>
 	<script src="<?=$this->assetUrl('js/script.js')?>"></script>
 	<script src="<?=$this->assetUrl('js/ajaxScript.js')?>"></script>
 </head>
