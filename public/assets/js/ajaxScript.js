@@ -246,10 +246,12 @@ $(function(){
 
                     // Définition de la boite de dialogue
                     $( "#dialog" ).dialog({
-                        maxWidth: 150,
-                        maxHeight: 250,
+                        maxWidth: 600,
+                        maxHeight: 400,
+                        minWidth: 150,
+                        minHeight: 250,
                         width: 'auto',
-                        height: 250,
+                        height: 'auto',
                         modal: true,
                         autoOpen: false,
                         show: {
