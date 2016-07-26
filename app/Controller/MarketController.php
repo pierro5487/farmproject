@@ -28,7 +28,7 @@ class MarketController extends \W\Controller\Controller
         $pdo = $controller->connectPdo();
         $animalsManager = new \Manager\AnimalsManager();
 
-        $idNbSpecies = $animalsManager->getNbSpecies($pdo);
+        $NbSpecies = $animalsManager->getNbSpecies($pdo);
 
         $nbAnimals = rand(10, 30);
 
@@ -44,7 +44,7 @@ class MarketController extends \W\Controller\Controller
             $marketManager->deleteAll($pdo);
             //on créé les animaux aléatoirement
             for ($i=0;$i< $nbAnimals; $i++){
-                $idNbSpecies = rand(1, $idNbSpecies);
+                $idNbSpecies = rand(1, $NbSpecies);
                 $animals[] = new \Classes\Animals($idNbSpecies);
             }
             //on les insere en bdd
