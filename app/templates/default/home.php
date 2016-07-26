@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<title>Connexion</title>
 	</head>
 	<link rel="stylesheet" type="text/css" href="<?= $this->assetUrl('css/connexion.styles.css')?>">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
 	<body>
 		<form action="#" method="POST" accept-charset="utf-8">
@@ -15,6 +16,7 @@
 					<video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
 						<source src="https://d2v9y0dukr6mq2.cloudfront.net/video/preview/okUindP/tractor-cycle-cartoon_hupss54n__PM.mp4?random=1" type="video/webm">
 					</video>
+
 				</div>
 			</div>
 			<div class="container">
@@ -53,4 +55,3 @@
 		</form>
 	</body>
 </html>
-

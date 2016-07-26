@@ -46,7 +46,7 @@ class DefaultController extends Controller
 			}
 
 			/*---- redirection en fonction des erreurs-----------*/
-			//si j'ai des erreurs dans formulaire je renvoie direct au formulaire avec les erreurs 
+			//si j'ai des erreurs dans formulaire je renvoie direct au formulaire avec les erreurs
 			//sinon je test le login,le mot de passe est bien dans la bdd et correct
 			//si c'est faux je renvoi le formulaire ;si c'est ok je récupères les infos user et les password à la session grace à logUserIn() voir doc
 			/*------------------------------------------------------*/
@@ -57,7 +57,7 @@ class DefaultController extends Controller
 					//récupération données utilisateur
 					$userManager = new \Manager\UsersManager();
 					$user= $userManager->find($userId);
-					//j'inseres les donnees user dans la session 
+					//j'inseres les donnees user dans la session
 					$authentificationManager->logUserIn($user);
 					//on remet les trylogin à zéero
 					$authentificationManager->resetLoginTries($pdo, $email);
@@ -164,7 +164,9 @@ class DefaultController extends Controller
 
 				$authentificationManager = new \Manager\AuthentificationManager();
 				$authentificationManager->insertUser($pdo, $pseudo, $email, $passHashed, $lastname, $firstname);
-                $this->redirectToRoute('home');
+				$_SESSION['user']['message'] = 'L\'utilisateur à bien été enregistré';
+				$this->redirectToRoute('home');
+
 			}
 			$this->show('default/subscription', ['errors'=>$errors]);
 		}
@@ -206,15 +208,14 @@ class DefaultController extends Controller
 				$this->show('default/recovery-password',['errors'=>$errors]);
 			}else{
 				//je créé un token,je l 'insere en bdd et j'envoi l email
-                $token = \W\Security\StringUtils::randomString(32);
-                $controller = new \Manager\ConnectManager();
-                $pdo = $controller->connectPdo();
+				$token = \W\Security\StringUtils::randomString(32);
+				$controller = new \Manager\ConnectManager();
+				$pdo = $controller->connectPdo();
 				$userManager = new \Manager\UsersManager();
 				$user = $userManager->getUserByUsernameOrEmail($email);
 				$authentificationManager = new \Manager\AuthentificationManager();
-                $authentificationManager->postToken($pdo,$user['id'],$token);
+				$authentificationManager->postToken($pdo,$user['id'],$token);
 				$this->sendMail($email,$token,$user['id']);
-
 			}
 
 		}else{
@@ -245,74 +246,32 @@ class DefaultController extends Controller
 		$mail->addBCC('bcc@example.com');
 
 		$mail->isHTML(true);                                  	 // Set email format to HTML
-		$mail->CharSet = 'UTF-8';
 
-
-		$mail->addEmbeddedImage('../public/assets/img/cow.png','cow_image');
-		$mail->addEmbeddedImage('../public/assets/img/cow2.png','cow2_image');
 		$mail->Subject = 'Changement de mot de passe';
-        $message = "
-			<style type=\"text/css\">
-				section{
-					display: block;
-					width: 100%;
-				}
-				section::before{
-				content:'';
-				display: block;
-				clear: both;
-				}
-				h4{
-					font-size: 2em;
-					font-weight: bold;
-					padding: 20px 0px;
-					float: left;
-					display: block;
-				}
-				img{
-					display: block;
-					float: left;
-					width: 100px;
-					height: 100px;
-					margin-left: 20px;
-					margin-right: 20px;
-				}
-				a{
-					font-weight: bold;
-				}
-			</style>
-			<section>
-				<img tag put src=\"cid:cow_image\">
-				<h4>Bien le bonjour!</h4>
-				<img tag put src=\"cid:cow2_image\">
-			</section>
-			<div class='clearfix''></div>
-			
-			<section>
-				<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p><br>
-				<p><a href=\"lornfarm.livehost.fr/public/new-password?token=$token&id=$id\">Cliquez ici</a></p><br>
-				<p>Bonne continuation et amusez vous bien sur <strong>Lor'N Farm</strong></p><br>
-				<p>Vous n'êtes pas à l'origine de ce mail? Faites donc comme si vous ne l'aviez jamais reçu et go à la corbeille!</p><br>
-			</section>";
-
-
+		$message = '
+			<h4>Bien le bonjour!</h4>
+			<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p>
+			<p><a href=\"lornfarm.livehost.fr/public/new-password?token=$token&id=$id\">Cliquez ici</a></p><br>
+			<p>Bonne continuation et amusez vous bien sur Lore\'N Farm</p>
+			<p>Vous n\'êtes pas à l\'origine de ce mail? Faites donc comme si vous ne l\'aviez jamais reçu et go à la corbeille!</p>';
 		$mail->Body    = $message;
 		$mail->AltBody = 'Le message en texte brut, pour les clients qui ont désactivé l\'affichage HTML';
 
 		if(!$mail->send()) {
-			echo 'Le message n\'a pas pu être envoyé';
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
+			$_SESSION['user']['message'] = 'Le message n\'a pas pu être envoyé<br>Mailer Error: '. $mail->ErrorInfo;
+			$this->redirectToRoute('home');
 		} else {
-			echo 'Le message a été envoyé';
+			$_SESSION['user']['message'] = 'Le message à été envoyé';
+			$this->redirectToRoute('home');
 		}
 
 
 	}
 
-    public function setNewPassword()
-    {
-        //si j ai une requete
-        if(isset($_GET['token'])|| isset($_POST['new-password'])){
+	public function setNewPassword()
+	{
+		//si j ai une requete
+		if(isset($_GET['token'])|| isset($_POST['new-password'])){
 			//si c une requete post
 			if(isset($_POST['new-password'])){
 				//je récupere les password1 et 2
@@ -360,25 +319,25 @@ class DefaultController extends Controller
 					$this->show('default/new-password',['validationPassword'=>true]);
 				}
 			}
-            //si c une requete get
-            if(isset($_GET['token'])){
-                $token = $_GET['token'];
-                $controller = new \Manager\ConnectManager();
-                $pdo = $controller->connectPdo();
-                $authentificationManager = new \Manager\AuthentificationManager();
-                if($user = $authentificationManager->tokenExist($pdo,$token)){
-                    //si le token existe dans la bdd j'affiche le formulaire nouveau mot de passe
-                    $this->show('default/new-password',['user'=>$user]);
-                }else{
+			//si c une requete get
+			if(isset($_GET['token'])){
+				$token = $_GET['token'];
+				$controller = new \Manager\ConnectManager();
+				$pdo = $controller->connectPdo();
+				$authentificationManager = new \Manager\AuthentificationManager();
+				if($user = $authentificationManager->tokenExist($pdo,$token)){
+					//si le token existe dans la bdd j'affiche le formulaire nouveau mot de passe
+					$this->show('default/new-password',['user'=>$user]);
+				}else{
 					$this->redirectToRoute('home');
-                }
-            }
+				}
+			}
 
-        }else{
-            //pas de requete je renvoi vers la page recovery-password
-			$this->redirectToRoute('recovery-password');
-        }
-    }
+		}else{
+			//pas de requete je renvoi vers la page recovery-password
+			$this->redirectToRoute('recovery-passwords');
+		}
+	}
 	// fonction creé seulement pour se déconnecter pendant les test avec l url /deconnect
 	public function logOut()
 	{
@@ -387,3 +346,4 @@ class DefaultController extends Controller
 		$this->redirectToRoute('home');
 	}
 }
+

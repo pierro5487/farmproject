@@ -97,7 +97,10 @@ body {
 div.error {
   font-style: italic;
   font-size: 80%;
-  color: #EA2525; }
+  color: #EA2525;
+  width: 250px;
+  margin: 0 auto;
+  text-align: center; }
 
 /*************** */
 /* M├®diaqueries */
