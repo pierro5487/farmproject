@@ -20,14 +20,14 @@
                                 for ($i = 0; $i< count($key); $i++) {
                                     $name = $key[$i]['name'];
                                     if($key[$i] != $name) {
-                                        echo "<li>".$allUserFarmInformations['buildings'][$i]['nb_building'] . " " . mb_strtolower($allUserFarmInformations['buildings'][$i]['name'], 'utf8') . "(s) (" . $allUserFarmInformations['buildings'][$i]['max_quantity']." place(s) max)</li>";
+                                        echo "<li>".$key[$i]['nb_building'] . " " . mb_strtolower($key[$i]['name'], 'utf8') . "(s) (" . $key[$i]['max_quantity']." place(s) max)</li>";
                                     }
                                 }
                             }
     
                             else if ($value == 'animals' && $key != null) {
                                 echo "<h2>Vos animaux:</h2>";
-                                for ($i = 0; $i< count($allNbAnimalsInformations)-1; $i++) {
+                                for ($i = 0; $i< count($allNbAnimalsInformations); $i++) {
                                     $name = $key[$i]['name'];
                                     if($key[$i] != $name) {
                                         echo "<li>".$allNbAnimalsInformations[$i]['nb_animals'] . "/" . $allUserFarmInformations['buildings'][$i]['max_quantity'] . " " . mb_strtolower($allNbAnimalsInformations[$i]['name'], 'utf8') . "(s)</li>";
@@ -40,8 +40,8 @@
                                 for ($i = 0; $i< count($key); $i++) {
                                     $name = $key[$i]['name'];
                                     if($key[$i] != $name) {
-                                        echo "<li>" . $allUserFarmInformations['fields'][$i]['nb_field'] . " champ(s)";
-                                        if (!empty($key[$i]['name'])) echo " de " . mb_strtolower($allUserFarmInformations['fields'][$i]['name'], 'utf8') . "(s)</li>";
+                                        echo "<li>" . $key[$i]['nb_field'] . " champ(s)";
+                                        if (!empty($key[$i]['name'])) echo " de " . mb_strtolower($key[$i]['name'], 'utf8') . "(s)</li>";
                                     }
                                 }
                             }
@@ -50,14 +50,13 @@
                                 for ($i = 0; $i< count($key); $i++) {
                                     $name = $key[$i]['name'];
                                     if($key[$i] != $name) {
-                                        echo "<li>" . $allUserFarmInformations['products'][$i]['quantity'] . " unité(s)";
-                                        if (!empty($key[$i]['name'])) echo " de " . mb_strtolower($allUserFarmInformations['products'][$i]['name'], 'utf8') . "(s)</li>";
+                                        echo "<li>" . $key[$i]['quantity'] . " unité(s)";
+                                        if (!empty($key[$i]['name'])) echo " de " . mb_strtolower($key[$i]['name'], 'utf8') . "(s)</li>";
                                     }
                                 }
                             }
                             ?>
                         <?php endforeach; ?>
-    
                         <!-- Fin affichage des informations relatives à la ferme -->
                     </ul>
                 </div>
