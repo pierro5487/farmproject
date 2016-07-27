@@ -378,7 +378,7 @@ class DefaultController extends Controller
 			}
 
 		}else{
-			//pas de requete je renvoi vers la page recovery-password
+			// Pas de requete je renvoi vers la page recovery-password
 			$this->redirectToRoute('recovery-password');
 		}
 	}
