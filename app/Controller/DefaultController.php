@@ -279,6 +279,10 @@ class DefaultController extends Controller
 				a{
 					font-weight: bold;
 				}
+				.clearfix{
+					display: block;
+					clear: both;
+				}
 			</style>
 			<section>
 				<img tag put src=\"cid:cow_image\">
@@ -289,7 +293,7 @@ class DefaultController extends Controller
 			
 			<section>
 				<p>Vous avez oublié votre mot de passe? Vous souhaitez le changer? Et bien voici! Tâchez bien de cliquer sur le lien et votre voeu sera exaucé!</p><br>
-				<p><a href=\"lornfarm.livehost.fr/public/new-password?token=$token&id=$id\">Cliquez ici</a></p><br>
+				<p><a href=\"http://lornfarm.livehost.fr/public/new-password?token=$token&id=$id\">Cliquez ici</a></p><br>
 				<p>Bonne continuation et amusez vous bien sur <strong>Lor'N Farm</strong></p><br>
 				<p>Vous n'êtes pas à l'origine de ce mail? Faites donc comme si vous ne l'aviez jamais reçu et go à la corbeille!</p><br>
 			</section>";
@@ -374,8 +378,8 @@ class DefaultController extends Controller
 			}
 
 		}else{
-			//pas de requete je renvoi vers la page recovery-password
-			$this->redirectToRoute('recovery-passwords');
+			// Pas de requete je renvoi vers la page recovery-password
+			$this->redirectToRoute('recovery-password');
 		}
 	}
 	// fonction creé seulement pour se déconnecter pendant les test avec l url /deconnect
