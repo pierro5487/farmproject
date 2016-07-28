@@ -2,7 +2,6 @@
 
 <?php $this->start('main_content'); ?>
 <!--    select pour afficher le animaux qu'on veut voir-->
-<?php print_r($test)?>
 Animaux:
 <select name="animal" id="market_select">
     <option value="*">Tous</option>
