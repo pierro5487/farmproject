@@ -55,7 +55,8 @@ class MarketController extends \W\Controller\Controller
                 $marketManager->insert($data);
             }
             //on change la date du marché
-            $timeManager->updateTimestamp();
+            $time=time();
+            $timeManager->updateTimestamp($time);
         }
         return $marketManager;
     }

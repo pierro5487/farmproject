@@ -30,7 +30,7 @@
                     ?>
                 </div>
                 <div class="field">
-                    <button type="submit" name="recovery">Ajouter un utilisateur</button>
+                    <button type="submit" name="recovery">Envoyer</button>
                 </div>
             </form>
         </div>

@@ -27,9 +27,10 @@ class OptionsManager extends \W\Manager\Manager
         return $donnees['option_value'];
     }
 
-    public function updateTimestamp()
+    public function updateTimestamp($time)
     {
         $pdo=$this->dbh;
-        $pdo->exec('UPDATE options SET option_value = NOW() WHERE option_name = \'timestamp_market\'');
+        $req=$pdo->prepare('UPDATE options SET option_value =:time WHERE option_name = \'timestamp_market\'');
+        $req->execute(array('time'=>$time));
     }
 }
